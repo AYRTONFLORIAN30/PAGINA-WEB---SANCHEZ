@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../assets/logo.png';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'; // AÑADIDO Link
 
 function Navbar() {
   const [activeItem, setActiveItem] = useState('');
   const navigate = useNavigate();
+
   const handleClick = (item) => {
     setActiveItem(item);
   };
@@ -27,7 +28,17 @@ function Navbar() {
       </div>
 
       <nav className="main-nav">
-        <img src={logo} alt="Logo Grúas" className="logo" />
+        {/* ENVOLVER EL LOGO EN UN LINK */}
+        <Link
+  to="/"
+  onClick={() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }}
+>
+  <img src={logo} alt="Logo Grúas" className="logo" />
+</Link>
+
+
         <ul className="menu">
           <li className="dropdown">
             <a
@@ -65,10 +76,10 @@ function Navbar() {
               Nosotros ▾
             </a>
             <ul className="dropdown-menu">
-              <li><a href="#">Historia</a></li>
-              <li><a href="#">Misión</a></li>
-              <li><a href="#">Visión</a></li>
-              <li><a href="#">Nuestros valores</a></li>
+              <li><a href="/nosotros#historia">Historia</a></li>
+              <li><a href="/nosotros#mision">Misión</a></li>
+              <li><a href="/nosotros#vision">Visión</a></li>
+              <li><a href="/nosotros#valores">Nuestros valores</a></li>
             </ul>
           </li>
 
@@ -92,8 +103,10 @@ function Navbar() {
             </a>
           </li>
         </ul>
-        <button className="cotizar-btn" onClick={() => navigate('/cotizar')}>Cotizar</button>
 
+        <button className="cotizar-btn" onClick={() => navigate('/cotizar')}>
+          Cotizar
+        </button>
       </nav>
     </header>
   );

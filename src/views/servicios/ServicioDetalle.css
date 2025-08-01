@@ -1,0 +1,51 @@
+.servicio-container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+  
+}
+
+/* Centrado vertical y a la derecha */
+.centro-derecha {
+  position: absolute;
+  top: 45%; /* antes 50%, sube un poco */
+  right: 5%;
+  transform: translateY(-50%);
+  max-width: 450px;
+  text-align: left;
+}
+.contenido-servicio h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #b4ff4b;
+  font-weight: 800;
+}
+
+.contenido-servicio p {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  margin: 10px 0;
+  color: white;
+}
+
+.boton-cotizar {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.boton-cotizar:hover {
+  background-color: #45a049;
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px 25px;
+  border-radius: 10px;
+}

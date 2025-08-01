@@ -146,41 +146,69 @@ function Home() {
       </section>
 
       {/* Sección Servicios */}
-      <section className="servicios-section">
-        <div className="container-servicios">
-          <h2>
-            <span className="black">NUESTROS</span> <span className="verde">SERVICIOS</span>
-          </h2>
+<section className="servicios-section">
+  <div className="container-servicios">
+    <h2>
+      <span className="black">NUESTROS</span> <span className="verde">SERVICIOS</span>
+    </h2>
 
-          <div className="servicios-grid">
-            {[ 
-              { title: 'Alquiler de Grúas Telescópicas', desc: 'Alquiler de grúas telescópicas potentes que van desde las 45 ton hasta las 650 ton' },
-              { title: 'Alquiler de Transporte de Carga Pesada', desc: 'Transporte de carga pesada con plataformas cama baja y cama alta' },
-              { title: 'Alquiler de Semitrailer Grúa', desc: 'Alquiler de semitrailer con grúa para proyectos especiales' },
-              { title: 'Alquiler de Accesorios (Canastilla)', desc: 'Alquiler de accesorios como canastillas para trabajos en altura' },
-              { title: 'Mantenimiento de Grúas Articuladas', desc: 'Servicios de mantenimiento para grúas articuladas de diversas capacidades' }
-            ].map((servicio, index) => (
-              <div className="servicio-card" key={index}>
-                <div className="imagen-servicio" style={{ backgroundImage: `url(${proyecto})` }}>
-                  <div className="overlay">
-                    <h3>{servicio.title}</h3>
-                  </div>
-                </div>
-                <div className="plus-bar">
-                  <i className="fas fa-plus"></i>
-                </div>
-                <p>{servicio.desc}</p>
-              </div>
-            ))}
+    <div className="servicios-grid">
+      {[
+        {
+          title: 'Alquiler de Grúas Telescópicas',
+          desc: 'Alquiler de grúas telescópicas potentes que van desde las 45 ton hasta las 650 ton',
+          ruta: '/servicio/grua-telescopica',
+        },
+        {
+          title: 'Alquiler de Transporte de Carga Pesada',
+          desc: 'Transporte de carga pesada con plataformas cama baja y cama alta',
+          ruta: '/servicio/transporte-pesado',
+        },
+        {
+          title: 'Alquiler de Semitrailer Grúa',
+          desc: 'Alquiler de semitrailer con grúa para proyectos especiales',
+          ruta: '/servicio/semitrailer',
+        },
+        {
+          title: 'Alquiler de Accesorios (Canastilla)',
+          desc: 'Alquiler de accesorios como canastillas para trabajos en altura',
+          ruta: '/servicio/accesorios',
+        },
+        {
+          title: 'Mantenimiento de Grúas Articuladas',
+          desc: 'Servicios de mantenimiento para grúas articuladas de diversas capacidades',
+          ruta: '/servicio/mantenimiento',
+        },
+      ].map((servicio, index) => (
+        <div className="servicio-card" key={index}>
+          <div
+            className="imagen-servicio"
+            style={{ backgroundImage: `url(${proyecto})` }}
+          >
+            <div className="overlay">
+              <h3>{servicio.title}</h3>
+            </div>
           </div>
+          <div
+            className="plus-bar"
+            onClick={() => navigate(servicio.ruta)}
+            style={{ cursor: 'pointer' }}
+          >
+            <i className="fas fa-plus"></i>
+          </div>
+          <p>{servicio.desc}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Nuestra experiencia */}
       <section className="experiencia-proyectos">
         <div className="container-experiencia">
           <h2>
-            <span className="black">NUESTRA</span> <span className="verde">EXPERIENCIA</span>
+            <span className="black">NUESTROS</span> <span className="verde">PROYECTOS</span>
           </h2>
           <p>Te presentamos algunos de nuestros últimos proyectos más destacados</p>
 
@@ -203,7 +231,7 @@ function Home() {
   {/* Empresas que nos respaldan */}
 <section className="empresas-section">
   <h2>
-    <span className="black">GRANDES EMPRESAS QUE</span>{' '}
+    <span className="black">EMPRESAS QUE</span>{' '}
     <span className="verde">NOS RESPALDAN</span>
   </h2>
 
@@ -241,70 +269,6 @@ function Home() {
     </Slider>
   </div>
 </section>
-
-
-{/* FOOTER */}
-<footer className="footer">
-  <div className="footer-content">
-    <div className="footer-col">
-      <img src={logo} alt="Logo" className="footer-logo" />
-      <p>
-        Líderes en <span className="verde-text">Alquiler</span> de grúas por más de 19 años.
-      </p>
-      <p>Izamos progreso sin fronteras</p>
-      <p className="horario">
-        <i className="fas fa-clock verde-text"></i> Horario de atención:<br />
-        Lun-Vier : 8am - 6pm<br />
-        Sáb : 8am - 1pm
-      </p>
-    </div>
-
-    <div className="footer-col">
-      <h3>DATOS DE CONTACTO</h3>
-      <p><i className="fas fa-envelope verde-text"></i> comercial.pe@gruasymaniobras.com</p>
-      <p><i className="fas fa-phone verde-text"></i> Central: (511) 356-5800</p>
-      <p><i className="fas fa-mobile-alt verde-text"></i> +51 998311996 / +51 955329346</p>
-      <p><i className="fas fa-map-marker-alt verde-text"></i> Cal. Los Canarios mz. E2 Lote. 9A<br />Urb. Santa María de Huachipa<br />Lima - Lurigancho</p>
-    </div>
-
-    <div className="footer-col">
-      <h3>Grúas y Maniobras en Latinoamérica</h3>
-      <p>
-        <img src="https://flagcdn.com/16x12/pe.png" alt="Perú" /> Perú &nbsp;&nbsp;
-        <img src="https://flagcdn.com/16x12/cl.png" alt="Chile" /> Chile
-      </p>
-      <p>Puedes seguirnos en nuestras redes:</p>
-
-      <div className="redes-con-libro">
-        <div className="redes">
-          <i className="fab fa-facebook-square"></i>
-          <i className="fab fa-instagram"></i>
-          <i className="fab fa-linkedin"></i>
-          <i className="fab fa-youtube"></i>
-        </div>
-        <div className="libro-reclamaciones">
-          <a href="#">
-            <img src={libroReclamaciones} alt="Libro de Reclamaciones" className="libro-img" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div className="footer-bottom">
-    <p>Copyright 2025 © Sanchez | Gruas y Transportes</p>
-    <div className="footer-links">
-      <a href="#">Políticas de Privacidad</a> |
-      <a href="#">Políticas de Cookies</a> |
-      <a href="#">Responsabilidad Social Corporativa</a> |
-      <a href="#">Felicitaciones, Sugerencias y Reclamos</a> |
-      <a href="#">Política SIG</a>
-    </div>
-    <span className="dev">Developed by <strong>Ayrton Florian</strong></span>
-  </div>
-</footer>
-
-
 
     </>
   );

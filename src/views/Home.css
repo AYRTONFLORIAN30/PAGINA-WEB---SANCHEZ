@@ -410,3 +410,204 @@
 .slick-list {
   cursor: grab !important;
 }
+
+
+
+/* Empresas que nos respaldan */
+
+.empresas-section {
+  background-color: #e6ebee;
+  padding: 40px 0 80px 0; /* Aumentamos el padding inferior */
+  text-align: center;
+}
+
+.empresas-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px; /* igual al contenedor de proyectos */
+}
+
+
+.empresas-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.empresas-section .black {
+  color: #000;
+  font-weight: bold;
+}
+
+.empresas-section .verde {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.empresa-logo {
+  padding: 0; /* sin espacio entre logos */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empresa-logo img {
+  height: 200px;           /* máximo tamaño para logos */
+  max-width: 220px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.empresa-logo img:hover {
+  transform: scale(1.05);
+}
+
+.slick-dots {
+  display: none !important;
+}
+
+
+/* FOOTER */
+
+.footer {
+  background-color: #000;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.05rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 80px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer h3 {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.footer p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.footer-logo {
+  width: 220px;
+  margin-bottom: 15px;
+}
+
+.verde-text {
+  color: #91d100;
+  font-weight: bold;
+}
+
+.horario {
+  margin-top: 15px;
+}
+
+.redes {
+  margin-top: 15px;
+  font-size: 1.8rem;
+}
+
+.redes i {
+  margin-right: 12px;
+  color: #91d100;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.redes i:hover {
+  transform: scale(1.15);
+}
+
+.footer-bottom {
+  background-color: #2e7d32;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 1rem;
+}
+
+.footer-links {
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.dev {
+  display: block;
+  margin-top: 12px;
+}
+
+
+.libro-reclamaciones {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.libro-reclamaciones .libro-img {
+  max-width: 140px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.libro-reclamaciones .libro-img:hover {
+  transform: scale(1.05);
+}
+.redes-con-libro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea todo a la izquierda */
+  margin-top: 15px;
+}
+
+.redes {
+  font-size: 1.8rem;
+  display: flex;
+  gap: 12px;
+}
+
+.redes i {
+  color: #91d100;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.redes i:hover {
+  transform: scale(1.15);
+}
+
+.libro-reclamaciones {
+  margin-top: 10px;
+}
+
+.libro-reclamaciones .libro-img {
+  max-width: 130px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.libro-reclamaciones .libro-img:hover {
+  transform: scale(1.05);
+}

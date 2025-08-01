@@ -1,12 +1,43 @@
 import React from 'react';  // Eliminar 'useState' ya que no lo estamos utilizando
+import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import './Home.css';
+import logo from '../assets/logo.png';
 import gruaBanner from '../assets/grua-banner.png';
 import alianza from '../assets/alianza.png';
 import iso from '../assets/iso.png';
 import proyecto from '../assets/proyecto.jpg'; // Ruta corregida y revisada
+import kallpa from '../assets/kallpa.png';
+import calidda from '../assets/calidda.jpg';
+import chinalco from '../assets/chinalco.jpg';
+import consorciohob from '../assets/consorciohob.jpg';
+import consorciosanmiguel from '../assets/consorciosanmiguel.jpg';
+import grañamontero from '../assets/grañamontero.jpg';
+import ingetest from '../assets/ingetest.jpg';
+import ingenieriayproyectos from '../assets/ingenieriayproyectos.jpg';
+import intecsa from '../assets/intecsa.jpg';
+import iproyecsa from '../assets/iproyecsa.jpg';
+import lapatrona from '../assets/lapatrona.jpg';
+import nagasco from '../assets/nagasco.jpg';
+import ohl from '../assets/ohl.jpg';
+import pei from '../assets/pei.jpg';
+import perforaciones from '../assets/perforaciones.jpg';
+import perfotunel from '../assets/perfotunel.jpg';
+import pevoex from '../assets/pevoex.jpg';
+import ransa from '../assets/ransa.jpg';
+import rindustrial from '../assets/rindustrial.jpg';
+import sanmartin from '../assets/sanmartin.jpg';
+import tecnicasmetalicas from '../assets/tecnicasmetalicas.jpg';
+import teigatmi from '../assets/teigatmi.jpg';
+import transportessanrafael from '../assets/transportessanrafael.jpg';
+import trenelectrico from '../assets/trenelectrico.jpg';
+import votorantim from '../assets/votorantim.jpg';
+import libroReclamaciones from '../assets/libro-reclamaciones.png';
+
+
 
 function Home() {
+  const navigate = useNavigate();
   const proyectos = [
     { title: 'Proyecto 1', description: '', img: proyecto },
     { title: 'Proyecto 2', description: '', img: proyecto },
@@ -70,7 +101,8 @@ function Home() {
               only five centuries, but also the leap into electronic typesetting,
               remaining essentially unchanged.
             </p>
-            <button className="cotizar-btn">Solicitar Cotización</button>
+            <button className="cotizar-btn" onClick={() => navigate('/cotizar')}>Solicitar Cotización</button>
+
           </div>
           <div className="hero-image">
             <img src={gruaBanner} alt="Banner grúa" />
@@ -165,6 +197,115 @@ function Home() {
           </Slider>
         </div>
       </section>
+
+
+   
+  {/* Empresas que nos respaldan */}
+<section className="empresas-section">
+  <h2>
+    <span className="black">GRANDES EMPRESAS QUE</span>{' '}
+    <span className="verde">NOS RESPALDAN</span>
+  </h2>
+
+  <div className="empresas-wrapper">
+    <Slider
+      {...{
+        infinite: true,
+        speed: 900,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        dots: false,
+        arrows: false,
+        swipeToSlide: true,
+        draggable: true,
+        touchThreshold: 15,
+        responsive: [
+          { breakpoint: 1024, settings: { slidesToShow: 4 } },
+          { breakpoint: 768, settings: { slidesToShow: 3 } },
+          { breakpoint: 480, settings: { slidesToShow: 2 } }
+        ]
+      }}
+    >
+      {[kallpa, calidda, chinalco, consorciohob, consorciosanmiguel, grañamontero,
+        ingetest, ingenieriayproyectos, intecsa, iproyecsa, lapatrona,
+        nagasco, ohl, pei, perforaciones, perfotunel, pevoex, ransa, rindustrial,
+        sanmartin, tecnicasmetalicas, teigatmi, transportessanrafael,
+        trenelectrico, votorantim
+      ].map((logo, index) => (
+        <div className="empresa-logo" key={index}>
+          <img src={logo} alt={`Logo ${index + 1}`} />
+        </div>
+      ))}
+    </Slider>
+  </div>
+</section>
+
+
+{/* FOOTER */}
+<footer className="footer">
+  <div className="footer-content">
+    <div className="footer-col">
+      <img src={logo} alt="Logo" className="footer-logo" />
+      <p>
+        Líderes en <span className="verde-text">Alquiler</span> de grúas por más de 19 años.
+      </p>
+      <p>Izamos progreso sin fronteras</p>
+      <p className="horario">
+        <i className="fas fa-clock verde-text"></i> Horario de atención:<br />
+        Lun-Vier : 8am - 6pm<br />
+        Sáb : 8am - 1pm
+      </p>
+    </div>
+
+    <div className="footer-col">
+      <h3>DATOS DE CONTACTO</h3>
+      <p><i className="fas fa-envelope verde-text"></i> comercial.pe@gruasymaniobras.com</p>
+      <p><i className="fas fa-phone verde-text"></i> Central: (511) 356-5800</p>
+      <p><i className="fas fa-mobile-alt verde-text"></i> +51 998311996 / +51 955329346</p>
+      <p><i className="fas fa-map-marker-alt verde-text"></i> Cal. Los Canarios mz. E2 Lote. 9A<br />Urb. Santa María de Huachipa<br />Lima - Lurigancho</p>
+    </div>
+
+    <div className="footer-col">
+      <h3>Grúas y Maniobras en Latinoamérica</h3>
+      <p>
+        <img src="https://flagcdn.com/16x12/pe.png" alt="Perú" /> Perú &nbsp;&nbsp;
+        <img src="https://flagcdn.com/16x12/cl.png" alt="Chile" /> Chile
+      </p>
+      <p>Puedes seguirnos en nuestras redes:</p>
+
+      <div className="redes-con-libro">
+        <div className="redes">
+          <i className="fab fa-facebook-square"></i>
+          <i className="fab fa-instagram"></i>
+          <i className="fab fa-linkedin"></i>
+          <i className="fab fa-youtube"></i>
+        </div>
+        <div className="libro-reclamaciones">
+          <a href="#">
+            <img src={libroReclamaciones} alt="Libro de Reclamaciones" className="libro-img" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div className="footer-bottom">
+    <p>Copyright 2025 © Sanchez | Gruas y Transportes</p>
+    <div className="footer-links">
+      <a href="#">Políticas de Privacidad</a> |
+      <a href="#">Políticas de Cookies</a> |
+      <a href="#">Responsabilidad Social Corporativa</a> |
+      <a href="#">Felicitaciones, Sugerencias y Reclamos</a> |
+      <a href="#">Política SIG</a>
+    </div>
+    <span className="dev">Developed by <strong>Ayrton Florian</strong></span>
+  </div>
+</footer>
+
+
+
     </>
   );
 }

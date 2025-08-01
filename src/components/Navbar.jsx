@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../assets/logo.png';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
   const [activeItem, setActiveItem] = useState('');
-
+  const navigate = useNavigate();
   const handleClick = (item) => {
     setActiveItem(item);
   };
@@ -91,7 +92,8 @@ function Navbar() {
             </a>
           </li>
         </ul>
-        <button className="cotizar-btn">Cotizar</button>
+        <button className="cotizar-btn" onClick={() => navigate('/cotizar')}>Cotizar</button>
+
       </nav>
     </header>
   );

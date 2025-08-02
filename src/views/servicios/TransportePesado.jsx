@@ -1,24 +1,23 @@
 import React from 'react';
-import './ServicioDetalle.css'; // Si usas un CSS común para servicios
+import './ServicioDetalle.css';
+import imagenFondo from '../../assets/servicio-transporte-carga.jpg';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 
-function TransportePesado() {
+function TransporteCargaPesada() {
+  const navigate = useNavigate(); // Hook para redirección
+
+  const irACotizacion = () => {
+    navigate('/cotizar');
+  };
+
   return (
-    <div className="detalle-servicio">
-      <div className="imagen-encabezado" style={{ backgroundImage: 'url(/assets/grua-banner.png)' }}>
-        {/* Puedes cambiar la imagen por otra relacionada al transporte si deseas */}
-      </div>
-      <div className="contenido-servicio">
+    <div className="servicio-container" style={{ backgroundImage: `url(${imagenFondo})` }}>
+      <div className="contenido-servicio centro-derecha overlay">
         <h1>ALQUILER DE TRANSPORTE DE CARGA PESADA</h1>
-        <p>
-          Servicio de transporte especializado para cargas pesadas y sobredimensionadas en todo el Perú.
-        </p>
-        <p>
-          Contamos con plataformas cama baja y cama alta, equipos modernos y operadores certificados que garantizan seguridad en todo el proceso.
-        </p>
-        <p>
-          ¿Tienes un proyecto que requiere transporte de maquinaria o estructuras pesadas?
-        </p>
-        <button className="boton-cotizar" onClick={() => window.location.href = '/cotizar'}>
+        <p>Transporte especializado para maquinaria pesada, estructuras metálicas, y equipos de gran volumen.</p>
+        <p>Unidades modernas y personal capacitado para garantizar seguridad y puntualidad en cada entrega.</p>
+        <p>¿Necesitas transportar carga pesada a cualquier punto del país?</p>
+        <button className="boton-cotizar" onClick={irACotizacion}>
           Solicitar Cotización
         </button>
       </div>
@@ -26,4 +25,4 @@ function TransportePesado() {
   );
 }
 
-export default TransportePesado;
+export default TransporteCargaPesada;

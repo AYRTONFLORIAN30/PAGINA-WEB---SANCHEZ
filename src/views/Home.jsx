@@ -2,7 +2,6 @@ import React from 'react';  // Eliminar 'useState' ya que no lo estamos utilizan
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import './Home.css';
-import logo from '../assets/logo.png';
 import gruaBanner from '../assets/grua-banner.png';
 import alianza from '../assets/alianza.png';
 import iso from '../assets/iso.png';
@@ -32,7 +31,6 @@ import teigatmi from '../assets/teigatmi.jpg';
 import transportessanrafael from '../assets/transportessanrafael.jpg';
 import trenelectrico from '../assets/trenelectrico.jpg';
 import votorantim from '../assets/votorantim.jpg';
-import libroReclamaciones from '../assets/libro-reclamaciones.png';
 
 
 
@@ -85,30 +83,36 @@ function Home() {
 
   return (
     <>
-      <section className="hero-section">
-        <div className="hero-content">
-          <div className="hero-text">
-            <h1>
-              <span className="bold">GRÚAS Y TRANSPORTES</span>{' '}
-              <span className="highlight">SANCHEZ</span>
-            </h1>
-            <p className="subtitulo">Izamos progreso sin fronteras</p>
-            <p className="descripcion">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of type
-              and scrambled it to make a type specimen book. It has survived not
-              only five centuries, but also the leap into electronic typesetting,
-              remaining essentially unchanged.
-            </p>
-            <button className="cotizar-btn" onClick={() => navigate('/cotizar')}>Solicitar Cotización</button>
+      <section
+  className="hero-fullscreen"
+  style={{ backgroundImage: `url(${gruaBanner})` }}
+>
+  <div className="overlay-hero">
+    <div className="hero-texto-centrado">
+      <h1>
+        <span className="bold">GRÚAS Y TRANSPORTES</span>{' '}
+        <span className="highlight">SANCHEZ</span>
+      </h1>
 
-          </div>
-          <div className="hero-image">
-            <img src={gruaBanner} alt="Banner grúa" />
-          </div>
-        </div>
-      </section>
+      <p className="subtitulo">Izamos progreso sin fronteras</p>
+
+      <p className="descripcion">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br />
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...
+      </p>
+
+      <button
+        className="cotizar-btn"
+        onClick={() => window.location.href = '/cotizar'}
+      >
+        Solicitar Cotización
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
 
       {/* Sección Experiencia y Respaldo */}
       <section className="experiencia-section">

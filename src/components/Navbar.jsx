@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../assets/logo.png';
-import { useNavigate, Link } from 'react-router-dom'; // AÑADIDO Link
+import { useNavigate, Link } from 'react-router-dom';
 
 function Navbar() {
   const [activeItem, setActiveItem] = useState('');
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleClick = (item) => {
     setActiveItem(item);
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -28,18 +30,18 @@ function Navbar() {
       </div>
 
       <nav className="main-nav">
-        {/* ENVOLVER EL LOGO EN UN LINK */}
         <Link
-  to="/"
-  onClick={() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }}
->
-  <img src={logo} alt="Logo Grúas" className="logo" />
-</Link>
+          to="/"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          <img src={logo} alt="Logo Grúas" className="logo" />
+        </Link>
 
+        <button className="menu-toggle" onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
+          ☰
+        </button>
 
-        <ul className="menu">
+        <ul className={`menu ${isMobileMenuOpen ? 'open' : ''}`}>
           <li className="dropdown">
             <a
               href="#"
@@ -49,11 +51,11 @@ function Navbar() {
               Servicios ▾
             </a>
             <ul className="dropdown-menu">
-              <li><a href="#">Alquiler de grúa telescópica</a></li>
-              <li><a href="#">Alquiler de transporte de carga pesada</a></li>
-              <li><a href="#">Alquiler semitrailer grúa</a></li>
-              <li><a href="#">Alquiler de accesorios (canastilla)</a></li>
-              <li><a href="#">Mantenimiento de grúas articuladas</a></li>
+              <li><Link to="/servicio/grua-telescopica">Alquiler de grúa telescópica</Link></li>
+              <li><Link to="/servicio/transporte-pesado">Alquiler de transporte de carga pesada</Link></li>
+              <li><Link to="/servicio/semitrailer">Alquiler semitrailer grúa</Link></li>
+              <li><Link to="/servicio/accesorios">Alquiler de accesorios (canastilla)</Link></li>
+              <li><Link to="/servicio/mantenimiento">Mantenimiento de grúas articuladas</Link></li>
             </ul>
           </li>
 
@@ -104,6 +106,7 @@ function Navbar() {
           </li>
         </ul>
 
+        {/* ✅ Botón Cotizar correctamente alineado */}
         <button className="cotizar-btn" onClick={() => navigate('/cotizar')}>
           Cotizar
         </button>

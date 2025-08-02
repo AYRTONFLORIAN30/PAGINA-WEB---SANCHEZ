@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 104vh;
   position: relative;
   
 }
@@ -18,7 +18,7 @@
 }
 .contenido-servicio h1 {
   font-size: 3rem;
-  margin-bottom: 15px;
+  margin-bottom: 100px;
   color: #b4ff4b;
   font-weight: 800;
 }
@@ -26,7 +26,7 @@
 .contenido-servicio p {
   font-size: 1.3rem;
   line-height: 1.7;
-  margin: 10px 0;
+  margin: 0px ;
   color: white;
 }
 
@@ -46,6 +46,6 @@
 }
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px 25px;
-  border-radius: 10px;
+  padding: 70px 25px;
+  border-radius: 0px;
 }

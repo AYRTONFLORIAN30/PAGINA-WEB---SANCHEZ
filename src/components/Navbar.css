@@ -1,3 +1,23 @@
+.cotizar-btn {
+  background-color: #3db343;   /* ✅ Verde más claro */
+  color: white;                /* ✅ Texto blanco para mejor contraste */
+  padding: 16px 36px;          /* ✅ Tamaño más pequeño */
+  font-size: 1.1rem;           /* ✅ Más proporcionado */
+  font-weight: 400;            /* ✅ No negrita */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: none;
+  font-family: inherit;
+}
+
+.cotizar-btn:hover {
+  background-color: #ffffff;
+  color: #3db343;             /* ✅ Misma tonalidad para hover */
+}
+
+
 .top-bar {
   background-color: #000;
   color: white;
@@ -24,10 +44,12 @@
 
 .main-nav {
   display: flex;
-  align-items: center;
-  padding: 15px 40px;
+  align-items: center;       /* 🔥 Alinea verticalmente */
+  justify-content: space-between;
+  padding: 0 40px;
   background-color: #000;
   color: white;
+  height: 70px;              /* 🔥 Altura fija para navbar */
 }
 
 .logo {
@@ -47,10 +69,15 @@
   position: relative;
 }
 
+
 .menu a {
   color: white;
   text-decoration: none;
-  padding: 8px;
+  padding: 16px 8px;   /* Aumentamos el padding vertical */
+  display: flex;
+  align-items: center;
+  height: 100%;
+  line-height: 1;
 }
 
 .menu a.dlt {
@@ -86,7 +113,7 @@
 }
 
 .dropdown-menu li a:hover {
-  background-color: #2e7d32; /* verde oscuro */
+  background-color: #3db343; /* verde oscuro */
   color: white;
 }
 
@@ -95,17 +122,10 @@
   text-decoration: none;
 }
 
-.cotizar-btn {
-  background-color: #4caf50;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-}
+
 .menu a.active {
   position: relative;
-  border-bottom: 3px solid #4caf50;
+  border-bottom: 3px solid #2e8a31;
 }
 
 .menu a.active::after {
@@ -129,10 +149,84 @@ header {
   z-index: 1000;
 }
 
-/* 🔳 Asegura que la combinación top-bar + main-nav tenga sombra si deseas */
-header::after {
-  content: '';
-  display: block;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.1);
+
+
+/* Añade al final de tu Navbar.css */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  font-size: 28px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
 }
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    background-color: #111;
+    min-width: 100%;
+  }
+
+  
+  .menu-toggle {
+    display: block;
+  }
+
+  .cotizar-btn {
+    margin-top: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .main-nav .cotizar-btn {
+  margin-left: 20px;         /* Espacio entre el menú y el botón */
+  align-self: center;        /* ✅ Alineación vertical con el menú */
+  padding: 12px 30px;        /* Tamaño más uniforme */
+  height: auto;              /* Asegura que no se estire */
+}
+
+}
+
+header {
+  background-color: #000; /* Asegura que no haya fondo blanco por detrás */
+  border-bottom: none !important; /* Elimina cualquier borde residual */
+}
+
+
+
+.menu.open {
+  border-top: none !important;
+}
+
+.menu {
+  border: none !important;
+  margin-top: 0 !important;
+}
+
+.menu li {
+  border: none !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+

@@ -43,7 +43,7 @@
 
 /* Título */
 .hero-texto-centrado h1 {
-  font-size: 4.5rem;
+  font-size: 3.2rem;
   font-weight: bold;
   margin-bottom: 20px;
   opacity: 0;
@@ -53,7 +53,7 @@
 
 /* Subtítulo */
 .hero-texto-centrado .subtitulo {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   margin-bottom: 20px;
   opacity: 0;
   animation: slideDownFade 0.8s ease-out forwards;
@@ -62,7 +62,7 @@
 
 /* Descripción */
 .hero-texto-centrado .descripcion {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   margin-bottom: 30px;
   opacity: 0;
@@ -74,11 +74,11 @@
 .hero-texto-centrado .cotizar-btn {
   background-color: #29af42;
   color: #edeeec;
-  padding: 22px 50px;
+  padding: 15px 40px;
   font-size: 1.3rem;
   font-weight: 400;
   border: none;
-  border-radius: 6px;
+  border-radius: 2px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: none;
@@ -245,19 +245,24 @@
 .servicio-card {
   background-color: #fff;
   border-radius: 10px;
-  overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  position: relative;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* 👈 esto debe ir aquí para recortar la imagen si se pasa */
 }
+
+
 
 .imagen-servicio {
   background-size: cover;
   background-position: center;
   height: 220px;
-  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
 }
+
 
 .overlay {
   background: rgba(0, 0, 0, 0.6);
@@ -281,19 +286,28 @@
   padding: 8px;
   text-align: center;
   font-size: 1.4rem;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
   border-radius: 50%;
-  z-index: 2;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
 }
 
-.servicio-card p {
+.servicio-info {
   padding: 20px;
+  position: relative;
+  min-height: 120px;
+}
+
+
+.servicio-card p {
   font-size: 1rem;
   line-height: 1.5;
-  margin-top: 25px;
+  margin: 0;
 }
+
 
 .servicio-card:hover {
   transform: translateY(-5px);
@@ -302,6 +316,29 @@
 .servicio-card .overlay i {
   display: none;
 }
+
+/* Overlay de servicios más claro */
+.overlay-servicio {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+/* Título más claro y grande */
+.titulo-servicio {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
 
 
 /* Sección de Nuestra Experiencia */
@@ -363,7 +400,7 @@
 
 /* Ajuste en el overlay */
 .overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   color: white;
   position: absolute;
   top: 0;
@@ -485,3 +522,21 @@
 }
 
 
+@media (max-width: 768px) {
+  .hero-texto-centrado h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-texto-centrado .subtitulo {
+    font-size: 1.2rem;
+  }
+
+  .hero-texto-centrado .descripcion {
+    font-size: 1rem;
+  }
+
+  .hero-texto-centrado .cotizar-btn {
+    font-size: 1rem;
+    padding: 12px 28px;
+  }
+}

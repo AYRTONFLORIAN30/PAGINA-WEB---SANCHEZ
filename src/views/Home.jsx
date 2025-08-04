@@ -31,7 +31,7 @@ import teigatmi from '../assets/teigatmi.jpg';
 import transportessanrafael from '../assets/transportessanrafael.jpg';
 import trenelectrico from '../assets/trenelectrico.jpg';
 import votorantim from '../assets/votorantim.jpg';
-
+import './ProyectosSlider.css';
 
 
 function Home() {
@@ -185,30 +185,26 @@ function Home() {
         },
       ].map((servicio, index) => (
         <div className="servicio-card" key={index}>
-          <div
-            className="imagen-servicio"
-            style={{ backgroundImage: `url(${proyecto})` }}
-          >
-            <div className="overlay">
-              <h3>{servicio.title}</h3>
-            </div>
-          </div>
-          <div
-            className="plus-bar"
-            onClick={() => navigate(servicio.ruta)}
-            style={{ cursor: 'pointer' }}
-          >
-            <i className="fas fa-plus"></i>
-          </div>
-          <p>{servicio.desc}</p>
-        </div>
+  <div className="imagen-servicio" style={{ backgroundImage: `url(${proyecto})` }}>
+    <div className="overlay-servicio">
+      <h3 className="titulo-servicio">{servicio.title}</h3>
+    </div>
+  </div>
+  <div className="servicio-info">
+    <p>{servicio.desc}</p>
+    <div className="plus-bar" onClick={() => navigate(servicio.ruta)} style={{ cursor: 'pointer' }}>
+      <i className="fas fa-plus"></i>
+    </div>
+  </div>
+</div>
+
       ))}
     </div>
   </div>
 </section>
 
 
-      {/* Nuestra experiencia */}
+      {/* Nuestros proyectos*/}
       <section className="experiencia-proyectos">
         <div className="container-experiencia">
           <h2>

@@ -59,15 +59,14 @@ function Navbar() {
             </ul>
           </li>
 
-          <li>
-            <a
-              href="#"
-              onClick={() => handleClick('proyectos')}
-              className={activeItem === 'proyectos' ? 'active' : ''}
-            >
-              Proyectos
-            </a>
-          </li>
+          <Link
+  to="/proyectos"
+  className={activeItem === 'proyectos' ? 'active' : ''}
+  onClick={() => setActiveItem('proyectos')}
+>
+  Proyectos
+</Link>
+
 
           <li className="dropdown">
             <a
@@ -78,32 +77,33 @@ function Navbar() {
               Nosotros ▾
             </a>
             <ul className="dropdown-menu">
-              <li><a href="/nosotros#historia">Historia</a></li>
-              <li><a href="/nosotros#mision">Misión</a></li>
-              <li><a href="/nosotros#vision">Visión</a></li>
-              <li><a href="/nosotros#valores">Nuestros valores</a></li>
+              <li><Link to="/nosotros">Más de nosotros</Link></li>
+              <li><Link to="/nosotros/responsabilidad-social">Responsabilidad Social Corporativa</Link></li>
             </ul>
           </li>
 
-          <li>
-            <a
-              href="#"
-              onClick={() => handleClick('blog')}
-              className={activeItem === 'blog' ? 'active' : ''}
-            >
-              Blog
-            </a>
-          </li>
 
           <li>
-            <a
-              href="#"
-              onClick={() => handleClick('contacto')}
-              className={activeItem === 'contacto' ? 'active' : ''}
-            >
-              Contacto
-            </a>
+              <Link
+                to="/blog"
+                onClick={() => handleClick('blog')}
+                className={activeItem === 'blog' ? 'active' : ''}
+              >
+                Blog
+              </Link>
           </li>
+
+
+        <li>
+          <Link
+            to="/contacto-info"
+            className={activeItem === 'contacto' ? 'active' : ''}
+            onClick={() => handleClick('contacto')}
+          >
+            Contacto
+          </Link>
+        </li>
+
         </ul>
 
         {/* ✅ Botón Cotizar correctamente alineado */}

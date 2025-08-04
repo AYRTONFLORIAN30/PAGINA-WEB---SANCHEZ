@@ -11,6 +11,12 @@ import TransportePesado from './views/servicios/TransportePesado';
 import Semitrailer from './views/servicios/Semitrailer';
 import Accesorios from './views/servicios/Accesorios';
 import Mantenimiento from './views/servicios/Mantenimiento';
+import Blog from './views/Blog';
+import BlogDetalle from './pages/BlogDetalle';
+import ContactoInfo from './views/ContactoInfo';
+import Proyectos from './views/Proyectos';
+
+
 
 
 function App() {
@@ -27,7 +33,10 @@ function App() {
           <Route path="/servicio/semitrailer" element={<Semitrailer />} />
           <Route path="/servicio/accesorios" element={<Accesorios />} />
           <Route path="/servicio/mantenimiento" element={<Mantenimiento />} />
-
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogDetalle />} />
+          <Route path="/contacto-info" element={<ContactoInfo />} />
+          <Route path="/proyectos" element={<Proyectos />} />
 
         </Route>
       </Routes>

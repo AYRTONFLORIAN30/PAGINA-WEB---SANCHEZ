@@ -74,7 +74,6 @@ function Nosotros() {
 </section>
 
 
-
       <section id="valores" className="valores-section">
   <h2>Nuestros valores</h2>
   <div className="valores-grid">

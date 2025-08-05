@@ -185,19 +185,25 @@ function Home() {
         },
       ].map((servicio, index) => (
         <div className="servicio-card" key={index}>
-  <div className="imagen-servicio" style={{ backgroundImage: `url(${proyecto})` }}>
-    <div className="overlay-servicio">
-      <h3 className="titulo-servicio">{servicio.title}</h3>
-    </div>
-  </div>
-  <div className="servicio-info">
-    <p>{servicio.desc}</p>
-    <div className="plus-bar" onClick={() => navigate(servicio.ruta)} style={{ cursor: 'pointer' }}>
-      <i className="fas fa-plus"></i>
-    </div>
-  </div>
-</div>
+          <div className="imagen-servicio">
+            <img src={proyecto} alt={servicio.title} className="imagen-servicio-img" />
+            <div className="overlay-servicio">
+              <h3 className="titulo-servicio">{servicio.title}</h3>
+              <div
+                className="plus-bar"
+                onClick={() => navigate(servicio.ruta)}
+                style={{ cursor: 'pointer' }}
+              >
+                <i className="fas fa-plus"></i>
+              </div>
+            </div>
+          </div>
 
+          {/* Descripción del servicio */}
+          <div className="servicio-descripcion">
+            {servicio.desc}
+          </div>
+        </div>
       ))}
     </div>
   </div>

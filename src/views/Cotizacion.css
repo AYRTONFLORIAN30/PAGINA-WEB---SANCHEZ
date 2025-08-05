@@ -66,3 +66,7 @@
   display: flex;
   flex-direction: column;
 }
+
+#formulario-cotizacion {
+  scroll-margin-top: 100px; /* Ajusta según la altura de tu navbar */
+}

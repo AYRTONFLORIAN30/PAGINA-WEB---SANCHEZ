@@ -19,6 +19,7 @@ import Proyectos from './views/Proyectos';
 
 
 
+
 function App() {
   return (
     <Router>
@@ -37,6 +38,7 @@ function App() {
           <Route path="/blog/:id" element={<BlogDetalle />} />
           <Route path="/contacto-info" element={<ContactoInfo />} />
           <Route path="/proyectos" element={<Proyectos />} />
+          
 
         </Route>
       </Routes>

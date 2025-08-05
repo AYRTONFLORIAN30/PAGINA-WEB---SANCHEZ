@@ -1,8 +1,7 @@
 /* Estilos para la sección hero */
-/* Estilos para la sección hero */
 .hero-fullscreen {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -10,6 +9,8 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 }
 
 .overlay-hero {
@@ -96,11 +97,10 @@
 
 
 
-/* --------------- */
-/* Sección Experiencia y Respaldo */
+/* 🔝 Sección Experiencia y Respaldo (AMPLIADA) */
 .experiencia-section {
   background-color: #f9f9f9;
-  padding: 60px 40px;
+  padding: 80px 50px;
   color: #000;
   display: flex;
   justify-content: center;
@@ -109,37 +109,39 @@
 .experiencia-content {
   display: flex;
   gap: 60px;
-  max-width: 1400px;
+  max-width: 1600px;
   width: 100%;
+  align-items: stretch;
 }
 
 .experiencia-content .texto {
-  flex: 1;
+  flex: 1.2;
 }
 
 .experiencia-content .texto h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 
 .experiencia-content .texto hr {
-  margin: 15px 0;
-  width: 70%;
-  border: 2px solid #91d100;
+  margin: 25px 0;
+  width: 80%;
+  border: 3px solid #91d100;
 }
 
 .experiencia-content .texto p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
 }
 
 .btn-verde {
   background-color: #33a837;
   color: white;
-  padding: 12px 25px;
+  padding: 14px 30px;
   border: none;
   border-radius: 6px;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
 }
@@ -147,66 +149,79 @@
 .cards {
   flex: 2;
   display: flex;
-  gap: 20px;
+  gap: 30px;
   justify-content: space-between;
+  align-items: stretch;
 }
 
 .card {
   background-color: white;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  border-radius: 0 0 10px 10px;
+  border: none;
+  overflow: hidden;
   flex: 1;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 20px 20px; /* ✅ Espaciado reducido */
+  min-height: 300px; /* ✅ Altura total menor */
+  position: relative;
 }
 
 .card-header {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  padding: 10px 0;
-  background-color: #111;
+  background-color: #0f1b23;
   color: white;
+  border-radius: 0;
+  padding: 15px 10px;
+  width: 100%; /* ✅ Que ocupe todo el ancho */
+  box-sizing: border-box;
 }
 
-.card-header.verde-oscuro {
-  background-color: #2e7d32;
+.card-header.verde {
+  background-color: #0f1b23;
 }
+
 
 .card .años {
   font-size: 3.5rem;
   font-weight: bold;
-  color: #2e7d32;
-  margin: 10px 0;
+  color: #50af47; /* Verde como en imagen */
+  margin: 10px 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .card .años span {
   font-size: 1.5rem;
-  display: block;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-top: 5px; 
 }
 
 .card img {
   width: auto;
   height: auto;
-  max-height: 180px;
+  max-height: 200px;
   max-width: 100%;
   object-fit: contain;
   display: block;
-  margin: 20px auto;
-}
-
-/* Imagen más grande solo en tarjeta 2 y 3 */
-.cards .card:nth-child(2) img {
-  max-height: 220px;
+  margin: 30px auto 0;
 }
 
 .cards .card:nth-child(3) img {
-  max-height: 260px;
-  margin-top: 40px;
+  margin-top: 35px;
 }
 
-.cards .card:nth-child(3) {
-  padding-top: 30px;
-}
 
 /* Sección Servicios */
 .servicios-section {

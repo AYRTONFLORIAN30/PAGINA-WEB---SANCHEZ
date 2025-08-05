@@ -1,5 +1,6 @@
 .nosotros-container {
-  padding: 40px 20px;
+  padding: 0;
+  margin: 0;
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -173,3 +174,54 @@
   line-height: 1.3;
 }
 
+/* CSS BANNER */
+.nosotros-banner {
+  width: 100vw; /* Fuerza el ancho total */
+  height: 80vh;
+  background-image: url('../assets/banner-nosotros.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.overlay-nosotros {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 60px 80px;
+  box-sizing: border-box;
+}
+
+.texto-nosotros {
+  color: white;
+  text-align: left;
+  max-width: 600px;
+}
+
+.texto-nosotros h1 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.texto-nosotros p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Evita scroll lateral */
+}

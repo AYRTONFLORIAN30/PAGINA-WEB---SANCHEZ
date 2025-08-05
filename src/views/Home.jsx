@@ -102,11 +102,12 @@ function Home() {
       </p>
 
       <button
-        className="cotizar-btn"
-        onClick={() => window.location.href = '/cotizar'}
-      >
-        Solicitar Cotización
-      </button>
+  className="cotizar-btn"
+  onClick={() => window.location.href = '/nosotros#formulario-cotizacion'}
+>
+  Solicitar Cotización
+</button>
+
     </div>
   </div>
 </section>
@@ -116,38 +117,39 @@ function Home() {
 
       {/* Sección Experiencia y Respaldo */}
       <section className="experiencia-section">
-        <div className="experiencia-content">
-          <div className="texto">
-            <h2>EXPERIENCIA Y RESPALDO</h2>
-            <hr />
-            <p>
-              Sánchez Grúas se especializa en brindar un servicio integral de izajes que incluye el{' '}
-              <strong>alquiler de grúas, ingeniería y transporte sobredimensionado.</strong>
-            </p>
-            <button className="btn-verde">Conócenos Aquí</button>
-          </div>
+  <div className="experiencia-content">
+    <div className="texto">
+      <h2>EXPERIENCIA Y RESPALDO</h2>
+      <hr />
+      <p>
+        Sánchez Grúas se especializa en brindar un servicio integral de izajes que incluye el{' '}
+        <strong>alquiler de grúas, ingeniería y transporte sobredimensionado.</strong>
+      </p>
+      <button className="btn-verde">Conócenos Aquí</button>
+    </div>
 
-          <div className="cards">
-            <div className="card">
-              <div className="card-header verde">Más de</div>
-              <div className="años">22 <span>años</span></div>
-              <p>
-                Somos líderes en Alquiler de Grúas desde hace <strong>más de 22 años</strong>
-              </p>
-            </div>
+    <div className="cards">
+      <div className="card">
+        <div className="card-header verde">Más de</div>
+        <div className="años">22 <span>años</span></div>
+        <p>
+          Somos líderes en Alquiler de Grúas desde hace <strong>más de 22 años</strong>
+        </p>
+      </div>
 
-            <div className="card">
-              <div className="card-header negro">Homologaciones y Alianzas Estratégicas</div>
-              <img src={alianza} alt="alianza" className="alianza-img" />
-            </div>
+      <div className="card">
+        <div className="card-header negro">Homologaciones y Alianzas Estratégicas</div>
+        <img src={alianza} alt="alianza" className="alianza-img" />
+      </div>
 
-            <div className="card">
-              <div className="card-header negro">Certificaciones ISO</div>
-              <img src={iso} alt="ISO" className="iso-img" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="card">
+        <div className="card-header negro">Certificaciones ISO</div>
+        <img src={iso} alt="ISO" className="iso-img" />
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Sección Servicios */}
 <section className="servicios-section">

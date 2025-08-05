@@ -59,13 +59,16 @@ function Navbar() {
             </ul>
           </li>
 
-          <Link
-  to="/proyectos"
-  className={activeItem === 'proyectos' ? 'active' : ''}
-  onClick={() => setActiveItem('proyectos')}
->
-  Proyectos
-</Link>
+          <li>
+  <Link
+    to="/proyectos"
+    className={activeItem === 'proyectos' ? 'active' : ''}
+    onClick={() => setActiveItem('proyectos')}
+  >
+    Proyectos
+  </Link>
+</li>
+
 
 
           <li className="dropdown">
@@ -106,10 +109,11 @@ function Navbar() {
 
         </ul>
 
-        {/* ✅ Botón Cotizar correctamente alineado */}
-        <button className="cotizar-btn" onClick={() => navigate('/cotizar')}>
-          Cotizar
-        </button>
+        <button className="cotizar-btn" onClick={() => navigate('/nosotros#formulario-cotizacion')}>
+  Cotizar
+</button>
+
+
       </nav>
     </header>
   );

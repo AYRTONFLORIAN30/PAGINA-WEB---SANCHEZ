@@ -1,4 +1,4 @@
-import React from 'react';  // Eliminar 'useState' ya que no lo estamos utilizando
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import './Home.css';
@@ -49,37 +49,46 @@ function Home() {
 
   // Configuración del slider
   const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    arrows: false,  // Deshabilitar los botones de navegación
-    autoplay: true,  // Activar el movimiento automático
-    autoplaySpeed: 5000,  // Cambia a 5000 (5 segundos) o más para un movimiento más lento
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  arrows: false,
+  autoplay: true,
+  autoplaySpeed: 3000,
+
+  // 👇 Estas son las claves:
+  swipeToSlide: true,       // Permite deslizar libremente hasta cualquier slide
+  touchThreshold: 10,       // Menor valor = más sensible al arrastre
+  pauseOnHover: true,       // Pausa autoplay cuando el mouse está encima
+  pauseOnFocus: true,       // Pausa autoplay cuando haces clic o enfocas
+  pauseOnDotsHover: true,   // Pausa autoplay al pasar sobre los puntos
+
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
       },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
       },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
       },
-    ],
-  };
+    },
+  ],
+};
+
 
   return (
     <>
@@ -113,8 +122,6 @@ function Home() {
 </section>
 
 
-
-
       {/* Sección Experiencia y Respaldo */}
       <section className="experiencia-section">
   <div className="experiencia-content">
@@ -125,7 +132,10 @@ function Home() {
         Sánchez Grúas se especializa en brindar un servicio integral de izajes que incluye el{' '}
         <strong>alquiler de grúas, ingeniería y transporte sobredimensionado.</strong>
       </p>
-      <button className="btn-verde">Conócenos Aquí</button>
+      <Link to="/nosotros" className="btn-verde">
+  Conócenos Aquí
+</Link>
+
     </div>
 
     <div className="cards">
@@ -159,54 +169,155 @@ function Home() {
     </h2>
 
     <div className="servicios-grid">
-      {[
-        {
-          title: 'Alquiler de Grúas Telescópicas',
-          desc: 'Alquiler de grúas telescópicas potentes que van desde las 45 ton hasta las 650 ton',
-          ruta: '/servicio/grua-telescopica',
-        },
-        {
-          title: 'Alquiler de Transporte de Carga Pesada',
-          desc: 'Transporte de carga pesada con plataformas cama baja y cama alta',
-          ruta: '/servicio/transporte-pesado',
-        },
-        {
-          title: 'Alquiler de Semitrailer Grúa',
-          desc: 'Alquiler de semitrailer con grúa para proyectos especiales',
-          ruta: '/servicio/semitrailer',
-        },
-        {
-          title: 'Alquiler de Accesorios (Canastilla)',
-          desc: 'Alquiler de accesorios como canastillas para trabajos en altura',
-          ruta: '/servicio/accesorios',
-        },
-        {
-          title: 'Mantenimiento de Grúas Articuladas',
-          desc: 'Servicios de mantenimiento para grúas articuladas de diversas capacidades',
-          ruta: '/servicio/mantenimiento',
-        },
-      ].map((servicio, index) => (
-        <div className="servicio-card" key={index}>
-          <div className="imagen-servicio">
-            <img src={proyecto} alt={servicio.title} className="imagen-servicio-img" />
-            <div className="overlay-servicio">
-              <h3 className="titulo-servicio">{servicio.title}</h3>
-              <div
-                className="plus-bar"
-                onClick={() => navigate(servicio.ruta)}
-                style={{ cursor: 'pointer' }}
-              >
-                <i className="fas fa-plus"></i>
-              </div>
+      {/* Servicio 1 */}
+      <div
+        className="servicio-card"
+        onClick={() => navigate('/servicio/grua-telescopica')}
+        style={{ cursor: 'pointer' }}
+      >
+        <div className="imagen-servicio">
+          <img
+            src={proyecto}
+            alt="Alquiler de Grúas Telescópicas"
+            className="imagen-servicio-img"
+          />
+          <div className="overlay-servicio">
+            <h3 className="titulo-servicio">Alquiler de Grúas Telescópicas</h3>
+            <div
+              className="plus-bar"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate('/servicio/grua-telescopica');
+              }}
+            >
+              <i className="fas fa-plus"></i>
             </div>
           </div>
+        </div>
+        <div className="servicio-descripcion">
+          Alquiler de grúas telescópicas potentes que van desde las 45 ton hasta las 650 ton
+        </div>
+      </div>
 
-          {/* Descripción del servicio */}
-          <div className="servicio-descripcion">
-            {servicio.desc}
+      {/* Servicio 2 */}
+      <div
+        className="servicio-card"
+        onClick={() => navigate('/servicio/transporte-pesado')}
+        style={{ cursor: 'pointer' }}
+      >
+        <div className="imagen-servicio">
+          <img
+            src={proyecto}
+            alt="Alquiler de Transporte de Carga Pesada"
+            className="imagen-servicio-img"
+          />
+          <div className="overlay-servicio">
+            <h3 className="titulo-servicio">Alquiler de Transporte de Carga Pesada</h3>
+            <div
+              className="plus-bar"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate('/servicio/transporte-pesado');
+              }}
+            >
+              <i className="fas fa-plus"></i>
+            </div>
           </div>
         </div>
-      ))}
+        <div className="servicio-descripcion">
+          Transporte de carga pesada con plataformas cama baja y cama alta
+        </div>
+      </div>
+
+      {/* Servicio 3 */}
+      <div
+        className="servicio-card"
+        onClick={() => navigate('/servicio/semitrailer')}
+        style={{ cursor: 'pointer' }}
+      >
+        <div className="imagen-servicio">
+          <img
+            src={proyecto}
+            alt="Alquiler de Semitrailer Grúa"
+            className="imagen-servicio-img"
+          />
+          <div className="overlay-servicio">
+            <h3 className="titulo-servicio">Alquiler de Semitrailer Grúa</h3>
+            <div
+              className="plus-bar"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate('/servicio/semitrailer');
+              }}
+            >
+              <i className="fas fa-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div className="servicio-descripcion">
+          Alquiler de semitrailer con grúa para proyectos especiales
+        </div>
+      </div>
+
+      {/* Servicio 4 */}
+      <div
+        className="servicio-card"
+        onClick={() => navigate('/servicio/accesorios')}
+        style={{ cursor: 'pointer' }}
+      >
+        <div className="imagen-servicio">
+          <img
+            src={proyecto}
+            alt="Alquiler de Accesorios (Canastilla)"
+            className="imagen-servicio-img"
+          />
+          <div className="overlay-servicio">
+            <h3 className="titulo-servicio">Alquiler de Accesorios (Canastilla)</h3>
+            <div
+              className="plus-bar"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate('/servicio/accesorios');
+              }}
+            >
+              <i className="fas fa-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div className="servicio-descripcion">
+          Alquiler de accesorios como canastillas para trabajos en altura
+        </div>
+      </div>
+
+      {/* Servicio 5 */}
+      <div
+        className="servicio-card"
+        onClick={() => navigate('/servicio/mantenimiento')}
+        style={{ cursor: 'pointer' }}
+      >
+        <div className="imagen-servicio">
+          <img
+            src={proyecto}
+            alt="Mantenimiento de Grúas Articuladas"
+            className="imagen-servicio-img"
+          />
+          <div className="overlay-servicio">
+            <h3 className="titulo-servicio">Mantenimiento de Grúas Articuladas</h3>
+            <div
+              className="plus-bar"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate('/servicio/mantenimiento');
+              }}
+            >
+              <i className="fas fa-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div className="servicio-descripcion">
+          Servicios de mantenimiento para grúas articuladas de diversas capacidades
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -176,52 +176,90 @@
 
 /* CSS BANNER */
 .nosotros-banner {
-  width: 100vw; /* Fuerza el ancho total */
-  height: 80vh;
   background-image: url('../assets/banner-nosotros.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  margin: 0;
-  padding: 0;
+  height: 600px; /* Igual que Proyectos */
   position: relative;
-  overflow: hidden;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  box-sizing: border-box;
+  color: white;
+  text-align: left;
+  overflow: hidden;
+  margin-bottom: 0;
+  border-bottom: none;
 }
 
 .overlay-nosotros {
-  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  text-align: left;
+  padding-left: 120px; /* 👈 Consistencia con Proyectos */
+  padding-right: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.filtro-oscuro {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 60px 80px;
-  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.5); /* ⬅️ oscurecimiento */
+  z-index: 1;
 }
+
 
 .texto-nosotros {
   color: white;
-  text-align: left;
+  margin-left: 0;
   max-width: 600px;
 }
 
 .texto-nosotros h1 {
-  font-size: 3.2rem;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-size: 48px;
+  font-weight: 900;
+  border-left: 6px solid #6dc55e;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  font-family: 'Bebas Neue', sans-serif; /* o cambia por Arial si no usas Bebas Neue */
 }
 
 .texto-nosotros p {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 18px;
+  margin-left: 16px;
 }
+
+
 
 body, html {
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* Evita scroll lateral */
+}
+
+@media (max-width: 768px) {
+  .nosotros-banner {
+    height: 250px;
+  }
+
+  .texto-nosotros h1 {
+    font-size: 28px;
+  }
+
+  .texto-nosotros p {
+    font-size: 14px;
+  }
+
+  .overlay-nosotros {
+    padding-left: 30px;
+    padding-right: 20px;
+  }
 }

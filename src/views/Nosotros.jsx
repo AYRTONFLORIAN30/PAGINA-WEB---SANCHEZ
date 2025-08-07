@@ -50,8 +50,12 @@ function Nosotros() {
   return (
     <div className="nosotros-container">
 
-      {/* BANNER DE NOSOTROS */}
+    {/* BANNER DE NOSOTROS */}
 <section className="nosotros-banner">
+  {/* 🔽 Capa de oscurecimiento */}
+  <div className="filtro-oscuro"></div>
+
+  {/* 🔽 Contenido del banner */}
   <div className="overlay-nosotros">
     <div className="texto-nosotros">
       <h1>NOSOTROS</h1>
@@ -61,6 +65,7 @@ function Nosotros() {
     </div>
   </div>
 </section>
+
 
       
       {/* Historia */}

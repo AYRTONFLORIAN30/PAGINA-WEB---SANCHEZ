@@ -1,13 +1,10 @@
 import React from 'react';
 import './ServicioDetalle.css';
 import imagenFondo from '../../assets/servicio-canastilla.jpg';
-import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 
 function Accesorios() {
-  const navigate = useNavigate(); // Hook para navegación
-
   const irACotizacion = () => {
-    navigate('/cotizar');
+    window.location.href = '/nosotros#formulario-cotizacion';
   };
 
   return (

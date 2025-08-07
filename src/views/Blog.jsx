@@ -11,7 +11,6 @@ import blog6 from '../assets/blog6.jpg';
 import blog7 from '../assets/blog7.jpg';
 import blog8 from '../assets/blog8.jpg';
 
-
 // Exportamos los artículos para usarlos también en BlogDetalle.jsx
 export const articulos = [
   {
@@ -100,10 +99,13 @@ function Blog() {
 
   return (
     <div className="blog-container">
+      {/* ✅ Hero corregido */}
       <div className="blog-hero" style={{ backgroundImage: `url(${portadaBlog})` }}>
         <div className="overlay">
-          <h1><span>NUESTRO</span> BLOG</h1>
-          <p>Te presentamos todos nuestros artículos de interés<br />y novedades de la empresa.</p>
+          <div className="texto-hero-blog">
+            <h1>NUESTRO BLOG</h1>
+            <p>Te presentamos todos nuestros artículos de interés<br />y novedades de la empresa.</p>
+          </div>
         </div>
       </div>
 

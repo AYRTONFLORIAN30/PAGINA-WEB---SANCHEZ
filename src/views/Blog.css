@@ -169,3 +169,22 @@
   text-decoration: none;
   color: inherit;
 }
+
+.texto-hero-blog {
+  color: white;
+  margin-left: 60px;
+  max-width: 600px;
+}
+
+.texto-hero-blog h1 {
+  font-size: 48px;
+  font-weight: 900;
+  border-left: 6px solid #4CAF50;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.texto-hero-blog p {
+  font-size: 16px;
+  margin-left: 16px;
+}

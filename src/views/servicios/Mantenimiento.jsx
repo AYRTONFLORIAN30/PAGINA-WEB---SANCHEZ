@@ -1,13 +1,10 @@
 import React from 'react';
 import './ServicioDetalle.css';
 import imagenFondo from '../../assets/servicio-mantenimiento.jpg';
-import { useNavigate } from 'react-router-dom'; // Importar hook
 
 function Mantenimiento() {
-  const navigate = useNavigate(); // Inicializar
-
   const irACotizacion = () => {
-    navigate('/cotizar');
+    window.location.href = '/nosotros#formulario-cotizacion';
   };
 
   return (

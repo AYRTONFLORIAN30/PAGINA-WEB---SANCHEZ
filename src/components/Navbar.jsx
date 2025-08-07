@@ -17,15 +17,21 @@ function Navbar() {
     <header>
       <div className="top-bar">
         <div className="social-icons">
-          <a href="#"><i className="fab fa-facebook-f"></i></a>
+          <a
+              href="https://www.facebook.com/people/TRANSPORTES-S%C3%81NCHEZ-GR%C3%9AAS-SAC/100063488621412/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-facebook-f"></i>
+          </a>
+
           <a href="#"><i className="fab fa-instagram"></i></a>
           <a href="#"><i className="fab fa-linkedin-in"></i></a>
-          <a href="#"><i className="fab fa-youtube"></i></a>
+          <a href="#"><i className="fab fa-tiktok"></i></a>
         </div>
         <div className="contact-info">
-          <span><i className="fas fa-phone"></i> +51 996133033 / +51 955329346</span>
+          <span><i className="fas fa-phone"></i> +51 996 046 754 / +51 996 046 754</span>
           <span><i className="fas fa-envelope"></i> tsanchezgruas@gmail.com</span>
-          <span className="lang">ES - EN</span>
         </div>
       </div>
 

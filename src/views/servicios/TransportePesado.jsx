@@ -1,13 +1,10 @@
 import React from 'react';
 import './ServicioDetalle.css';
 import imagenFondo from '../../assets/servicio-transporte-carga.jpg';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 
 function TransporteCargaPesada() {
-  const navigate = useNavigate(); // Hook para redirección
-
   const irACotizacion = () => {
-    navigate('/cotizar');
+    window.location.href = '/nosotros#formulario-cotizacion';
   };
 
   return (

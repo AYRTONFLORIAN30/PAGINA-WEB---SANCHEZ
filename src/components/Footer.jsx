@@ -37,10 +37,16 @@ const Footer = () => {
 
           <div className="redes-con-libro">
             <div className="redes">
-              <i className="fab fa-facebook-square"></i>
+              <a
+                href="https://www.facebook.com/people/TRANSPORTES-S%C3%81NCHEZ-GR%C3%9AAS-SAC/100063488621412/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-facebook-square"></i>
+              </a>
               <i className="fab fa-instagram"></i>
               <i className="fab fa-linkedin"></i>
-              <i className="fab fa-youtube"></i>
+              <i className="fab fa-tiktok"></i>
             </div>
             <div className="libro-reclamaciones">
               <a href="#">

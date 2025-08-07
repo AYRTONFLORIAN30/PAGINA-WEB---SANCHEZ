@@ -1,13 +1,10 @@
 import React from 'react';
 import './ServicioDetalle.css';
 import imagenFondo from '../../assets/servicio-grua-telescopica.jpg';
-import { useNavigate } from 'react-router-dom'; // <-- Importamos useNavigate
 
 function GruaTelescopica() {
-  const navigate = useNavigate(); // <-- Hook para navegar
-
   const irACotizacion = () => {
-    navigate('/cotizar');
+    window.location.href = '/nosotros#formulario-cotizacion';
   };
 
   return (

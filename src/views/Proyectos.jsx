@@ -25,7 +25,6 @@ function Proyectos() {
               <div className={`categoria-tag ${proyecto.categoria.toLowerCase()}`}>
                 {proyecto.categoria}
               </div>
-              <div className="boton-expandir">+</div>
             </div>
             <div className="proyecto-info">
               <h3>{proyecto.titulo}</h3>

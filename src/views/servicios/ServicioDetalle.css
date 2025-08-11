@@ -19,7 +19,7 @@
 .contenido-servicio h1 {
   font-size: 3rem;
   margin-bottom: 100px;
-  color: #b4ff4b;
+  color: #ffffff;
   font-weight: 800;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .boton-cotizar {
-  background-color: #4CAF50;
+  background-color: #d3b81e;
   color: white;
   padding: 14px 30px;
   font-size: 1.1rem;
@@ -42,7 +42,7 @@
 }
 
 .boton-cotizar:hover {
-  background-color: #45a049;
+  background-color: #d3b81e;
 }
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);

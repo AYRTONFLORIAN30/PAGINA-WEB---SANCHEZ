@@ -34,7 +34,7 @@
 }
 
 .blog-hero h1 span {
-  color: #8bc34a;
+  color: #d3b81e;
 }
 
 .blog-hero p {
@@ -85,7 +85,7 @@
   position: absolute;
   top: 8px;
   left: 12px;
-  background: #2d7d35;
+  background: #d3b81e;
   color: white;
   padding: 3px 10px;
   font-size: 14px;
@@ -97,7 +97,7 @@
   position: absolute;
   bottom: 8px;
   right: 12px;
-  background: #3db343;
+  background: #d3b81e;
   color: white;
   font-size: 22px;
   padding: 0 10px;
@@ -155,7 +155,7 @@
   cursor: pointer;
 }
 .filtro-lateral li:hover {
-  color: #3db343;
+  color: #d3b81e;
   font-weight: bold;
   cursor: pointer;
 }
@@ -179,7 +179,7 @@
 .texto-hero-blog h1 {
   font-size: 48px;
   font-weight: 900;
-  border-left: 6px solid #4CAF50;
+  border-left: 6px solid #d3b81e;
   padding-left: 10px;
   margin-bottom: 15px;
 }

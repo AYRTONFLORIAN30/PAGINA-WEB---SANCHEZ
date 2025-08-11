@@ -73,7 +73,7 @@
 
 /* Botón */
 .hero-texto-centrado .cotizar-btn {
-  background-color: #29af42;
+  background-color: #d3b81e;
   color: #edeeec;
   padding: 15px 40px;
   font-size: 1.3rem;
@@ -91,7 +91,7 @@
 
 .hero-texto-centrado .cotizar-btn:hover {
   background-color: #ffffff;
-  color: #20b33b;
+  color: #d3b81e;
 }
 
 
@@ -126,7 +126,7 @@
 .experiencia-content .texto hr {
   margin: 25px 0;
   width: 80%;
-  border: 3px solid #91d100;
+  border: 3px solid #d3b81e;
 }
 
 .experiencia-content .texto p {
@@ -136,7 +136,7 @@
 }
 
 .btn-verde {
-  background-color: #33a837;
+  background-color: #d3b81e;
   color: white;
   padding: 14px 30px;
   border: none;
@@ -173,7 +173,7 @@
 .card-header {
   font-size: 1.3rem;
   font-weight: bold;
-  background-color: #0f1b23;
+  background-color: #d3b81e;
   color: white;
   border-radius: 0;
   padding: 15px 10px;
@@ -182,14 +182,14 @@
 }
 
 .card-header.verde {
-  background-color: #0f1b23;
+  background-color: #d3b81e;
 }
 
 
 .card .años {
   font-size: 3.5rem;
   font-weight: bold;
-  color: #50af47; /* Verde como en imagen */
+  color: #d3b81e; /* Verde como en imagen */
   margin: 10px 0 10px;
   display: flex;
   justify-content: center;
@@ -247,7 +247,7 @@
 }
 
 .container-servicios .verde {
-  color: #2e7d32;
+  color: #d3b81e;
   font-weight: bold;
 }
 
@@ -321,7 +321,7 @@
 }
 
 .plus-bar {
-  background-color: #2e7d32;
+  background-color: #d3b81e;
   color: white;
   font-size: 1.2rem;
   width: 30px;
@@ -397,7 +397,7 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background-color: #2e7d32;
+  background-color: #d3b81e;
   color: white;
   border: none;
   border-radius: 4px;
@@ -569,7 +569,7 @@
 }
 
 .empresas-section .verde {
-  color: #2e7d32;
+  color: #d3b81e;
   font-weight: bold;
 }
 

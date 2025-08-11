@@ -39,8 +39,8 @@
   left: -20px;
   width: 100%;
   height: 100%;
-  border-left: 40px solid #2f5c2f;
-  border-bottom: 40px solid #2f5c2f;
+  border-left: 40px solid #d3b81e;
+  border-bottom: 40px solid #d3b81e;
   z-index: 1;
 }
 
@@ -75,7 +75,7 @@
 
 .mision-vision-card {
   background-color: #fff;
-  border-left: 14px solid #2f5c2f;
+  border-left: 14px solid #d3b81e;
   padding: 40px 60px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -88,7 +88,7 @@
 
 .mision-vision-card i {
   font-size: 38px;
-  color: #2f5c2f;
+  color: #d3b81e;
   margin-top: 5px;
 }
 
@@ -148,7 +148,7 @@
 
 /* CUADROS MÁS PEQUEÑOS */
 .valor-cuadro {
-  background-color: #2f5c2f;
+  background-color: #d3b81e;
   color: white;
   padding: 25px 10px;
   border-radius: 6px;
@@ -160,7 +160,7 @@
 }
 
 .valor-cuadro:hover {
-  background-color: #1e3d1e;
+  background-color: #000000;
 }
 
 .valor-cuadro i {
@@ -226,7 +226,7 @@
 .texto-nosotros h1 {
   font-size: 48px;
   font-weight: 900;
-  border-left: 6px solid #6dc55e;
+  border-left: 6px solid #d3b81e;
   padding-left: 10px;
   margin-bottom: 15px;
   font-family: 'Bebas Neue', sans-serif; /* o cambia por Arial si no usas Bebas Neue */

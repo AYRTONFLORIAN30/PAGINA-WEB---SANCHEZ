@@ -13,7 +13,7 @@
 }
 
 .cotizacion-formulario .verde {
-  color: #4caf50;
+  color: #d3b81e;
 }
 
 .cotizacion-formulario p {
@@ -44,7 +44,7 @@
 .form-grid button {
   grid-column: 1 / -1;
   padding: 14px;
-  background-color: #2e7d32;
+  background-color: #d3b81e;
   color: white;
   font-size: 1rem;
   font-weight: bold;
@@ -54,7 +54,7 @@
 }
 
 .form-grid button:hover {
-  background-color: #1b5e20;
+  background-color: #d3b81e;
 }
 .error {
   color: red;

@@ -30,9 +30,6 @@ const Footer = () => {
 
         <div className="footer-col">
           <h3>Gruas y Transportes | Sanchez</h3>
-          <p>
-            <img src="https://flagcdn.com/16x12/pe.png" alt="Perú" /> Perú
-          </p>
           <p>Puedes seguirnos en nuestras redes:</p>
 
           <div className="redes-con-libro">
@@ -44,9 +41,15 @@ const Footer = () => {
               >
                 <i className="fab fa-facebook-square"></i>
               </a>
-              <i className="fab fa-instagram"></i>
+              <a href="https://www.instagram.com/sanchezgruas?igsh=M2Z5NnZkcWJ5amxv" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-instagram"></i>
+              </a>
+
               <i className="fab fa-linkedin"></i>
-              <i className="fab fa-tiktok"></i>
+              <a href="https://www.tiktok.com/@sanchezgruas" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-tiktok"></i>
+              </a>
+
             </div>
             <div className="libro-reclamaciones">
               <a href="#">

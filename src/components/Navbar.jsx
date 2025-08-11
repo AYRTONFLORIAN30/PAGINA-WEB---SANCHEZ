@@ -25,9 +25,15 @@ function Navbar() {
               <i className="fab fa-facebook-f"></i>
           </a>
 
-          <a href="#"><i className="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/sanchezgruas?igsh=M2Z5NnZkcWJ5amxv" target="_blank" rel="noopener noreferrer">
+               <i className="fab fa-instagram"></i>
+          </a>
+
           <a href="#"><i className="fab fa-linkedin-in"></i></a>
-          <a href="#"><i className="fab fa-tiktok"></i></a>
+          <a href="https://www.tiktok.com/@sanchezgruas" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-tiktok"></i>
+          </a>
+
         </div>
         <div className="contact-info">
           <span><i className="fas fa-phone"></i> +51 996 046 754 / +51 996 046 754</span>

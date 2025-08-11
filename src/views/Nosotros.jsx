@@ -32,7 +32,7 @@ function Nosotros() {
     },
     {
       icon: 'leaf',
-      title: 'Sustentabilidad',
+      title: 'Sostentabilidad',
       description: 'Nuestras acciones social-ambientalmente responsables de hoy son pensadas en el mundo que queremos mañana.'
     },
     {

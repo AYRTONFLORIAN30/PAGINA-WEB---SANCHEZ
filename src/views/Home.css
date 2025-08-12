@@ -127,6 +127,7 @@
   margin: 25px 0;
   width: 80%;
   border: 3px solid #ffffff;
+  border: 3px solid #d3b81e;
 }
 
 .experiencia-content .texto p {
@@ -189,7 +190,7 @@
 .card .años {
   font-size: 3.5rem;
   font-weight: bold;
-  color: #000000; /* Verde como en imagen */
+  color: #d3b81e; /* Verde como en imagen */
   margin: 10px 0 10px;
   display: flex;
   justify-content: center;

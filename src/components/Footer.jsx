@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { Link } from "react-router-dom";
 import logo from '../assets/logo.png';
 import libroReclamaciones from '../assets/libro-reclamaciones.png';
 
@@ -52,10 +53,11 @@ const Footer = () => {
 
             </div>
             <div className="libro-reclamaciones">
-              <a href="#">
+              <Link to="/libro-reclamaciones">
                 <img src={libroReclamaciones} alt="Libro de Reclamaciones" className="libro-img" />
-              </a>
+              </Link>
             </div>
+
           </div>
         </div>
       </div>

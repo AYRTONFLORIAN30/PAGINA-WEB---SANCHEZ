@@ -15,8 +15,7 @@ import Blog from './views/Blog';
 import BlogDetalle from './pages/BlogDetalle';
 import ContactoInfo from './views/ContactoInfo';
 import Proyectos from './views/Proyectos';
-
-
+import LibroReclamaciones from './components/LibroReclamaciones'; 
 
 
 
@@ -38,7 +37,7 @@ function App() {
           <Route path="/blog/:id" element={<BlogDetalle />} />
           <Route path="/contacto-info" element={<ContactoInfo />} />
           <Route path="/proyectos" element={<Proyectos />} />
-          
+          <Route path="/libro-reclamaciones" element={<LibroReclamaciones />} />
 
         </Route>
       </Routes>

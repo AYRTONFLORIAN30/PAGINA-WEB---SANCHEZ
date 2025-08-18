@@ -1,0 +1,62 @@
+.formulario-container {
+  margin-top: 100px; /* Ajusta este valor según la altura del navbar */
+}
+body {
+  padding-top: 70px; /* mismo valor que la altura del navbar */
+}
+
+
+.form-container {
+  max-width: 800px;
+  margin: 120px auto 80px auto; /* ↑120px para separar del navbar y ↓80px del footer */
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 1px;
+  background: #fff;
+}
+
+/* SOLO afecta a este formulario */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-container .form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea,
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.form-container textarea {
+  height: 80px;
+}
+
+.form-container button {
+  background: #007BFF;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.form-container button:hover {
+  background: #0056b3;
+}
+
+.form-container .info {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #444;
+}

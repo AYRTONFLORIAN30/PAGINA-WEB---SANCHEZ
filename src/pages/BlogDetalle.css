@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 60px 80px;
+  padding: 100px 80px 60px; /* más espacio arriba */
   gap: 60px;
   max-width: 1400px;
   margin: auto;
@@ -13,6 +13,7 @@
 .blog-detalle-main {
   flex: 2;
   max-width: 800px;
+  margin-top: 40px; /* separa más el contenido del título */
 }
 
 .blog-detalle-sidebar {
@@ -22,10 +23,8 @@
   padding: 20px;
   border-left: 2px solid #ddd;
   box-sizing: border-box;
-  /* quitamos sticky para bajarlo */
-  margin-top: 80px;
+  margin-top: 160px; /* baja más la barra lateral */
 }
-
 
 .blog-categoria {
   color: #72cc46;
@@ -52,8 +51,8 @@
   font-size: 18px;
   line-height: 1.8;
   color: #333;
+  margin-top: 30px; /* espacio extra antes del texto */
 }
-
 .blog-buscador {
   width: 100%;
   padding: 10px;
@@ -83,4 +82,24 @@
 
 .blog-categorias li:hover {
   color: #72cc46;
+}
+
+
+.articulos-sidebar {
+  margin-top: 20px;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.sidebar-link:hover {
+  color: #d3b81e;
+  font-weight: bold;
 }

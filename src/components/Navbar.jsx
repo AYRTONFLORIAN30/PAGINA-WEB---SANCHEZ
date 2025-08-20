@@ -15,32 +15,52 @@ function Navbar() {
 
   return (
     <header>
+      {/* 🔝 Barra superior */}
       <div className="top-bar">
         <div className="social-icons">
           <a
-              href="https://www.facebook.com/people/TRANSPORTES-S%C3%81NCHEZ-GR%C3%9AAS-SAC/100063488621412/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fab fa-facebook-f"></i>
+            href="https://www.facebook.com/people/TRANSPORTES-S%C3%81NCHEZ-GR%C3%9AAS-SAC/100063488621412/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-facebook-f"></i>
           </a>
 
-          <a href="https://www.instagram.com/sanchezgruas?igsh=M2Z5NnZkcWJ5amxv" target="_blank" rel="noopener noreferrer">
-               <i className="fab fa-instagram"></i>
+          <a
+            href="https://www.instagram.com/sanchezgruas?igsh=M2Z5NnZkcWJ5amxv"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-instagram"></i>
           </a>
 
           <a href="#"><i className="fab fa-linkedin-in"></i></a>
-          <a href="https://www.tiktok.com/@sanchezgruas" target="_blank" rel="noopener noreferrer">
+
+          <a
+            href="https://www.tiktok.com/@sanchezgruas"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fab fa-tiktok"></i>
           </a>
-
         </div>
+
+        {/* 📞 Contacto */}
         <div className="contact-info">
-          <span><i className="fas fa-phone"></i> +51 996 046 754 / +51 996 046 754</span>
-          <span><i className="fas fa-envelope"></i> tsanchezgruas@gmail.com</span>
+          <a href="tel:+51996046754" className="contact-link">
+            <i className="fas fa-phone"></i> +51 996 046 754
+          </a>
+          <span className="sep">/</span>
+          <a href="tel:+51996133401" className="contact-link">
+            +51 996 133 401
+          </a>
+          <a href="mailto:tsanchezgruas@gmail.com" className="contact-link">
+            <i className="fas fa-envelope"></i> tsanchezgruas@gmail.com
+          </a>
         </div>
       </div>
 
+      {/* 🔽 Navbar principal */}
       <nav className="main-nav">
         <Link
           to="/"
@@ -49,7 +69,10 @@ function Navbar() {
           <img src={logo} alt="Logo Grúas" className="logo" />
         </Link>
 
-        <button className="menu-toggle" onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
+        <button
+          className="menu-toggle"
+          onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+        >
           ☰
         </button>
 
@@ -72,16 +95,14 @@ function Navbar() {
           </li>
 
           <li>
-  <Link
-    to="/proyectos"
-    className={activeItem === 'proyectos' ? 'active' : ''}
-    onClick={() => setActiveItem('proyectos')}
-  >
-    Proyectos
-  </Link>
-</li>
-
-
+            <Link
+              to="/proyectos"
+              className={activeItem === 'proyectos' ? 'active' : ''}
+              onClick={() => setActiveItem('proyectos')}
+            >
+              Proyectos
+            </Link>
+          </li>
 
           <li className="dropdown">
             <a
@@ -97,35 +118,33 @@ function Navbar() {
             </ul>
           </li>
 
-
           <li>
-              <Link
-                to="/blog"
-                onClick={() => handleClick('blog')}
-                className={activeItem === 'blog' ? 'active' : ''}
-              >
-                Blog
-              </Link>
+            <Link
+              to="/blog"
+              onClick={() => handleClick('blog')}
+              className={activeItem === 'blog' ? 'active' : ''}
+            >
+              Blog
+            </Link>
           </li>
 
-
-        <li>
-          <Link
-            to="/contacto-info"
-            className={activeItem === 'contacto' ? 'active' : ''}
-            onClick={() => handleClick('contacto')}
-          >
-            Contacto
-          </Link>
-        </li>
-
+          <li>
+            <Link
+              to="/contacto-info"
+              className={activeItem === 'contacto' ? 'active' : ''}
+              onClick={() => handleClick('contacto')}
+            >
+              Contacto
+            </Link>
+          </li>
         </ul>
 
-        <button className="cotizar-btn" onClick={() => navigate('/nosotros#formulario-cotizacion')}>
-  Cotizar
-</button>
-
-
+        <button
+          className="cotizar-btn"
+          onClick={() => navigate('/nosotros#formulario-cotizacion')}
+        >
+          Cotizar
+        </button>
       </nav>
     </header>
   );

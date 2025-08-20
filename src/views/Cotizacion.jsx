@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import './Cotizacion.css';
 
@@ -13,10 +12,11 @@ function Cotizacion() {
     fecha: '',
     duracion: '',
     capacidad: '',
-    mensaje: ''
+    mensaje: '',
+    botfield: '' // honeypot anti-spam
   });
-
   const [errors, setErrors] = useState({});
+  const [sending, setSending] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,13 +33,44 @@ function Cotizacion() {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = validate();
     setErrors(newErrors);
-    if (Object.keys(newErrors).length === 0) {
-      // aquí enviar formulario
-      console.log('Formulario válido', formData);
+    if (Object.keys(newErrors).length > 0) return;
+
+    // honeypot simple
+    if (formData.botfield) return;
+
+    try {
+      setSending(true);
+      const res = await fetch('https://tgruasanchez.com/send_quote.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const result = await res.json().catch(() => ({}));
+      alert(result.message || (res.ok ? 'Mensaje enviado.' : 'Ocurrió un problema.'));
+      if (res.ok && result.ok) {
+        // reset
+        setFormData({
+          empresa: '',
+          ruc: '',
+          contacto: '',
+          email: '',
+          telefono: '',
+          ubicacion: '',
+          fecha: '',
+          duracion: '',
+          capacidad: '',
+          mensaje: '',
+          botfield: ''
+        });
+      }
+    } catch (err) {
+      alert('Error de red: ' + err.message);
+    } finally {
+      setSending(false);
     }
   };
 
@@ -49,105 +80,61 @@ function Cotizacion() {
       <p>Recibe una cotización registrando tus datos y requerimientos en el siguiente formulario.</p>
       <p><strong className="verde">Por favor,</strong> Ingrese sus datos en el formulario</p>
 
-      <form className="form-grid" onSubmit={handleSubmit}>
+      <form className="form-grid" onSubmit={handleSubmit} noValidate>
+        {/* Honeypot oculto */}
+        <input type="text" name="botfield" value={formData.botfield} onChange={handleChange} style={{display:'none'}} />
+
         <div>
-          <input
-            type="text"
-            name="empresa"
-            placeholder="Empresa *"
-            value={formData.empresa}
-            onChange={handleChange}
-          />
+          <input type="text" name="empresa" placeholder="Empresa *"
+            value={formData.empresa} onChange={handleChange} />
           {errors.empresa && <span className="error">{errors.empresa}</span>}
         </div>
 
         <div>
-          <input
-            type="text"
-            name="ruc"
-            placeholder="RUC *"
-            value={formData.ruc}
-            onChange={handleChange}
-          />
+          <input type="text" name="ruc" placeholder="RUC *"
+            value={formData.ruc} onChange={handleChange} />
           {errors.ruc && <span className="error">{errors.ruc}</span>}
         </div>
 
         <div>
-          <input
-            type="text"
-            name="contacto"
-            placeholder="Nombre Contacto *"
-            value={formData.contacto}
-            onChange={handleChange}
-          />
+          <input type="text" name="contacto" placeholder="Nombre Contacto *"
+            value={formData.contacto} onChange={handleChange} />
           {errors.contacto && <span className="error">{errors.contacto}</span>}
         </div>
 
         <div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email *"
-            value={formData.email}
-            onChange={handleChange}
-          />
+          <input type="email" name="email" placeholder="Email *"
+            value={formData.email} onChange={handleChange} />
           {errors.email && <span className="error">{errors.email}</span>}
         </div>
 
         <div>
-          <input
-            type="tel"
-            name="telefono"
-            placeholder="Teléfono *"
-            value={formData.telefono}
-            onChange={handleChange}
-          />
+          <input type="tel" name="telefono" placeholder="Teléfono *"
+            value={formData.telefono} onChange={handleChange} />
           {errors.telefono && <span className="error">{errors.telefono}</span>}
         </div>
 
-        <input
-          type="text"
-          name="ubicacion"
-          placeholder="Ubicación Proyecto"
-          value={formData.ubicacion}
-          onChange={handleChange}
-        />
+        <input type="text" name="ubicacion" placeholder="Ubicación Proyecto"
+          value={formData.ubicacion} onChange={handleChange} />
 
-        <input
-          type="date"
-          name="fecha"
-          placeholder="Fecha Inicio"
-          value={formData.fecha}
-          onChange={handleChange}
-        />
+        <input type="date" name="fecha" placeholder="Fecha Inicio"
+          value={formData.fecha} onChange={handleChange} />
 
-        <input
-          type="text"
-          name="duracion"
-          placeholder="Duración de Proyecto en días"
-          value={formData.duracion}
-          onChange={handleChange}
-        />
+        <input type="text" name="duracion" placeholder="Duración de Proyecto en días"
+          value={formData.duracion} onChange={handleChange} />
 
-        <input
-          type="text"
-          name="capacidad"
-          placeholder="Capacidad de Carga"
-          value={formData.capacidad}
-          onChange={handleChange}
-        />
+        <input type="text" name="capacidad" placeholder="Capacidad de Carga"
+          value={formData.capacidad} onChange={handleChange} />
 
         <div style={{ gridColumn: '1 / -1' }}>
-          <textarea
-            name="mensaje"
-            placeholder="Mensaje *"
-            value={formData.mensaje}
-            onChange={handleChange}
-          />
+          <textarea name="mensaje" placeholder="Mensaje *"
+            value={formData.mensaje} onChange={handleChange} />
           {errors.mensaje && <span className="error">{errors.mensaje}</span>}
         </div>
 
-        <button type="submit">Enviar Mensaje</button>
+        <button type="submit" disabled={sending}>
+          {sending ? 'Enviando…' : 'Enviar Mensaje'}
+        </button>
       </form>
     </div>
   );

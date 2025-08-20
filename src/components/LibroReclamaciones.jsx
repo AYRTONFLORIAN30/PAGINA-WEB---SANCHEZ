@@ -23,23 +23,22 @@ function LibroReclamaciones() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const res = await fetch("https://tsanchrezgruas/send_form.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+  try {
+    const res = await fetch("https://tgruasanchez.com/send_form.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
-      const result = await res.json();
-      alert(result.message);
-    } catch (error) {
-      alert("Error al enviar: " + error);
-    }
-  };
+    const result = await res.json();
+    alert(result.message || "Enviado");
+  } catch (error) {
+    alert("Error al enviar: " + error.message);
+  }
+};
+
 
   return (
     <div className="form-container">

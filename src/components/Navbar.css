@@ -29,6 +29,32 @@
   border-bottom: 1px solid white; /* ✅ línea blanca divisora */
 }
 
+.contact-info{
+  display:flex;
+  align-items:center;
+  gap:0;                      /* 🔥 sin huecos entre items */
+}
+
+.contact-info .sep{
+  color:#fff;
+  opacity:.7;
+  margin:0 6px;               /* 🔥 teléfonos bien pegados */
+}
+
+.contact-info .contact-link:link,
+.contact-info .contact-link:visited{
+  color:#fff !important;
+  text-decoration:none !important;
+}
+
+.contact-info .contact-link:hover{
+  color:#d3b81e;              /* hover en dorado */
+}
+
+.contact-info .contact-link i{
+  margin-right:6px;           /* espacio entre icono y texto */
+}
+
 .social-icons a {
   color: white;
   margin-right: 10px;
@@ -37,6 +63,7 @@
 .contact-info span {
   margin-right: 20px;
 }
+
 
 .lang {
   font-weight: bold;
@@ -236,3 +263,6 @@ body {
   padding: 0;
 }
 
+.contact-info a[href^="mailto"] {
+  margin-left: 20px;   /* ajusta el valor según lo que necesites */
+}

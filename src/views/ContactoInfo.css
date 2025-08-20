@@ -1,11 +1,22 @@
 /* HERO con imagen */
 .contacto-hero {
-  margin-top: 60px;
+  margin-top: 45px;
   height: 550px;
   background-image: url('../assets/contacto-hero.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
+
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroSlide 1s ease-out forwards;
+}
+
+@keyframes heroSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .overlay-contacto {
@@ -20,6 +31,18 @@
   color: white;
   margin-left: 60px;
   max-width: 600px;
+
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: contentSlide 1s ease-out forwards;
+  animation-delay: 0.3s; /* ⏱ entra un poquito después */
+}
+
+@keyframes contentSlide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .texto-hero-contacto h1 {
@@ -54,6 +77,14 @@
   padding: 0 20px 60px;
   max-width: 1200px;
   margin: 0 auto;
+
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* CUADROS DE CONTACTO */

@@ -1,5 +1,13 @@
 .formulario-container {
   margin-top: 100px; /* Ajusta este valor según la altura del navbar */
+
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 body {
   padding-top: 70px; /* mismo valor que la altura del navbar */
@@ -13,12 +21,36 @@ body {
   border: 2px solid #ddd;
   border-radius: 1px;
   background: #fff;
+
+  opacity: 0;
+  transform: translateY(30px);
+  animation: formSlide 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes formSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* SOLO afecta a este formulario */
 .form-container h2 {
   text-align: center;
   margin-bottom: 20px;
+
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: titleFade 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes titleFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .form-container .form-row {
@@ -36,7 +68,26 @@ body {
   border: 1px solid #aaa;
   border-radius: 5px;
   font-size: 14px;
+
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fieldFade 0.6s ease-out forwards;
 }
+
+@keyframes fieldFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Delays escalonados para cada campo */
+.form-container .form-row:nth-child(1) { animation-delay: 0.6s; }
+.form-container .form-row:nth-child(2) { animation-delay: 0.7s; }
+.form-container .form-row:nth-child(3) { animation-delay: 0.8s; }
+.form-container .form-row:nth-child(4) { animation-delay: 0.9s; }
+.form-container textarea { animation-delay: 1s; }
+.form-container button   { animation-delay: 1.1s; }
 
 .form-container textarea {
   height: 80px;

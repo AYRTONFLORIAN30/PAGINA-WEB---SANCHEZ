@@ -76,13 +76,17 @@
   padding: 0 40px;
   background-color: #000;
   color: white;
-  height: 90px;
+  height: 100px;
 }
 
 
 .logo {
-  height: 50px;
+  max-height: 180px;   /* ajusta altura máxima */
+  width: auto;        /* mantiene la proporción */
+  display: block;
+  object-fit: contain; /* asegura que no se deforme */
 }
+
 
 .menu {
   list-style: none;

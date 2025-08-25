@@ -1,4 +1,6 @@
+// src/pages/LibroReclamaciones.jsx
 import React, { useState } from "react";
+import ConfirmModal from "../components/ConfirmModal"; // <- ajusta la ruta si es necesario
 import "./LibroReclamaciones.css";
 
 function LibroReclamaciones() {
@@ -17,32 +19,66 @@ function LibroReclamaciones() {
     numero_pedido: "",
   });
 
+  const [submitting, setSubmitting] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
+    setSubmitting(true);
+    setErrorMsg("");
 
-  try {
-    const res = await fetch("https://tgruasanchez.com/send_form.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const res = await fetch("https://tgruasanchez.com/send_form.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    const result = await res.json();
-    alert(result.message || "Enviado");
-  } catch (error) {
-    alert("Error al enviar: " + error.message);
-  }
-};
+      const text = await res.text();
+      const json = (() => {
+        try { return JSON.parse(text); } catch { return { message: text }; }
+      })();
 
+      if (!res.ok || json.ok === false) {
+  setErrorMsg(json.message || `Error ${res.status}`);
+} else {
+  setModalOpen(true);
+  setTimeout(() => setModalOpen(false), 3000); // 👈 aquí
+
+  // Limpiar formulario tras éxito
+  setFormData({
+    nombre: "",
+    apellidos: "",
+    direccion: "",
+    documento: "",
+    correo: "",
+    telefono: "",
+    menor_edad: "",
+    tipo: "",
+    monto: "",
+    detalle_reclamo: "",
+    detalle_articulo: "",
+    numero_pedido: "",
+  });
+}
+
+    } catch (err) {
+      setErrorMsg(err.message || "Fallo de red");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <div className="form-container">
       <h2>Libro de Reclamaciones</h2>
+
       <form onSubmit={handleSubmit}>
         <div className="form-row">
           <input
@@ -146,8 +182,26 @@ function LibroReclamaciones() {
           onChange={handleChange}
         />
 
-        <button type="submit">Enviar</button>
+        <button type="submit" disabled={submitting}>
+          {submitting ? "Enviando..." : "Enviar"}
+        </button>
       </form>
+
+      {/* Modal de confirmación */}
+      <ConfirmModal
+        open={modalOpen}
+        title="¡Gracias!"
+        message="Tu mensaje se ha enviado correctamente"
+        onClose={() => setModalOpen(false)}
+      />
+
+      {/* Mensaje simple de error (opcional) */}
+      {errorMsg && (
+        <div className="toast-error" role="alert">
+          {errorMsg}
+          <button onClick={() => setErrorMsg("")} aria-label="Cerrar">×</button>
+        </div>
+      )}
 
       <div className="info">
         <p>

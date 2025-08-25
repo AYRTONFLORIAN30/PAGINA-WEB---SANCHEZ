@@ -99,7 +99,7 @@ function Home() {
   <div className="overlay-hero">
     <div className="hero-texto-centrado">
       <h1>
-        <span className="bold">GRÚAS Y TRANSPORTES</span>{' '}
+        <span className="bold">GRÚAS</span>{' '}
         <span className="highlight">SANCHEZ</span>
       </h1>
 

@@ -34,7 +34,14 @@ function Navbar() {
             <i className="fab fa-instagram"></i>
           </a>
 
-          <a href="#"><i className="fab fa-linkedin-in"></i></a>
+          <a
+              href="https://www.linkedin.com/company/sanchezgruas/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+
 
           <a
             href="https://www.tiktok.com/@sanchezgruas"
@@ -48,11 +55,11 @@ function Navbar() {
         {/* 📞 Contacto */}
         <div className="contact-info">
           <a href="tel:+51996046754" className="contact-link">
-            <i className="fas fa-phone"></i> +51 996 046 754
+            <i className="fas fa-phone"></i> +51 996 133 033
           </a>
           <span className="sep">/</span>
           <a href="tel:+51996133401" className="contact-link">
-            +51 996 133 401
+            +51 965 430 434
           </a>
           <a href="mailto:tsanchezgruas@gmail.com" className="contact-link">
             <i className="fas fa-envelope"></i> tsanchezgruas@gmail.com

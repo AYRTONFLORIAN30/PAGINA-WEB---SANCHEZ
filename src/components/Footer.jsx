@@ -46,7 +46,13 @@ const Footer = () => {
                 <i className="fab fa-instagram"></i>
               </a>
 
-              <i className="fab fa-linkedin"></i>
+              <a
+                  href="https://www.linkedin.com/company/sanchezgruas/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-linkedin"></i>
+                </a>
               <a href="https://www.tiktok.com/@sanchezgruas" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-tiktok"></i>
               </a>

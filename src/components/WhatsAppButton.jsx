@@ -4,7 +4,7 @@ import './WhatsAppButton.css';
 function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/51991870790" // Reemplaza con tu número real
+      href="https://wa.me/51996133033" // Reemplaza con tu número real
       className="whatsapp-button"
       target="_blank"
       rel="noopener noreferrer"

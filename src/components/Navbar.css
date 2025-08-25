@@ -81,7 +81,7 @@
 
 
 .logo {
-  max-height: 180px;   /* ajusta altura máxima */
+  max-height: 130px;   /* ajusta altura máxima */
   width: auto;        /* mantiene la proporción */
   display: block;
   object-fit: contain; /* asegura que no se deforme */

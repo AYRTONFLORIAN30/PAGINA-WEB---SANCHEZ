@@ -8,18 +8,21 @@ function Mantenimiento() {
   };
 
   return (
-    <div className="servicio-container" style={{ backgroundImage: `url(${imagenFondo})` }}>
-      <div className="contenido-servicio centro-derecha overlay">
+    <section
+      className="servicio-container"
+      style={{ backgroundImage: `url(${imagenFondo})` }}
+      aria-label="Mantenimiento de grúas articuladas"
+    >
+      <div className="contenido-servicio bloque-hero">
         <h1>MANTENIMIENTO DE GRÚAS ARTICULADAS</h1>
-        <p>Ofrecemos servicio técnico especializado en mantenimiento preventivo y correctivo de grúas articuladas.</p>
-        <p>Contamos con personal altamente capacitado y repuestos originales.</p>
-        <p>¿Necesitas asegurar el funcionamiento óptimo de tus grúas?</p>
+        <p>Servicio técnico especializado en mantenimiento preventivo y correctivo.</p>
+        <p>Personal capacitado y repuestos originales para un funcionamiento óptimo.</p>
+        <p>¿Necesitas asegurar la disponibilidad de tus equipos?</p>
         <button className="boton-cotizar" onClick={irACotizacion}>
           Solicitar Cotización
         </button>
       </div>
-    </div>
+    </section>
   );
 }
-
 export default Mantenimiento;

@@ -8,8 +8,12 @@ function Accesorios() {
   };
 
   return (
-    <div className="servicio-container" style={{ backgroundImage: `url(${imagenFondo})` }}>
-      <div className="contenido-servicio centro-derecha overlay">
+    <section
+      className="servicio-container"
+      style={{ backgroundImage: `url(${imagenFondo})` }}
+      aria-label="Alquiler de accesorios (canastilla)"
+    >
+      <div className="contenido-servicio bloque-hero">
         <h1>ALQUILER DE ACCESORIOS</h1>
         <p>Disponemos de canastillas especializadas como accesorio adicional para nuestras grúas.</p>
         <p>Ideales para trabajos en altura como mantenimiento, inspecciones o instalaciones.</p>
@@ -18,8 +22,7 @@ function Accesorios() {
           Solicitar Cotización
         </button>
       </div>
-    </div>
+    </section>
   );
 }
-
 export default Accesorios;

@@ -8,18 +8,21 @@ function GruaTelescopica() {
   };
 
   return (
-    <div className="servicio-container" style={{ backgroundImage: `url(${imagenFondo})` }}>
-      <div className="contenido-servicio centro-derecha overlay">
+    <section
+      className="servicio-container"
+      style={{ backgroundImage: `url(${imagenFondo})` }}
+      aria-label="Alquiler de grúas telescópicas"
+    >
+      <div className="contenido-servicio bloque-hero">
         <h1>ALQUILER DE GRÚAS TELESCÓPICAS</h1>
-        <p>Grúas Telescópicas modernas, potentes, de las mejores marcas (Terex, Grove, Demag).</p>
-        <p>Maquinaria 100% operativa para realizar cualquier maniobra en cualquier punto del país.</p>
-        <p>¿Necesitas Grúas Telescópicas para tus proyectos?</p>
+        <p>Grúas modernas y potentes de marcas líderes (Terex, Grove, Demag).</p>
+        <p>Maquinaria 100% operativa para maniobras en cualquier punto del país.</p>
+        <p>¿Necesitas grúas telescópicas para tus proyectos?</p>
         <button className="boton-cotizar" onClick={irACotizacion}>
           Solicitar Cotización
         </button>
       </div>
-    </div>
+    </section>
   );
 }
-
 export default GruaTelescopica;

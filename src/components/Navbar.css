@@ -257,3 +257,196 @@ body {
 .contact-info a[href^="mailto"] { 
   margin-left: 20px; /* ajusta el valor según lo que necesites */ 
 }
+
+
+/* ——— TOP BAR COMPACT ——— */
+.top-bar{
+  padding: 6px 18px;
+  font-size: 13px;
+  line-height: 1.1;
+  border-bottom: 1px solid rgba(255,255,255,.18);
+}
+.social-icons a{ font-size: 14px; margin-right: 8px; }
+.contact-info{ gap: 8px; flex-wrap: nowrap; white-space: nowrap; }
+.contact-info .contact-link{ display:inline-flex; align-items:center; gap:6px; }
+.contact-info .contact-link i{ margin-right:0; font-size: 13px; }
+.contact-info .sep{ margin: 0 6px; }
+
+/* ——— NAVBAR COMPACT ——— */
+.main-nav{ padding: 0 18px; height: 72px; }
+.logo{ max-height: 64px; }
+.menu-toggle{ font-size: 24px; padding: 4px 8px; }
+.cotizar-btn{ padding: 10px 18px; font-size: .98rem; border-radius: 6px; }
+
+/* ====== Tablet (<= 992px) ====== */
+@media (max-width: 992px){
+  .top-bar{ padding: 6px 16px; font-size: 12px; }
+  .main-nav{ height: 64px; padding: 0 16px; }
+  .logo{ max-height: 56px; }
+  .cotizar-btn{ padding: 9px 16px; font-size: .95rem; }
+  .menu a{ font-size: 1rem; }
+}
+
+/* ====== Móvil (<= 768px) ====== */
+@media (max-width: 768px){
+  .top-bar{ padding: 4px 12px; font-size: 11px; }
+  .social-icons a{ font-size: 13px; margin-right: 6px; }
+
+  .main-nav{
+    height: 58px;
+    padding: 0 12px;
+    gap: 10px;
+  }
+  .logo{ max-height: 50px; }
+  .menu-toggle{ font-size: 22px; }
+  .cotizar-btn{
+    padding: 8px 14px;
+    font-size: .9rem;
+    border-radius: 5px;
+  }
+
+  /* Menú desplegable móvil */
+  .menu{
+    top: 100%;
+    border-top: 1px solid rgba(255,255,255,.12);
+  }
+}
+
+/* ====== Muy pequeño (<= 480px): simplificamos el contenido ====== */
+@media (max-width: 480px){
+  /* Oculta 2º teléfono y el separador "/" */
+  .contact-info .contact-link:nth-of-type(2),
+  .contact-info .sep{ display:none; }
+
+  /* El email queda solo como ícono para ahorrar espacio */
+  .contact-info .contact-link[href^="mailto"]{ font-size:0; }
+  .contact-info .contact-link[href^="mailto"] i{
+    font-size: 14px; margin: 0 0 0 8px;
+  }
+
+  .main-nav{ height: 54px; }
+  .logo{ max-height: 46px; }
+  .cotizar-btn{ padding: 7px 12px; font-size: .88rem; }
+}
+
+/* === Ajustes pedidos (móvil) === */
+@media (max-width: 768px){
+
+  /* 1) Subir tamaño del logo */
+  .logo{
+    max-height: 62px;        /* antes ~50px */
+  }
+
+  /* 2) Bajar el borde negro (más alto el nav) */
+  .main-nav{
+    height: 68px;            /* antes 58px */
+    padding: 0 12px 4px;     /* un poco de padding inferior */
+  }
+
+  /* 3) Botón Cotizar más pequeño y SIN ancho 90% dentro del nav */
+  .main-nav .cotizar-btn{
+    width: auto !important;  /* anula el 90% general */
+    padding: 6px 12px;       /* más compacto */
+    font-size: .88rem;
+    border-radius: 6px;
+    margin-left: 12px;
+  }
+
+  /* Mantener ancho 90% SOLO cuando el menú móvil está abierto,
+     para que el botón salga debajo del menú ocupando el ancho */
+  .menu.open + .cotizar-btn{
+    width: 90% !important;
+    margin: 10px auto 12px;
+    padding: 10px 16px;      /* un poco más cómodo en la lista */
+    font-size: .95rem;
+  }
+}
+
+/* Opcional: en móviles muy pequeños subimos un pelín más el logo
+   y seguimos compactando el botón */
+@media (max-width: 420px){
+  .logo{ max-height: 64px; }
+  .main-nav{ height: 72px; }
+  .main-nav .cotizar-btn{ padding: 6px 10px; font-size: .86rem; }
+}
+
+/* ——— Dropdown por CLICK en móvil (usa tu <a class="active">) ——— */
+.menu > li > a { cursor: pointer; }
+
+@media (max-width: 768px){
+  /* Desactiva comportamiento por hover en móvil */
+  .menu li:hover > .dropdown-menu{ display: none; }
+
+  /* El submenú ocupa el ancho del menú móvil */
+  .dropdown-menu{
+    position: relative;
+    min-width: 100%;
+  }
+
+  /* ✅ Muestra el submenú cuando el <a> tiene la clase .active */
+  .dropdown > a.active + .dropdown-menu{
+    display: block;
+  }
+}
+
+
+/* === Overrides de alineación y tamaños (móvil) === */
+
+/* Empuja todo a la izquierda y deja que la hamburguesa + Cotizar vivan a la derecha */
+.main-nav{
+  justify-content: flex-start;        /* antes: space-between */
+}
+
+/* La hamburguesa crea “espacio flexible” a su izquierda → se va a la derecha */
+.menu-toggle{
+  margin-left: auto;                   /* clave para pegarla al lado derecho */
+}
+
+/* Un pequeño gap entre hamburguesa y Cotizar */
+.cotizar-btn{
+  margin-left: 12px;
+}
+
+/* Móvil */
+@media (max-width: 768px){
+  /* Logo más grande */
+  .logo{
+    max-height: 68px;                  /* ↑ antes ~50–62px */
+  }
+
+  /* Un poco más alto y con menos padding a la derecha para que todo quede más “pegado” */
+  .main-nav{
+    height: 72px;                      /* ↑ */
+    padding: 0 8px 4px 12px;           /* derecha más pequeña -> botones más a la derecha */
+  }
+}
+
+/* Mini-móvil */
+@media (max-width: 420px){
+  .logo{ max-height: 72px; }           /* aún un poco más grande si quieres */
+  .main-nav{ height: 76px; }
+}
+
+/* ========== LOGO GRANDE EN DESKTOP (override) ========== */
+@media (min-width: 992px){
+  .main-nav{
+    height: 108px;          /* más alto para alojar el logo */
+    padding: 0 40px;
+  }
+  .logo{
+    max-height: 96px;       /* ↑ mucho más grande */
+    width: auto;
+  }
+}
+
+/* Extra grande (monitores anchos) */
+@media (min-width: 1400px){
+  .main-nav{ height: 124px; }
+  .logo{ max-height: 112px; }
+}
+
+/* Opcional: si también lo quieres un poco más grande en tablet */
+@media (min-width: 768px) and (max-width: 991.98px){
+  .main-nav{ height: 96px; }
+  .logo{ max-height: 84px; }
+}

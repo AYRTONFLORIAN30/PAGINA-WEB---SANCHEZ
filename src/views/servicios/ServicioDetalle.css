@@ -1,59 +1,121 @@
-.servicio-container {
+/* ====== HERO DE SERVICIO (compartido por los 5) ====== */
+
+.servicio-container{
+  /* Imagen de fondo */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+
+  /* Alto correcto */
+  min-height: 100svh;
+  height: 100vh; /* fallback */
   position: relative;
-  
+
+  /* Animación suave */
   opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
+  animation: fadeIn 700ms ease-in forwards;
+}
+@keyframes fadeIn{ from{opacity:0} to{opacity:1} }
+
+/* Gradiente lateral para mejorar legibilidad (solo desktop/tablet) */
+.servicio-container::before{
+  content:"";
+  position:absolute; inset:0;
+  pointer-events:none;
+  background: linear-gradient(90deg,
+    rgba(0,0,0,.35) 0%,
+    rgba(0,0,0,.18) 45%,
+    rgba(0,0,0,0) 75%);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* ——— Tarjeta de contenido ——— */
+.contenido-servicio{
+  position: relative; /* encima del ::before */
+  background: rgba(0,0,0,.58);
+  color: #fff;
+  border-radius: 10px;
+  border-left: 8px solid #d3b81e;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+
+  padding: clamp(16px, 2.2vw, 28px) clamp(18px, 3vw, 36px);
+  max-width: min(720px, 45vw);
 }
 
-/* Centrado vertical y a la derecha */
-.centro-derecha {
-  position: absolute;
-  top: 35%; /* antes 50%, sube un poco */
-  right: 5%;
-  transform: translateY(-50%);
-  max-width: 450px;
-  text-align: left;
+.contenido-servicio h1{
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 clamp(14px, 2.2vw, 22px);
+  font-size: clamp(26px, 5.2vw, 56px);
+  text-wrap: balance;
 }
-.contenido-servicio h1 {
-  font-size: 3rem;
-  margin-bottom: 40px;
-  color: #ffffff;
-  font-weight: 800;
+.contenido-servicio p{
+  margin: 10px 0;
+  line-height: 1.6;
+  font-size: clamp(14px, 2.1vw, 18px);
+  text-wrap: pretty;
 }
 
-.contenido-servicio p {
-  font-size: 1.3rem;
-  line-height: 1.7;
-  margin: 0px ;
-  color: white;
-}
-
-.boton-cotizar {
-  background-color: #d3b81e;
-  color: white;
-  padding: 14px 30px;
-  font-size: 1.1rem;
-  border: none;
+/* Botón */
+.boton-cotizar{
+  margin-top: clamp(12px, 2vw, 18px);
+  background: #d3b81e;
+  color:#fff;
+  border:0;
+  border-radius: 8px;
+  padding: clamp(10px, 1.6vw, 14px) clamp(18px, 2.6vw, 26px);
+  font-size: clamp(14px, 1.8vw, 17px);
   cursor: pointer;
-  border-radius: 5px;
-  margin-top: 20px;
+  transition: transform .12s ease, filter .12s ease;
+}
+.boton-cotizar:hover{ filter: brightness(1.06); transform: translateY(-1px); }
+
+/* ——— Posicionamiento CONSISTENTE (abajo-izquierda en desktop) ——— */
+.bloque-hero{
+  position: absolute;
+  left: clamp(16px, 6vw, 72px);
+  bottom: clamp(20px, 10vh, 110px);
 }
 
-.boton-cotizar:hover {
-  background-color: #d3b81e;
+/* Breakpoints */
+@media (min-width: 1200px){
+  .contenido-servicio{ max-width: 680px; }
 }
-.overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 145px 75px;
-  border-radius: 0px;
-  
+@media (max-width: 1024px){
+  .contenido-servicio{ max-width: 560px; }
 }
+
+/* ——— Móvil: tarjeta más abajo y menos suelo ——— */
+@media (max-width: 768px){
+  .servicio-container{
+    /* alto visible real = viewport - header fijo */
+    --header-gap: 86px;           /* si tu header cambia, ajusta este número */
+    --focus-y: 6%;                /* MÁS pequeño = la imagen sube (se ve menos suelo) */
+
+    padding-top: var(--header-gap);
+    min-height: calc(100svh - var(--header-gap));
+    height:     calc(100vh  - var(--header-gap));
+
+    background-color: #000;       /* evita franja blanca al cargar */
+    background-position: center var(--focus-y);
+    background-size: cover;
+  }
+
+  /* Tarjeta bien abajo y centrada */
+  .bloque-hero{
+    position: static;
+    margin: clamp(170px, 40vh, 360px) auto 20px;  /* ↑ sube este valor para bajarla aún más */
+    width: min(92%, 700px);
+  }
+
+  .contenido-servicio{
+    max-width: none;
+    border-left-width: 6px;
+    border-radius: 10px;
+    padding: 18px;
+  }
+}
+
+
+
+/* Por si acaso: sin márgenes colapsados */
+.servicio-container{ margin: 0; }

@@ -1,272 +1,259 @@
-.cotizar-btn {
-  background-color: #d3b81e;
-  color: white;
-  padding: 12px 30px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: inherit;
-  height: auto;
-  align-self: center; /* clave para alinear con flex */
-}
+.cotizar-btn { 
+  background-color: #d3b81e; 
+  color: white; 
+  padding: 12px 30px; 
+  font-size: 1.1rem; 
+  border: none; 
+  border-radius: 6px; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+  font-family: inherit; 
+  height: auto; 
+  align-self: center; /* clave para alinear con flex */ 
+} 
 
-.cotizar-btn:hover {
-  background-color: #ffffff;
-  color: #d3b81e;             /* ✅ Misma tonalidad para hover */
-}
+.cotizar-btn:hover { 
+  background-color: #ffffff; 
+  color: #d3b81e; /* ✅ Misma tonalidad para hover */ 
+} 
 
+.top-bar { 
+  background-color: #000; 
+  color: white; 
+  display: flex; 
+  justify-content: space-between; 
+  padding: 5px 40px; 
+  font-size: 14px; 
+  align-items: center; 
+  border-bottom: 1px solid white; /* ✅ línea blanca divisora */ 
+} 
 
-.top-bar {
-  background-color: #000;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 40px;
-  font-size: 14px;
-  align-items: center;
-  border-bottom: 1px solid white; /* ✅ línea blanca divisora */
-}
+.contact-info { 
+  display:flex; 
+  align-items:center; 
+  gap:0; /* 🔥 sin huecos entre items */ 
+} 
 
-.contact-info{
-  display:flex;
-  align-items:center;
-  gap:0;                      /* 🔥 sin huecos entre items */
-}
+.contact-info .sep { 
+  color:#fff; 
+  opacity:.7; 
+  margin:0 6px; /* 🔥 teléfonos bien pegados */ 
+} 
 
-.contact-info .sep{
-  color:#fff;
-  opacity:.7;
-  margin:0 6px;               /* 🔥 teléfonos bien pegados */
-}
+.contact-info .contact-link:link, 
+.contact-info .contact-link:visited { 
+  color:#fff !important; 
+  text-decoration:none !important; 
+} 
 
-.contact-info .contact-link:link,
-.contact-info .contact-link:visited{
-  color:#fff !important;
-  text-decoration:none !important;
-}
+.contact-info .contact-link:hover { 
+  color:#d3b81e; /* hover en dorado */ 
+} 
 
-.contact-info .contact-link:hover{
-  color:#d3b81e;              /* hover en dorado */
-}
+.contact-info .contact-link i { 
+  margin-right:6px; /* espacio entre icono y texto */ 
+} 
 
-.contact-info .contact-link i{
-  margin-right:6px;           /* espacio entre icono y texto */
-}
+.social-icons a { 
+  color: white; 
+  margin-right: 10px; 
+} 
 
-.social-icons a {
-  color: white;
-  margin-right: 10px;
-}
+.contact-info span { 
+  margin-right: 20px; 
+} 
 
-.contact-info span {
-  margin-right: 20px;
-}
+.lang { 
+  font-weight: bold; 
+} 
 
+.main-nav { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 0 40px; 
+  background-color: #000; 
+  color: white; 
+  height: 100px; 
+} 
 
-.lang {
-  font-weight: bold;
-}
+.logo { 
+  max-height: 130px; /* ajusta altura máxima */ 
+  width: auto; /* mantiene la proporción */ 
+  display: block; 
+  object-fit: contain; /* asegura que no se deforme */ 
+} 
 
-.main-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  background-color: #000;
-  color: white;
-  height: 100px;
-}
+.menu { 
+  list-style: none; 
+  display: flex; 
+  gap: 25px; 
+  align-items: center; 
+  margin-left: auto; /* 🔥 mueve el menú a la derecha */ 
+  margin-right: 20px; 
+} 
 
+.menu li { 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+  margin-top: 6px; /* también puede funcionar desde aquí */ 
+} 
 
-.logo {
-  max-height: 130px;   /* ajusta altura máxima */
-  width: auto;        /* mantiene la proporción */
-  display: block;
-  object-fit: contain; /* asegura que no se deforme */
-}
+.menu a { 
+  color: white; 
+  text-decoration: none; 
+  padding: 16px 8px; /* Aumentamos el padding vertical */ 
+  display: flex; 
+  align-items: center; 
+  height: 100%; 
+  line-height: 1; 
+  font-size: 1.1rem; 
+  margin-top: 6px; 
+} 
 
+.menu a.dlt { 
+  background-color: red; 
+  padding: 8px 12px; 
+} 
 
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  align-items: center;
-  margin-left: auto; /* 🔥 mueve el menú a la derecha */
-  margin-right: 20px;
-}
+.menu li:hover .dropdown-menu { 
+  display: block; 
+} 
 
-.menu li {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-top: 6px; /* también puede funcionar desde aquí */
-}
+.dropdown-menu { 
+  list-style: none; /* 🔥 esto quita las bolitas */ 
+  position: absolute; 
+  top: 100%; 
+  left: 0; 
+  background-color: #111; 
+  padding: 10px; 
+  display: none; 
+  z-index: 1000; 
+  min-width: 280px; 
+} 
 
+.dropdown-menu li { 
+  margin: 8px 0; 
+  list-style-type: none; /* 🔥 elimina las bolitas solo en los <li> */ 
+} 
 
-.menu a {
-  color: white;
-  text-decoration: none;
-  padding: 16px 8px;   /* Aumentamos el padding vertical */
-  display: flex;
-  align-items: center;
-  height: 100%;
-  line-height: 1;
-  font-size: 1.1rem;
-  margin-top: 6px;
-}
+.dropdown-menu li a { 
+  transition: background-color 0.3s ease; 
+  display: block; 
+  padding: 8px 12px; 
+} 
 
-.menu a.dlt {
-  background-color: red;
-  padding: 8px 12px;
-}
+.dropdown-menu li a:hover { 
+  background-color: #d3b81e; /* verde oscuro */ 
+  color: white; 
+} 
 
-.menu li:hover .dropdown-menu {
-  display: block;
-}
+.dropdown-menu a { 
+  color: white; 
+  text-decoration: none; 
+} 
 
-.dropdown-menu {
-  list-style: none; /* 🔥 esto quita las bolitas */
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #111;
-  padding: 10px;
-  display: none;
-  z-index: 1000;
-  min-width: 280px;
-}
+.menu a.active { 
+  position: relative; 
+  border-bottom: 3px solid #d3b81e; 
+} 
 
-.dropdown-menu li {
-  margin: 8px 0;
-  list-style-type: none; /* 🔥 elimina las bolitas solo en los <li> */
-}
+.menu a.active::after { 
+  content: ''; 
+  position: absolute; 
+  bottom: -5px; 
+  left: 0; 
+  width: 100%; 
+  height: 3px; 
+  background-color: #d3b81e; 
+  border-radius: 2px; 
+} 
 
-.dropdown-menu li a {
-  transition: background-color 0.3s ease;
-  display: block;
-  padding: 8px 12px;
-}
+/* 🔒 Mantener navbar fijo arriba */ 
+header { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  z-index: 1000; 
+} 
 
-.dropdown-menu li a:hover {
-  background-color: #d3b81e; /* verde oscuro */
-  color: white;
-}
+/* Añade al final de tu Navbar.css */ 
+.menu-toggle { 
+  display: none; 
+  background: none; 
+  font-size: 28px; 
+  color: white; 
+  border: none; 
+  cursor: pointer; 
+  margin-left: auto; 
+} 
 
-.dropdown-menu a {
-  color: white;
-  text-decoration: none;
-}
+@media (max-width: 768px) { 
+  .menu { 
+    display: none; 
+    flex-direction: column; 
+    background-color: #000; 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    width: 100%; 
+    padding: 10px 0; 
+  } 
 
+  .menu.open { 
+    display: flex; 
+  } 
 
-.menu a.active {
-  position: relative;
-  border-bottom: 3px solid #d3b81e;
-}
+  .dropdown-menu { 
+    position: relative; 
+    background-color: #111; 
+    min-width: 100%; 
+  } 
 
-.menu a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #d3b81e;
-  border-radius: 2px;
-}
+  .menu-toggle { 
+    display: block; 
+  } 
 
+  .cotizar-btn { 
+    margin-top: 10px; 
+    width: 90%; 
+    margin-left: auto; 
+    margin-right: auto; 
+  } 
 
-/* 🔒 Mantener navbar fijo arriba */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
+  .main-nav .cotizar-btn { 
+    margin-left: 20px; /* Espacio entre el menú y el botón */ 
+    align-self: center; /* ✅ Alineación vertical con el menú */ 
+    padding: 12px 30px; /* Tamaño más uniforme */ 
+    height: auto; /* Asegura que no se estire */ 
+  } 
+} 
 
+header { 
+  background-color: #000; /* Asegura que no haya fondo blanco por detrás */ 
+  border-bottom: none !important; /* Elimina cualquier borde residual */ 
+} 
 
+.menu.open { 
+  border-top: none !important; 
+} 
 
-/* Añade al final de tu Navbar.css */
+.menu { 
+  border: none !important; 
+  margin-top: 0 !important; 
+} 
 
-.menu-toggle {
-  display: none;
-  background: none;
-  font-size: 28px;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-left: auto;
-}
+.menu li { 
+  border: none !important; 
+} 
 
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    background-color: #000;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-  }
+body { 
+  margin: 0; 
+  padding: 0; 
+} 
 
-  .menu.open {
-    display: flex;
-  }
-
-  .dropdown-menu {
-    position: relative;
-    background-color: #111;
-    min-width: 100%;
-  }
-
-  
-  .menu-toggle {
-    display: block;
-  }
-
-  .cotizar-btn {
-    margin-top: 10px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .main-nav .cotizar-btn {
-  margin-left: 20px;         /* Espacio entre el menú y el botón */
-  align-self: center;        /* ✅ Alineación vertical con el menú */
-  padding: 12px 30px;        /* Tamaño más uniforme */
-  height: auto;              /* Asegura que no se estire */
-}
-
-}
-
-header {
-  background-color: #000; /* Asegura que no haya fondo blanco por detrás */
-  border-bottom: none !important; /* Elimina cualquier borde residual */
-}
-
-
-
-.menu.open {
-  border-top: none !important;
-}
-
-.menu {
-  border: none !important;
-  margin-top: 0 !important;
-}
-
-.menu li {
-  border: none !important;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.contact-info a[href^="mailto"] {
-  margin-left: 20px;   /* ajusta el valor según lo que necesites */
+.contact-info a[href^="mailto"] { 
+  margin-left: 20px; /* ajusta el valor según lo que necesites */ 
 }

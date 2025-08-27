@@ -10,7 +10,8 @@
 .footer-content {
   display: flex;
   justify-content: space-between;
-  padding: 60px 80px;
+  align-items: flex-start;   /* alinea todas las columnas arriba */
+  padding: 20px 80px 50px 80px;       /* reducimos padding superior */
   flex-wrap: wrap;
   gap: 40px;
 }
@@ -18,6 +19,9 @@
 .footer-col {
   flex: 1;
   min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;  /* contenido pegado arriba */
 }
 
 .footer h3 {
@@ -33,11 +37,27 @@
 }
 
 .footer-logo {
-  max-width: 260px;   /* más ancho */
+  max-width: 180px;
   height: auto;
   display: block;
   object-fit: contain;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
+  margin-top: -10px;
+
+  /* 🔑 centrado respecto al texto */
+  margin-left: 0;   /* lo mantiene alineado con el texto */
+}
+.footer-col:first-child {
+  align-items: flex-start;   /* mantiene el texto alineado a la izquierda */
+}
+
+.footer-content .footer-col:nth-child(2),
+.footer-content .footer-col:nth-child(3) {
+  padding-top: 26px;   /* ajusta 20–32px según lo veas en pantalla */
+}
+.footer-col p {
+  margin: 4px 0;       /* menos espacio entre párrafos */
+  line-height: 1.3;    /* más compacto */
 }
 
 @media (max-width: 768px) {
@@ -53,9 +73,8 @@
 }
 
 .horario {
-  margin-top: 15px;
+  margin-top: 4px;     /* menos separación arriba */
 }
-
 .redes {
   margin-top: 15px;
   font-size: 1.8rem;

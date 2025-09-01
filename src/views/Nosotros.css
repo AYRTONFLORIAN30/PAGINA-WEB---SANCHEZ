@@ -470,3 +470,41 @@ body, html {
 @media (max-width: 420px){
   .valor-cuadro{ min-height: 210px; margin: 10px 18px; width: calc(100% - 36px); }
 }
+
+/* === MÓVIL: bajar más la imagen del banner de Nosotros === */
+@media (max-width: 768px){
+  .nosotros-banner{
+    height: 300px;                 /* antes 250px → muestra más imagen */
+    background-position: center 75%; /* mueve el foco hacia abajo */
+  }
+
+  /* opcional: si quieres el texto un pelín más abajo también */
+  .overlay-nosotros{
+    padding-top: 110px;            /* ajusta 100–130 a tu gusto */
+  }
+}
+
+/* === NOSOTROS — móvil: imagen arriba y texto a la izquierda (como Blog/Contacto) === */
+@media (max-width: 768px){
+  .nosotros-banner{
+    height: 300px;                               /* alto cómodo en móvil */
+    background-position: center 12% !important;  /* ↑ sube el encuadre de la imagen */
+    margin-top: 0 !important;
+    position: relative;
+    top: -1px;                                   /* por si aparece una “rayita” blanca debajo del header */
+  }
+
+  .overlay-nosotros{
+    justify-content: flex-start !important;      /* texto arriba */
+    align-items: flex-start !important;          /* a la izquierda */
+    padding: 96px 12px 16px 12px !important;     /* top right bottom left */
+    text-align: left;
+  }
+
+  .texto-nosotros{
+    margin-left: 0 !important;                   /* pegado al borde izquierdo */
+    max-width: 600px;
+  }
+  .texto-nosotros h1{ font-size: 32px; margin-bottom: 8px; }
+  .texto-nosotros p { font-size: 14px; margin-left: 12px; }
+}

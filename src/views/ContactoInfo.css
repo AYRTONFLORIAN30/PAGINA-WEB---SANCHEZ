@@ -143,3 +143,90 @@
   margin: 4px 0;
   font-size: 14px;
 }
+
+/* === CONTACTO — móvil: imagen más arriba y texto a la izquierda === */
+@media (max-width: 768px){
+  .contacto-hero{
+    height: 300px;                 /* alto cómodo en móvil */
+    background-position: center 18%;/* ↑ sube la imagen del banner */
+  }
+
+  .overlay-contacto{
+    align-items: flex-start;        /* texto arriba a la izquierda */
+    padding: 110px 16px 16px 18px;  /* top right bottom left */
+  }
+
+  .texto-hero-contacto{
+    margin-left: 0 !important;      /* pegado al borde izquierdo */
+    max-width: 600px;
+  }
+  .texto-hero-contacto h1{
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  .texto-hero-contacto p{
+    font-size: 14px;
+    margin-left: 12px;              /* si lo quieres aún más a la izquierda, pon 8px o 0 */
+  }
+}
+
+/* === CONTACTO — FIX móvil === */
+@media (max-width: 768px){
+  .contacto-hero{
+    height: 320px;                  /* un poco más alto para que no “corte” */
+    background-position: center 10%;/* ↑ sube la imagen del banner */
+    margin-bottom: 16px;            /* separa del contenido de abajo */
+  }
+
+  .overlay-contacto{
+    align-items: flex-start;        /* texto arriba a la izquierda */
+    justify-content: flex-start;
+    padding: 96px 12px 14px 12px;   /* top right bottom left */
+    box-sizing: border-box;
+  }
+
+  .texto-hero-contacto{
+    margin-left: 0 !important;      /* pegado al borde izquierdo */
+    max-width: 560px;
+  }
+  .texto-hero-contacto h1{
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  .texto-hero-contacto p{
+    font-size: 14px;
+    margin-left: 12px;              /* pon 0 si lo quieres totalmente al filo */
+  }
+}
+
+/* === CONTACTO — cubrir la línea blanca bajo el header (móvil) === */
+@media (max-width: 768px){
+  .contacto-hero{
+    margin-top: 0 !important;      /* no deje hueco bajo el header */
+    position: relative;
+    top: -1px;                      /* cubre cualquier 1px de “rayita” */
+    height: 320px;                  /* mantén el alto del banner */
+    background-position: center 10%;
+  }
+
+  .overlay-contacto{
+    /* empuja el texto para que no quede bajo el header fijo */
+    padding: 100px 12px 16px 12px;  /* top right bottom left */
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .texto-hero-contacto{
+    margin-left: 0 !important;
+    max-width: 560px;
+  }
+  .texto-hero-contacto h1{ font-size: 32px; margin-bottom: 8px; }
+  .texto-hero-contacto p { font-size: 14px; margin-left: 12px; }
+}
+
+/* Por si algún estilo global añade borde al header */
+header{ border-bottom: 0 !important; }
+
+
+

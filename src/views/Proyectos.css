@@ -272,3 +272,90 @@
   .proyecto-info p  { font-size: 14.5px; }
   .proyecto-fecha   { font-size: 13.5px; }
 }
+
+/* === MÓVIL: separa el banner de las cards === */
+@media (max-width: 768px){
+  /* deja espacio debajo del banner (aunque tenga .sin-linea) */
+  .proyectos-container .proyectos-hero.sin-linea{
+    margin-bottom: 24px !important;   /* prueba 16–32px a gusto */
+  }
+
+  /* quita el margen negativo que pegaba las cards hacia arriba */
+  .proyectos-grid{
+    margin-top: 0 !important;         /* o 8–12px si quieres aún más aire */
+    padding-top: 4px;                  /* respirito extra opcional */
+  }
+
+  /* (opcional) ajusta el padding del contenido del banner en móvil */
+  .proyectos-hero .overlay{
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 90px;                 /* estaba muy alto (150px) */
+  }
+}
+
+/* === MOVIL: más separación y texto del banner más a la izquierda === */
+@media (max-width: 768px){
+
+  /* baja un poco la primera imagen (cards) -> más aire debajo del banner */
+  .proyectos-container .proyectos-hero.sin-linea{
+    margin-bottom: 40px !important;   /* sube a 48–56 si quieres más */
+  }
+
+  /* texto del banner más a la izquierda y un pelín más abajo */
+  .proyectos-hero .overlay{
+    padding-left: 10px;    /* antes 16 */
+    padding-right: 14px;
+    padding-top: 100px;    /* antes 90: baja un poco el texto */
+  }
+
+  /* anula el margen izquierdo grande del desktop */
+  .texto-hero-proyectos{
+    margin-left: 0 !important;  /* antes 60px */
+    max-width: 90%;
+  }
+  .texto-hero-proyectos h1{ padding-left: 8px; }   /* borde dorado */
+  .texto-hero-proyectos p{  margin-left: 12px; }
+
+  /* por si acaso: nada de margen negativo arriba de la grilla */
+  .proyectos-grid{ margin-top: 0 !important; }
+}
+
+/* === MÓVIL: bajar un poco la imagen del banner === */
+@media (max-width: 768px){
+  .proyectos-hero{
+    height: 300px;                 /* antes 250px → más alto */
+    background-position: center 70%; /* mueve el foco hacia abajo */
+  }
+
+  /* opcional: acompaña el texto para que también quede un poco más abajo */
+  .proyectos-hero .overlay{
+    padding-top: 120px;            /* ajusta 110–140 a gusto */
+  }
+}
+
+/* === PROYECTOS — móvil: texto más arriba (como Blog/Contacto) === */
+@media (max-width: 768px){
+  .proyectos-hero{
+    height: 300px;                                  /* alto cómodo */
+    background-position: center 12% !important;     /* sube el encuadre */
+  }
+
+  .proyectos-hero .overlay{
+    padding: 96px 12px 16px 12px !important;        /* top right bottom left */
+    align-items: flex-start !important;
+    text-align: left;
+  }
+
+  .texto-hero-proyectos{
+    margin-left: 0 !important;                      /* pegado a la izquierda */
+    max-width: 600px;
+  }
+  .texto-hero-proyectos h1{ font-size: 32px; margin-bottom: 8px; }
+  .texto-hero-proyectos p { font-size: 14px; margin-left: 12px; }
+
+  /* separa el banner de las cards */
+  .proyectos-container .proyectos-hero.sin-linea{
+    margin-bottom: 28px !important;
+  }
+}

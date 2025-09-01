@@ -1,20 +1,45 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../assets/logo.png';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 
 function Navbar() {
-  const [activeItem, setActiveItem] = useState('');
+  // Dropdown abierto SOLO para móvil
+  const [openDropdown, setOpenDropdown] = useState('');
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
-  const closeMobileMenu = () => setMobileMenuOpen(false);
+  // Helpers para marcar activo según la ruta
+  const isActive = (key) => {
+    switch (key) {
+      case 'home':
+        return pathname === '/';
+      case 'servicios':
+        return pathname.startsWith('/servicio');
+      case 'proyectos':
+        return pathname.startsWith('/proyectos');
+      case 'nosotros':
+        return pathname === '/nosotros' || pathname.startsWith('/nosotros/');
+      case 'blog':
+        return pathname.startsWith('/blog');
+      case 'contacto':
+        return pathname.startsWith('/contacto');
+      default:
+        return false;
+    }
+  };
 
-  // keepMenuOpen = true para los toggles ("Servicios", "Nosotros")
-  const handleClick = (item, keepMenuOpen = false, e) => {
-    if (e) e.preventDefault(); // evita salto al usar href="#"
-    setActiveItem(item);
-    if (!keepMenuOpen) closeMobileMenu();
+  // Cierra menú móvil y cualquier dropdown abierto
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setOpenDropdown('');
+  };
+
+  // Toggle para dropdowns en móvil
+  const toggleDropdown = (item, e) => {
+    if (e) e.preventDefault();
+    setOpenDropdown((prev) => (prev === item ? '' : item));
   };
 
   return (
@@ -77,7 +102,13 @@ function Navbar() {
 
         <button
           className="menu-toggle"
-          onClick={() => setMobileMenuOpen((s) => !s)}
+          onClick={() =>
+            setMobileMenuOpen((prev) => {
+              const next = !prev;
+              if (!next) setOpenDropdown('');
+              return next;
+            })
+          }
           aria-expanded={isMobileMenuOpen}
           aria-label="Abrir menú"
         >
@@ -85,17 +116,21 @@ function Navbar() {
         </button>
 
         <ul className={`menu ${isMobileMenuOpen ? 'open' : ''}`}>
-          {/* Servicios */}
+          {/* Servicios (dropdown) */}
           <li className="dropdown">
             <a
               href="#"
-              onClick={(e) => handleClick('servicios', true, e)}
-              className={activeItem === 'servicios' ? 'active' : ''}
-              aria-expanded={activeItem === 'servicios'}
+              onClick={(e) => toggleDropdown('servicios', e)}
+              className={isActive('servicios') || openDropdown === 'servicios' ? 'active' : ''}
+              aria-expanded={openDropdown === 'servicios'}
             >
               Servicios ▾
             </a>
-            <ul className="dropdown-menu" onClick={(e) => e.stopPropagation()}>
+            <ul
+              className="dropdown-menu"
+              style={{ display: openDropdown === 'servicios' ? 'block' : undefined }}
+              onClick={(e) => e.stopPropagation()}
+            >
               <li>
                 <Link to="/servicio/grua-telescopica" onClick={closeMobileMenu}>
                   Alquiler de grúa telescópica
@@ -128,24 +163,28 @@ function Navbar() {
           <li>
             <Link
               to="/proyectos"
-              className={activeItem === 'proyectos' ? 'active' : ''}
-              onClick={() => handleClick('proyectos')}
+              className={isActive('proyectos') ? 'active' : ''}
+              onClick={closeMobileMenu}
             >
               Proyectos
             </Link>
           </li>
 
-          {/* Nosotros */}
+          {/* Nosotros (dropdown) */}
           <li className="dropdown">
             <a
               href="#"
-              onClick={(e) => handleClick('nosotros', true, e)}
-              className={activeItem === 'nosotros' ? 'active' : ''}
-              aria-expanded={activeItem === 'nosotros'}
+              onClick={(e) => toggleDropdown('nosotros', e)}
+              className={isActive('nosotros') || openDropdown === 'nosotros' ? 'active' : ''}
+              aria-expanded={openDropdown === 'nosotros'}
             >
               Nosotros ▾
             </a>
-            <ul className="dropdown-menu" onClick={(e) => e.stopPropagation()}>
+            <ul
+              className="dropdown-menu"
+              style={{ display: openDropdown === 'nosotros' ? 'block' : undefined }}
+              onClick={(e) => e.stopPropagation()}
+            >
               <li>
                 <Link to="/nosotros" onClick={closeMobileMenu}>
                   Más de nosotros
@@ -163,8 +202,8 @@ function Navbar() {
           <li>
             <Link
               to="/blog"
-              onClick={() => handleClick('blog')}
-              className={activeItem === 'blog' ? 'active' : ''}
+              className={isActive('blog') ? 'active' : ''}
+              onClick={closeMobileMenu}
             >
               Blog
             </Link>
@@ -174,8 +213,8 @@ function Navbar() {
           <li>
             <Link
               to="/contacto-info"
-              className={activeItem === 'contacto' ? 'active' : ''}
-              onClick={() => handleClick('contacto')}
+              className={isActive('contacto') ? 'active' : ''}
+              onClick={closeMobileMenu}
             >
               Contacto
             </Link>

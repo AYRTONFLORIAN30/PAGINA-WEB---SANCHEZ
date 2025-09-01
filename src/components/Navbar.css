@@ -71,18 +71,19 @@
   display: flex; 
   align-items: center; 
   justify-content: space-between; 
-  padding: 0 40px; 
+  padding: 0 24px;        /* menos espacio lateral */
   background-color: #000; 
   color: white; 
-  height: 100px; 
+  height: 68px;           /* antes 100px */
 } 
 
 .logo { 
-  max-height: 130px; /* ajusta altura máxima */ 
-  width: auto; /* mantiene la proporción */ 
+  max-height: 56px;       /* antes 130px */
+  width: auto; 
   display: block; 
-  object-fit: contain; /* asegura que no se deforme */ 
-} 
+  object-fit: contain; 
+}
+
 
 .menu { 
   list-style: none; 
@@ -638,4 +639,122 @@ body {
   }
 }
 
+/* ====== COMPACT NAV – OVERRIDES (pegar al FINAL del CSS) ====== */
+.main-nav{
+  height: 56px !important;      /* ↓ barra más delgada */
+  padding: 0 20px !important;
+  background-color: #000;        /* mantiene negro */
+}
+.logo{
+  max-height: 42px !important;   /* ↓ logo no empuja la altura */
+  width: auto;
+}
 
+/* Links del menú más compactos */
+.menu li{ margin-top: 0 !important; }
+.menu a{
+  padding: 10px 8px !important;  /* ↓ padding vertical */
+  margin-top: 0 !important;
+  line-height: 1 !important;
+}
+
+/* En pantallas grandes NO re-crecer */
+@media (min-width: 992px){
+  .main-nav{ height: 56px !important; padding: 0 24px !important; }
+  .logo{ max-height: 42px !important; }
+}
+
+/* Si quieres aún más fino en 1400+ */
+@media (min-width: 1400px){
+  .main-nav{ height: 56px !important; }
+  .logo{ max-height: 42px !important; }
+}
+/* ====== NAVBAR MÁS ALTO + LOGO MÁS GRANDE ====== */
+.main-nav{
+  height: 88px !important;      /* antes 56px o 68px */
+  padding: 0 28px !important;   /* un poco más de aire */
+}
+
+.logo{
+  max-height: 72px !important;  /* antes 42–56px */
+  width: auto;
+}
+
+/* Menú links centrados verticalmente */
+.menu a{
+  padding: 20px 10px !important;  /* más relleno vertical */
+  line-height: 1.2 !important;
+}
+
+/* ====== NAVBAR + LOGO AJUSTADO (versión final) ====== */
+.main-nav{
+  height: 96px !important;       /* negro un poco más alto */
+  padding: 0 28px !important; 
+  background-color: #000;
+}
+
+.logo{
+  max-height: 82px !important;   /* logo más grande */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Menú alineado al centro vertical */
+.menu a{
+  padding: 22px 10px !important;
+  line-height: 1.2 !important;
+}
+
+/* ===== Submenús más compactos (DESKTOP) ===== */
+@media (min-width: 992px){
+  .dropdown-menu{
+    min-width: 240px;        /* antes 280px */
+    padding: 6px 0;          /* menos relleno del panel */
+  }
+  .dropdown-menu li{
+    margin: 0;               /* elimina separación vertical extra */
+  }
+  .dropdown-menu a{
+    font-size: 0.95rem;      /* texto más chico */
+    padding: 10px 14px;      /* menos alto por opción */
+    line-height: 1.2;
+  }
+  /* Hover/activo mantiene contraste sin “engordar” */
+  .dropdown-menu li a:hover{
+    background-color: #d3b81e;
+    color: #fff;
+  }
+}
+
+/* ==== Dropdown: hover amarillo a TODO el ancho ==== */
+.dropdown-menu{
+  padding: 0 !important;       /* quita el colchón del panel */
+  min-width: 240px;            /* el ancho que prefieras */
+}
+
+.dropdown-menu li{
+  margin: 0 !important;        /* sin huecos entre items */
+}
+
+.dropdown-menu a{
+  display: block;               /* el <a> ocupa todo el ancho */
+  width: 100%;
+  padding: 12px 16px;           /* espacio interno del item */
+  color: #fff;                  /* color por defecto en panel oscuro */
+  line-height: 1.2;
+}
+
+/* Al pasar el mouse, el FONDO COMPLETO se pinta */
+.dropdown-menu li:hover > a,
+.dropdown-menu a:focus{
+  background: #d3b81e !important;
+  color: #111 !important;       /* o #fff si prefieres blanco sobre dorado */
+}
+
+/* (Opcional) separadores sutiles entre items */
+@media (min-width: 992px){
+  .dropdown-menu li + li a{
+    border-top: 1px solid rgba(255,255,255,.05);
+  }
+}

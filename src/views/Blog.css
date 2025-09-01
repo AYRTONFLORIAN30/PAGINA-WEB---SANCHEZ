@@ -327,3 +327,26 @@
   .texto-hero-blog h1{ font-size: 32px; margin-bottom: 8px; }
   .texto-hero-blog p { font-size: 14px; margin-left: 12px; }
 }
+
+/* ===== BLOG – Más separación (DESKTOP) ===== */
+@media (min-width: 769px){
+  /* 1) Banner más alto para empujar el blanco hacia abajo */
+  .blog-hero{
+    height: 78vh;              /* antes 60vh; prueba 80–85vh si quieres más */
+  }
+
+  /* 2) Un poco de aire extra dentro del banner (opcional) */
+  .blog-hero .overlay{
+    padding-bottom: 48px;      /* da “respiro” bajo el texto del hero */
+  }
+
+  /* 3) Los artículos comienzan más abajo dentro del bloque blanco */
+  .contenido-principal{
+    padding: 110px 60px 80px;  /* ↑ padding-top más grande (antes 60px) */
+  }
+}
+
+/* Si tu pantalla es MUY grande, aún más alto el hero */
+@media (min-width: 1400px){
+  .blog-hero{ height: 82vh; }  /* sube un poco más en monitores grandes */
+}

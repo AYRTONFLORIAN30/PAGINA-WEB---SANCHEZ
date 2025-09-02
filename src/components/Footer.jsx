@@ -71,11 +71,11 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>Copyright 2025 © Sanchez | Gruas y Transportes</p>
         <div className="footer-links">
-          <a href="#">Políticas de Privacidad</a> |
-          <a href="#">Políticas de Cookies</a> |
-          <a href="#">Responsabilidad Social Corporativa</a> |
-          <a href="#">Felicitaciones, Sugerencias y Reclamos</a> |
-          <a href="#">Política SIG</a>
+          <span>Políticas de Privacidad</span> |
+          <span>Políticas de Cookies</span> |
+          <span>Responsabilidad Social Corporativa</span> |
+          <span>Felicitaciones, Sugerencias y Reclamos</span> |
+          <span>Política SIG</span>
         </div>
         <span className="dev">Developed by <strong>Ayrton Florian</strong></span>
       </div>

@@ -1,105 +1,492 @@
-.blog-detalle-container {
+/* ====== LAYOUT BASE (mobile-first) ====== */
+.post{
+  --y: #d3b81e;              
+  --ink: #0b0b0b;
+  --muted: #6b6b6b;
+  --card: #f6f7f8;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ----- HERO ----- */
+.post-hero{
+  position: relative;
+  background-size: cover;
+  background-position: center 40%;
+  aspect-ratio: 16 / 10;                 
+  border-radius: 0;   /* 👈 bordes rectos */
+  overflow: hidden;
+}
+
+.post-hero__overlay{
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.8) 100%);
+  color: #fff;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 100px 80px 60px; /* más espacio arriba */
-  gap: 60px;
-  max-width: 1400px;
-  margin: auto;
-  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px 18px 22px;
+  gap: 8px;
 }
 
-.blog-detalle-main {
-  flex: 2;
-  max-width: 800px;
-  margin-top: 40px; /* separa más el contenido del título */
+.post-chip{
+  align-self: flex-start;
+  background: var(--y);
+  color: #111;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 0;   /* 👈 bordes rectos */
+  letter-spacing: .3px;
 }
 
-.blog-detalle-sidebar {
-  flex: 1;
-  max-width: 320px;
-  background: #f9f9f9;
-  padding: 20px;
-  border-left: 2px solid #ddd;
-  box-sizing: border-box;
-  margin-top: 160px; /* baja más la barra lateral */
-}
-
-.blog-categoria {
-  color: #72cc46;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.blog-fecha {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.blog-imagen {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 20px;
-}
-
-.blog-contenido {
-  font-size: 18px;
-  line-height: 1.8;
-  color: #333;
-  margin-top: 30px; /* espacio extra antes del texto */
-}
-.blog-buscador {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.blog-categorias h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.blog-categorias ul {
-  list-style: none;
-  padding-left: 0;
+.post-title{
   margin: 0;
+  font-size: clamp(20px, 5.5vw, 34px);
+  line-height: 1.15;
+  text-wrap: balance;
 }
 
-.blog-categorias li {
-  margin-bottom: 10px;
+.post-meta{
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  opacity: .95;
+}
+.post-meta__item{ white-space: nowrap; }
+
+/* ----- GRID CONTENIDO ----- */
+.post-layout{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding: 18px;
+}
+
+.post-main{
+  background: #fff;
+  border-radius: 0;   /* 👈 bordes rectos */
+  padding: 18px;
+  box-shadow: 0 6px 22px rgba(0,0,0,.06);
+}
+
+.post-content{
   font-size: 16px;
-  cursor: pointer;
-  transition: 0.2s;
+  line-height: 1.8;
+  color: var(--ink);
+}
+.post-content p{ margin: 0 0 1.1em; }
+.post-content h2, .post-content h3{
+  margin: 1.6em 0 .6em;
+  line-height: 1.25;
+}
+.post-content img{
+  width: 100%; height: auto; border-radius: 0;   /* 👈 bordes rectos */
+  margin: 14px 0;
 }
 
-.blog-categorias li:hover {
-  color: #72cc46;
+/* ----- ASIDE ----- */
+.post-aside{ display: grid; gap: 14px; }
+
+.card{
+  background: var(--card);
+  border-radius: 0;   /* 👈 bordes rectos */
+  padding: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.05);
 }
 
-
-.articulos-sidebar {
-  margin-top: 20px;
+.card-title{
+  margin: 0 0 10px;
+  font-size: 16px;
 }
 
-.sidebar-link {
-  display: block;
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
+.search{
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 0;   /* 👈 bordes rectos */
   font-size: 14px;
-  color: #333;
-  text-decoration: none;
-  transition: color 0.2s ease;
 }
 
-.sidebar-link:hover {
-  color: #d3b81e;
-  font-weight: bold;
+.cats{
+  list-style: none;
+  padding: 0; margin: 0;
+  display: grid; gap: 8px;
+}
+.cat{
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 12px; border-radius: 0;   /* 👈 bordes rectos */
+  background: #fff;
+  cursor: pointer; border: 1px solid #eee;
+  transition: transform .12s ease, border-color .12s ease;
+}
+.cat:hover{ transform: translateY(-1px); border-color: #ddd; }
+.cat.active{ border-color: var(--y); box-shadow: 0 0 0 2px rgba(211,184,30,.15) inset; }
+.badge{
+  background: #ececec; border-radius: 0;   /* 👈 bordes rectos */
+  padding: 2px 8px; font-size: 12px;
+}
+
+.related{ list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.related-link{
+  display: block; padding: 8px 10px; border-radius: 0;   /* 👈 bordes rectos */
+  background: #fff; color: #222; text-decoration: none;
+  border: 1px solid #eee; transition: background .12s ease, border-color .12s ease;
+}
+.related-link:hover{ background: #fefae0; border-color: var(--y); }
+
+/* ====== TABLET / DESKTOP ====== */
+@media (min-width: 992px){
+  .post-hero{ aspect-ratio: 16 / 6; background-position: center 55%; }
+  .post-hero__overlay{ padding: 28px 40px 32px; }
+  .post-layout{
+    grid-template-columns: 1fr 320px;   
+    gap: 28px;
+    padding: 28px 40px 40px;
+  }
+  .post-aside{ position: sticky; top: 96px; align-self: start; }
+  .post-main{ padding: 28px; }
+}
+
+/* --- Separar el HERO del navbar fijo --- */
+/* --- Ajuste HERO sin franja blanca --- */
+@media (max-width: 768px){
+  .post{
+    padding-top: 0;      /* 👈 quita el espacio que creaba la franja */
+  }
+  .post-hero{
+    margin-top: 50px;   /* 👈 ajusta con la altura real de tu navbar en móvil */
+    aspect-ratio: 16 / 9;
+    background-position: center 44%;
+  }
+}
+
+@media (min-width: 769px){
+  .post{
+    padding-top: 0;      /* 👈 sin espacio extra */
+  }
+  .post-hero{
+    margin-top: 122px;   /* 👈 altura real de tu navbar en desktop */
+    aspect-ratio: 16 / 7;
+    background-position: center 55%;
+  }
+}
+
+/* Variable con fallback por si aún no se midiera el header */
+:root{
+  --header-h: 96px; /* se actualiza en runtime desde BlogDetalle.jsx */
+}
+
+/* ====== LAYOUT BASE (mobile-first) ====== */
+.post{
+  --y: #d3b81e;
+  --ink: #0b0b0b;
+  --muted: #6b6b6b;
+  --card: #f6f7f8;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ----- HERO ----- */
+.post-hero{
+  /* 👇 empuja el hero debajo del navbar fijo */
+  margin-top: var(--header-h);
+  position: relative;
+  z-index: 0; /* nunca por encima del navbar */
+  background-size: cover;
+  background-position: center 40%;
+  aspect-ratio: 16 / 10;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.post-hero__overlay{
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.8) 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px 18px 22px;
+  gap: 8px;
+}
+
+.post-chip{
+  align-self: flex-start;
+  background: var(--y);
+  color: #111;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 0;
+  letter-spacing: .3px;
+}
+
+.post-title{
+  margin: 0;
+  font-size: clamp(20px, 5.5vw, 34px);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.post-meta{
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  opacity: .95;
+}
+.post-meta__item{ white-space: nowrap; }
+
+/* ----- GRID CONTENIDO ----- */
+.post-layout{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding: 18px;
+}
+
+.post-main{
+  background: #fff;
+  border-radius: 0;
+  padding: 18px;
+  box-shadow: 0 6px 22px rgba(0,0,0,.06);
+}
+
+.post-content{
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--ink);
+}
+.post-content p{ margin: 0 0 1.1em; }
+.post-content h2, .post-content h3{
+  margin: 1.6em 0 .6em;
+  line-height: 1.25;
+}
+.post-content img{
+  width: 100%; height: auto; border-radius: 0;
+  margin: 14px 0;
+}
+
+/* ----- ASIDE ----- */
+.post-aside{ display: grid; gap: 14px; }
+
+.card{
+  background: var(--card);
+  border-radius: 0;
+  padding: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.05);
+}
+
+.card-title{
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.search{
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  font-size: 14px;
+}
+
+.cats{
+  list-style: none;
+  padding: 0; margin: 0;
+  display: grid; gap: 8px;
+}
+.cat{
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 12px; border-radius: 0;
+  background: #fff;
+  cursor: pointer; border: 1px solid #eee;
+  transition: transform .12s ease, border-color .12s ease;
+}
+.cat:hover{ transform: translateY(-1px); border-color: #ddd; }
+.cat.active{ border-color: var(--y); box-shadow: 0 0 0 2px rgba(211,184,30,.15) inset; }
+.badge{
+  background: #ececec; border-radius: 0;
+  padding: 2px 8px; font-size: 12px;
+}
+
+.related{ list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.related-link{
+  display: block; padding: 8px 10px; border-radius: 0;
+  background: #fff; color: #222; text-decoration: none;
+  border: 1px solid #eee; transition: background .12s ease, border-color .12s ease;
+}
+.related-link:hover{ background: #fefae0; border-color: var(--y); }
+
+/* ====== TABLET / DESKTOP ====== */
+@media (min-width: 992px){
+  .post-hero{ aspect-ratio: 16 / 6; background-position: center 55%; }
+  .post-hero__overlay{ padding: 28px 40px 32px; }
+
+  .post-layout{
+    grid-template-columns: 1fr 320px;
+    gap: 28px;
+    padding: 28px 40px 40px;
+  }
+
+  /* Sticky respetando la altura del header */
+  .post-aside{
+    position: sticky;
+    top: calc(var(--header-h) + 16px);
+    align-self: start;
+  }
+
+  .post-main{ padding: 28px; }
+}
+
+/* ✅ ELIMINADO: NO uses márgenes fijos por breakpoint.
+   Ya NO pongas:
+   - .post-hero { margin-top: 50px; }
+   - .post-hero { margin-top: 122px; }
+*/
+header{ position: fixed; top:0; left:0; width:100%; z-index:5000; }
+
+:root{
+  --header-h: 96px; /* fallback, se sobreescribe en runtime */
+}
+
+/* ====== LAYOUT BASE (mobile-first) ====== */
+.post{
+  --y: #d3b81e;
+  --ink: #0b0b0b;
+  --muted: #6b6b6b;
+  --card: #f6f7f8;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ----- HERO ----- */
+.post-hero{
+  /* 👇 empuja el hero justo debajo del navbar fijo */
+  margin-top: calc(var(--header-h) - 1px); /* mata el micro-gap */
+  position: relative;
+  z-index: 0; /* nunca por encima del navbar */
+  background-size: cover;
+  background-position: center 40%;
+  aspect-ratio: 16 / 10;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.post-hero__overlay{
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.8) 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px 18px 22px;
+  gap: 8px;
+}
+
+/* ... (resto de tu CSS igual) ... */
+
+/* ====== TABLET / DESKTOP ====== */
+@media (min-width: 992px){
+  .post-hero{ aspect-ratio: 16 / 6; background-position: center 55%; }
+  .post-hero__overlay{ padding: 28px 40px 32px; }
+
+  .post-layout{
+    grid-template-columns: 1fr 320px;
+    gap: 28px;
+    padding: 28px 40px 40px;
+  }
+
+  /* Sticky respetando la altura del header */
+  .post-aside{
+    position: sticky;
+    top: calc(var(--header-h) + 16px);
+    align-self: start;
+  }
+
+  .post-main{ padding: 28px; }
+}
+
+/* ❌ ELIMINA cualquier regla vieja que meta márgenes fijos al hero:
+   @media (max-width: 768px){ .post-hero{ margin-top: 50px; } }
+   @media (min-width: 769px){ .post-hero{ margin-top: 122px; } }
+*/
+
+header{ position: fixed; top:0; left:0; width:100%; z-index:5000; }
+
+/* BORRA línea inferior si la hubiere */
+.top-bar,
+.main-nav{
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+  margin-bottom: 0 !important;
+}
+
+/* Fondo sólido para que no “traspase” nada */
+.top-bar{ background:#000; }
+.main-nav{ background:#000; }
+
+
+/* ===== FIX ANTI-GAP: hero pegado al navbar ===== */
+
+/* 1) Asegura que NO haya padding/margin extra en el contenedor */
+.post{
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* 2) El hero NO lleva margen: queda pegado al header fijo */
+.post-hero{
+  margin-top: 0 !important;
+  /* mantiene tu layout */
+  position: relative;
+  z-index: 0;
+  background-size: cover;
+  background-position: center 40%;
+  aspect-ratio: 16 / 10;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+/* 3) Compensa solo el scroll a anclas (sin crear espacio visual) */
+.post-hero,
+.post-main,
+.post-aside {
+  scroll-margin-top: var(--header-h, 96px);
+}
+
+/* 4) Quita CUALQUIER regla vieja que re-imponga márgenes al hero */
+@media (max-width: 9999px){
+  .post-hero{ margin-top: 0 !important; }
+}
+
+/* 5) Por si algún borde/sombra del header dibuja línea: la tapamos */
+header,
+.top-bar,
+.main-nav{
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+/* --- Compactar la card del buscador y subir "Categorías" --- */
+.post-aside{
+  gap: 10px !important;                 /* antes 14px */
+}
+
+.post-aside .card:first-child{
+  padding: 8px 10px !important;         /* menos relleno */
+  min-height: auto !important;
+  height: auto !important;
+}
+
+.post-aside .card:first-child .search{
+  height: 38px !important;              /* campo más compacto */
+  line-height: 38px !important;
+  margin: 0 !important;                 /* sin margen extra */
+  display: block;
+}
+
+/* Si en algún CSS global hay un min-height para .card, lo anulamos aquí */
+.post-aside .card{
+  min-height: 0 !important;
 }

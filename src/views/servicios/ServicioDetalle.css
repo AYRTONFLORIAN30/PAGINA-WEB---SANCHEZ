@@ -119,3 +119,40 @@
 
 /* Por si acaso: sin márgenes colapsados */
 .servicio-container{ margin: 0; }
+
+/* —— MÓVIL: bloque de texto MÁS ARRIBA y visible el botón —— */
+@media (max-width: 768px){
+  .servicio-container{
+    --header-gap: 86px;
+    --focus-y: 12%;                 /* ajusta el encuadre de la foto */
+
+    padding-top: var(--header-gap);
+    min-height: calc(100svh - var(--header-gap));
+    height:     calc(100vh  - var(--header-gap));
+    background-color: #000;
+    background-position: center var(--focus-y);
+    background-size: cover;
+
+    /* sin flex, para que el .bloque-hero absoluto funcione */
+    display: block;
+  }
+
+  /* 🔝 Sube el bloque: más valor = más arriba */
+  .bloque-hero{
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: clamp(80px, 14vh, 140px);  /* 👈 antes 110px, ahora más abajo */
+  margin: 0;
+  width: auto;
+}
+
+
+  .contenido-servicio{
+    max-width: none;
+    border-left-width: 6px;
+    border-radius: 10px;
+    padding: 18px;
+  }
+}
+

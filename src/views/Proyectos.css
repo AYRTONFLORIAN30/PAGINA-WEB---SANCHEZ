@@ -359,3 +359,73 @@
     margin-bottom: 28px !important;
   }
 }
+
+
+
+/* ===== PROYECTOS: COMPACCIÓN EN MÓVIL ===== */
+@media (max-width: 768px) {
+  /* La grilla ocupa menos y deja aire al banner */
+  .proyectos-grid{
+    grid-template-columns: 1fr;
+    gap: 14px;                 /* antes 20+ */
+    padding: 12px 14px 24px;   /* menos padding lateral y vertical */
+    margin-top: 4px !important;
+  }
+
+  /* Tarjeta más compacta */
+  .proyecto-card{
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  }
+
+  /* Imagen más baja */
+  .proyecto-img img{
+    height: 170px;             /* antes 250px */
+  }
+
+  .categoria-tag{
+    top: 8px;
+    left: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  /* Contenido con menos padding y tipografía menor */
+  .proyecto-info{
+    padding: 10px 12px;        /* antes 14px */
+  }
+  .proyecto-info h3{
+    font-size: 16px;           /* antes 18–20px */
+    line-height: 1.25;
+    margin: 0 0 6px;
+  }
+  .proyecto-info p{
+    font-size: 13px;           /* antes 14.5–15.5px */
+    line-height: 1.45;
+    margin-top: 4px;
+  }
+  .proyecto-fecha{
+    font-size: 12px;           /* antes 13.5–14px */
+    margin-top: 6px;
+  }
+
+  /* Extra: más protagonismo para el banner */
+  .proyectos-hero{
+    height: 320px;             /* un poco más alto para destacar */
+    background-position: center 18% !important;
+  }
+  .proyectos-hero .overlay{
+    padding: 100px 12px 16px !important;
+  }
+  .texto-hero-proyectos h1{ font-size: 30px; }
+  .texto-hero-proyectos p { font-size: 13.5px; }
+}
+
+/* Aún más compacto en pantallas muy pequeñas */
+@media (max-width: 420px){
+  .proyecto-img img{ height: 155px; }
+  .proyecto-info{ padding: 9px 10px; }
+  .proyecto-info h3{ font-size: 15px; }
+  .proyecto-info p { font-size: 12.5px; }
+  .proyecto-fecha{ font-size: 11.5px; }
+}

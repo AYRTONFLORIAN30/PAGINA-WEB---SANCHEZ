@@ -170,3 +170,153 @@
 .libro-reclamaciones .libro-img:hover {
   transform: scale(1.05);
 }
+
+/* ====== MOBILE ONLY ====== */
+@media (max-width: 768px) {
+  .footer { 
+    font-size: 1rem; 
+    overflow-x: hidden;            /* evita scroll horizontal */
+  }
+
+  .footer-content {
+    flex-direction: column;        /* columnas en stack */
+    align-items: stretch;
+    padding: 20px 16px;            /* menos margen lateral */
+    gap: 18px;                     /* menos separación entre bloques */
+  }
+
+  .footer-col {
+    min-width: 0;                  /* permite encoger sin romper layout */
+    width: 100%;
+  }
+
+  .footer-logo {
+    max-width: 150px;
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
+
+  .footer h3 {
+    font-size: 1.25rem;
+    margin: 12px 0;
+  }
+
+  .footer p {
+    font-size: 1rem;
+    margin: 6px 0;
+    line-height: 1.4;
+    word-break: break-word;        /* corta email/direcciones largas */
+  }
+
+  /* quita el “salto” arriba de las cols 2 y 3 en móvil */
+  .footer-content .footer-col:nth-child(2),
+  .footer-content .footer-col:nth-child(3) {
+    padding-top: 0;
+  }
+
+  /* ===== Orden: texto -> Redes -> Libro ===== */
+  .redes-con-libro {
+    display: flex;
+    flex-direction: vertical;      /* fallback por si acaso */
+    flex-direction: column;        /* apilado */
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .redes { 
+    order: 1;                      /* primero las redes */
+    margin-top: 8px;
+    font-size: 1.6rem; 
+    display: flex;
+    gap: 14px; 
+  }
+
+  .libro-reclamaciones {
+    order: 2;                      /* luego el Libro de Reclamaciones */
+    margin-top: 6px;
+  }
+
+  .libro-reclamaciones .libro-img {
+    max-width: 130px;
+    height: auto;
+  }
+
+  .footer-bottom {
+    padding: 16px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* textos legales en líneas separadas (solo texto) */
+  .footer-links {
+    margin-top: 8px;
+    display: block;
+  }
+  .footer-links span {
+    display: block;
+    margin: 4px 0;
+  }
+
+  .dev {
+    margin-top: 10px;
+    display: block;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-logo { max-width: 130px; }
+  .redes { font-size: 1.4rem; gap: 8px; }
+  .footer-bottom { font-size: 0.85rem; }
+}
+
+
+/* ====== COMPACTAR FRANJA INFERIOR (todas las pantallas) ====== */
+.footer-bottom{
+  padding: 14px 10px;    /* antes 25px / 16px */
+  font-size: 0.95rem;
+  line-height: 1.2;      /* texto más apretado */
+}
+
+.footer-links{
+  margin-top: 6px;       /* antes 12px/8px */
+}
+
+.footer-links span{
+  display: inline-block; /* evita saltos raros */
+  margin: 0 4px;         /* reduce separación lateral */
+}
+
+/* firma del dev más cerca */
+.dev{
+  margin-top: 6px;       /* antes 12px/10px */
+}
+
+/* ====== EXTRA COMPACTO EN MÓVIL ====== */
+@media (max-width: 768px){
+  .footer-bottom{
+    padding: 12px 8px;   /* aún menos padding en móvil */
+    font-size: 0.9rem;
+    line-height: 1.15;
+  }
+
+  .footer-links{
+    margin-top: 4px;
+    text-align: center;
+    white-space: normal;
+  }
+
+  /* Si quieres que salgan en columnas verticales pero pegaditas: */
+  /* Descomenta estas 3 líneas y quita los pipes " | " del HTML si prefieres sin barras
+  .footer-links span{
+    display: block;
+    margin: 2px 0;
+  } */
+
+  .dev{
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 420px){
+  .footer-bottom{ font-size: 0.85rem; }
+}

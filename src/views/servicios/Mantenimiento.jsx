@@ -14,7 +14,7 @@ function Mantenimiento() {
       aria-label="Mantenimiento de grúas articuladas"
     >
       <div className="contenido-servicio bloque-hero">
-        <h1>MANTENIMIENTO DE GRÚAS ARTICULADAS</h1>
+        <h1>SERVICIO DE GRÚAS ARTICULADAS</h1>
         <p>Servicio técnico especializado en mantenimiento preventivo y correctivo.</p>
         <p>Personal capacitado y repuestos originales para un funcionamiento óptimo.</p>
         <p>¿Necesitas asegurar la disponibilidad de tus equipos?</p>

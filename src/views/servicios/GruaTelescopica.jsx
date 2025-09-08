@@ -14,7 +14,7 @@ function GruaTelescopica() {
       aria-label="Alquiler de grúas telescópicas"
     >
       <div className="contenido-servicio bloque-hero">
-        <h1>ALQUILER DE GRÚAS TELESCÓPICAS</h1>
+        <h1>SERVICIO DE GRÚAS TELESCÓPICAS</h1>
         <p>Grúas modernas y potentes de marcas líderes (Terex, Grove, Demag).</p>
         <p>Maquinaria 100% operativa para maniobras en cualquier punto del país.</p>
         <p>¿Necesitas grúas telescópicas para tus proyectos?</p>

@@ -182,7 +182,7 @@ function Home() {
             className="imagen-servicio-img"
           />
           <div className="overlay-servicio">
-            <h3 className="titulo-servicio">Alquiler de Grúas Telescópicas</h3>
+            <h3 className="titulo-servicio">Servicio de Grúas Telescópicas</h3>
             <div
               className="plus-bar"
               onClick={(e) => {
@@ -195,7 +195,7 @@ function Home() {
           </div>
         </div>
         <div className="servicio-descripcion">
-          Alquiler de grúas telescópicas potentes que van desde las 45 ton hasta las 650 ton
+          Servicio de grúas telescópicas potentes que van desde las 45 ton hasta las 650 ton
         </div>
       </div>
 
@@ -212,7 +212,7 @@ function Home() {
             className="imagen-servicio-img"
           />
           <div className="overlay-servicio">
-            <h3 className="titulo-servicio">Alquiler de Transporte de Carga Pesada</h3>
+            <h3 className="titulo-servicio">Servicio de Transporte de Carga Pesada</h3>
             <div
               className="plus-bar"
               onClick={(e) => {
@@ -225,7 +225,7 @@ function Home() {
           </div>
         </div>
         <div className="servicio-descripcion">
-          Transporte de carga pesada con plataformas cama baja y cama alta
+          Servicio de Transporte de carga pesada con plataformas cama baja y cama alta
         </div>
       </div>
 
@@ -242,7 +242,7 @@ function Home() {
             className="imagen-servicio-img"
           />
           <div className="overlay-servicio">
-            <h3 className="titulo-servicio">Alquiler de Semitrailer Grúa</h3>
+            <h3 className="titulo-servicio">Servicio de Semitrailer Grúa</h3>
             <div
               className="plus-bar"
               onClick={(e) => {
@@ -255,7 +255,7 @@ function Home() {
           </div>
         </div>
         <div className="servicio-descripcion">
-          Alquiler de semitrailer con grúa para proyectos especiales
+          Servicio de semitrailer con grúa para proyectos especiales
         </div>
       </div>
 
@@ -272,7 +272,7 @@ function Home() {
             className="imagen-servicio-img"
           />
           <div className="overlay-servicio">
-            <h3 className="titulo-servicio">Alquiler de Accesorios (Canastilla)</h3>
+            <h3 className="titulo-servicio">Alquiler de Canastilla</h3>
             <div
               className="plus-bar"
               onClick={(e) => {
@@ -285,7 +285,7 @@ function Home() {
           </div>
         </div>
         <div className="servicio-descripcion">
-          Alquiler de accesorios como canastillas para trabajos en altura
+          Alquiler de canastillas para trabajos en altura
         </div>
       </div>
 
@@ -318,6 +318,39 @@ function Home() {
           Servicios de mantenimiento para grúas articuladas de diversas capacidades
         </div>
       </div>
+
+      {/* Servicio 6 */}
+        <div
+          className="servicio-card"
+          onClick={() => navigate('/servicio/izajes-maniobras')}
+          style={{ cursor: 'pointer' }}
+        >
+          <div className="imagen-servicio">
+            <img
+              src={proyecto}
+              alt="Servicio de Izaje y Maniobras"
+              className="imagen-servicio-img"
+            />
+            <div className="overlay-servicio">
+              <h3 className="titulo-servicio">Servicio de Izaje y Maniobras</h3>
+              <div
+                className="plus-bar"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigate('/servicio/izajes-maniobras'); // ← aquí también
+                }}
+              >
+                <i className="fas fa-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div className="servicio-descripcion">
+            Ejecución segura de izajes y maniobras con ingeniería, señalización y
+            supervisión especializada.
+          </div>
+        </div>
+
+
     </div>
   </div>
 </section>

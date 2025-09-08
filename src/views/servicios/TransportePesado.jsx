@@ -14,7 +14,7 @@ function TransportePesado() {
       aria-label="Alquiler de transporte de carga pesada"
     >
       <div className="contenido-servicio bloque-hero">
-        <h1>ALQUILER DE TRANSPORTE DE CARGA PESADA</h1>
+        <h1>SERVICIO DE TRANSPORTE DE CARGA PESADA</h1>
         <p>Transporte especializado para maquinaria pesada y estructuras de gran volumen.</p>
         <p>Flota moderna y personal experto para garantizar seguridad y puntualidad.</p>
         <p>¿Necesitas llevar tu carga a cualquier punto del país?</p>

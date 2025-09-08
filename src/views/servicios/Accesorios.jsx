@@ -14,7 +14,7 @@ function Accesorios() {
       aria-label="Alquiler de accesorios (canastilla)"
     >
       <div className="contenido-servicio bloque-hero">
-        <h1>ALQUILER DE ACCESORIOS</h1>
+        <h1>ALQUILER DE CANASTILLA</h1>
         <p>Disponemos de canastillas especializadas como accesorio adicional para nuestras grúas.</p>
         <p>Ideales para trabajos en altura como mantenimiento, inspecciones o instalaciones.</p>
         <p>¿Necesitas una canastilla como complemento para tu maniobra?</p>

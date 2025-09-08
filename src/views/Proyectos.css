@@ -429,3 +429,104 @@
   .proyecto-info p { font-size: 12.5px; }
   .proyecto-fecha{ font-size: 11.5px; }
 }
+
+/* === PROYECTOS — móvil: bajar el texto del hero === */
+@media (max-width: 768px){
+  .proyectos-hero{
+    height: 400px !important;                 /* sube a 340 si quieres más alto */
+    background-position: center 22% !important;
+  }
+  .proyectos-hero .overlay{
+    display: flex !important;
+    justify-content: flex-end !important;     /* lleva el bloque hacia abajo */
+    align-items: flex-start !important;       /* pegado a la izquierda */
+    padding: 0 12px 6px 12px !important;     /* bottom = 26px (ajusta 18–40) */
+    text-align: left !important;
+  }
+  .texto-hero-proyectos{
+    margin-left: 0 !important;
+    max-width: 92%;
+  }
+  .texto-hero-proyectos h1{ font-size: 30px; margin-bottom: 6px; }
+  .texto-hero-proyectos p { font-size: 13.5px; margin-left: 12px; }
+}
+
+/* === PROYECTOS — móvil (≤768px) con alto 400 y texto abajo-izquierda === */
+@media (max-width: 768px){
+  .proyectos-hero{
+    height: 400px !important;
+    background-position: center 22% !important;
+  }
+  .proyectos-hero .overlay{
+    display: flex !important;
+    justify-content: flex-end !important;   /* abajo */
+    align-items: flex-start !important;     /* a la izquierda */
+    padding: 0 12px 20px 12px !important;   /* ⬅️ separa 20px del borde inferior */
+    text-align: left !important;
+  }
+  .texto-hero-proyectos{
+    margin-left: 0 !important;
+    max-width: 92%;
+  }
+  .texto-hero-proyectos h1{ font-size: 30px; margin-bottom: 6px; }
+  .texto-hero-proyectos p { font-size: 13.5px; margin-left: 12px; }
+}
+
+/* Afinado para pantallas 390–430px: un pelín más arriba si queda muy pegado */
+@media (max-width: 430px){
+  .proyectos-hero .overlay{ padding-bottom: 24px !important; }
+}
+
+/* === PROYECTOS — móvil (≤768px) | alto 400 y texto un poco más arriba === */
+@media (max-width: 768px){
+  .proyectos-hero{
+    height: 400px !important;
+    background-position: center 22% !important;
+  }
+  .proyectos-hero .overlay{
+    display: flex !important;
+    justify-content: flex-end !important;   /* sigue anclado abajo */
+    align-items: flex-start !important;     /* a la izquierda */
+    padding: 0 12px 64px 12px !important;   /* ⬅️ sube el bloque (antes 6–20px) */
+    text-align: left !important;
+  }
+  .texto-hero-proyectos{
+    margin-left: 0 !important;
+    max-width: 92%;
+  }
+  .texto-hero-proyectos h1{ font-size: 30px; margin-bottom: 6px; }
+  .texto-hero-proyectos p { font-size: 13.5px; margin-left: 12px; }
+}
+
+/* --- PROYECTOS: móvil (≤768px) — alto 400, texto más arriba --- */
+@media (max-width: 768px){
+  .proyectos-hero{
+    position: relative;
+    height: 400px !important;
+    background-position: center 22% !important;
+  }
+
+  /* anulamos paddings del overlay para que no afecten */
+  .proyectos-hero .overlay{
+    padding: 0 !important;
+  }
+
+  /* colocamos el bloque de texto fijo arriba-izquierda (ajusta bottom) */
+  .proyectos-hero .texto-hero-proyectos{
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 110px;      /* ← súbelo/bájalo cambiando este valor (90–140px) */
+    margin: 0 !important;
+  }
+
+  .texto-hero-proyectos h1{ font-size: 30px; margin: 0 0 6px; }
+  .texto-hero-proyectos p { font-size: 13.5px; margin: 0 0 0 12px; }
+}
+
+/* PROYECTOS — móvil (≤768px): texto un poco más abajo */
+@media (max-width: 768px){
+  .proyectos-hero .texto-hero-proyectos{
+    bottom: 32px !important;  /* antes 110px; prueba 90–100 según te guste */
+  }
+}

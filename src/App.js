@@ -11,6 +11,9 @@ import TransportePesado from './views/servicios/TransportePesado';
 import Semitrailer from './views/servicios/Semitrailer';
 import Accesorios from './views/servicios/Accesorios';
 import Mantenimiento from './views/servicios/Mantenimiento';
+import IzajesManiobras from './views/servicios/IzajesManiobras.jsx';
+
+
 import Blog from './views/Blog';
 import BlogDetalle from './pages/BlogDetalle';
 import ContactoInfo from './views/ContactoInfo';
@@ -33,6 +36,8 @@ function App() {
           <Route path="/servicio/semitrailer" element={<Semitrailer />} />
           <Route path="/servicio/accesorios" element={<Accesorios />} />
           <Route path="/servicio/mantenimiento" element={<Mantenimiento />} />
+          <Route path="/servicio/izajes-maniobras" element={<IzajesManiobras />} />
+
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetalle />} />
           <Route path="/contacto-info" element={<ContactoInfo />} />

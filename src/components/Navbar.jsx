@@ -133,29 +133,35 @@ function Navbar() {
             >
               <li>
                 <Link to="/servicio/grua-telescopica" onClick={closeMobileMenu}>
-                  Alquiler de grúa telescópica
+                  Servicio de grúa telescópica
                 </Link>
               </li>
               <li>
                 <Link to="/servicio/transporte-pesado" onClick={closeMobileMenu}>
-                  Alquiler de transporte de carga pesada
+                  Servicio de transporte de carga pesada
                 </Link>
               </li>
               <li>
                 <Link to="/servicio/semitrailer" onClick={closeMobileMenu}>
-                  Alquiler semitrailer grúa
+                  Servicio de semitrailer grúa
                 </Link>
               </li>
               <li>
                 <Link to="/servicio/accesorios" onClick={closeMobileMenu}>
-                  Alquiler de accesorios (canastilla)
+                  Alquiler de canastillas
                 </Link>
               </li>
               <li>
                 <Link to="/servicio/mantenimiento" onClick={closeMobileMenu}>
-                  Mantenimiento de grúas articuladas
+                  Servicio de grúas articuladas
                 </Link>
               </li>
+              <li>
+  <Link to="/servicio/izajes-maniobras" onClick={closeMobileMenu}>
+    Servicio de izajes y maniobras
+  </Link>
+</li>
+
             </ul>
           </li>
 
@@ -170,33 +176,20 @@ function Navbar() {
             </Link>
           </li>
 
-          {/* Nosotros (dropdown) */}
-          <li className="dropdown">
-            <a
-              href="#"
-              onClick={(e) => toggleDropdown('nosotros', e)}
-              className={isActive('nosotros') || openDropdown === 'nosotros' ? 'active' : ''}
-              aria-expanded={openDropdown === 'nosotros'}
-            >
-              Nosotros ▾
-            </a>
-            <ul
-              className="dropdown-menu"
-              style={{ display: openDropdown === 'nosotros' ? 'block' : undefined }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <li>
-                <Link to="/nosotros" onClick={closeMobileMenu}>
-                  Más de nosotros
-                </Link>
-              </li>
-              <li>
-                <Link to="/nosotros/responsabilidad-social" onClick={closeMobileMenu}>
-                  Responsabilidad Social Corporativa
-                </Link>
-              </li>
-            </ul>
-          </li>
+          {/* Nosotros (link simple) */}
+<li>
+  <Link
+    to="/nosotros"
+    className={isActive('nosotros') ? 'active' : ''}
+    onClick={() => { 
+      closeMobileMenu?.(); 
+      setOpenDropdown?.(''); // por si usas este state en móvil
+    }}
+  >
+    Nosotros
+  </Link>
+</li>
+
 
           {/* Blog */}
           <li>

@@ -333,7 +333,7 @@ body, html {
    VALORES (responsive + scroll)
    =========================== */
 .valores-section{
-  background:#f5f5f5;
+  background:#ffffff;
   padding: 50px 20px;
   text-align:center;
 }
@@ -355,8 +355,8 @@ body, html {
 
 /* Tarjetas */
 .valor-cuadro{
-  background:#d3b81e;
-  color:#fff;
+  background:#d8c00e;
+  color:#313131;
   padding: 24px 14px;
   border-radius: 8px;
   transition: background .25s ease;
@@ -437,7 +437,7 @@ body, html {
 }
 
 /* Mantén los textos legibles en el estado activo/hover */
-.valor-cuadro h3, .valor-cuadro p, .valor-cuadro i{ color:#fff; }
+.valor-cuadro h3, .valor-cuadro p, .valor-cuadro i{ color:#d42f50; }
 
 /* ==== VALORES — móvil: 1 tarjeta exacta por pantalla, con margen en los 4 bordes y SIN scrollbar ==== */
 @media (max-width: 768px){
@@ -813,4 +813,33 @@ body, html {
 /* Desktop: por si acaso, asegúrate de que el grid esté centrado */
 @media (min-width: 769px){
   .valores-grid{ margin-left: auto; margin-right: auto; transform: none !important; }
+}
+
+/* NOSOTROS — móvil: texto más ABAJO en el banner */
+@media (max-width: 768px){
+  .nosotros-banner{
+    height: 400px !important;                 /* algo más alto para que quepa */
+    background-position: center 26% !important;
+  }
+
+  .overlay-nosotros{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;       /* izquierda */
+    justify-content: flex-start !important;
+    height: 100% !important;
+    padding: 0 12px 34px 12px !important;     /* empuja el bloque hacia ABAJO */
+    text-align: left !important;
+  }
+
+  /* truco: lleva el bloque al fondo del banner */
+  .texto-nosotros{
+    margin-left: 0 !important;
+    margin-top: auto !important;              /* pega abajo */
+    margin-bottom: 0 !important;
+    max-width: 92%;
+  }
+
+  .texto-nosotros h1{ font-size: 30px; margin-bottom: 6px; }
+  .texto-nosotros p { font-size: 13.5px; margin-left: 12px; }
 }

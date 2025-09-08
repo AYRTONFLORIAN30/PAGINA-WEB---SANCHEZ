@@ -230,3 +230,50 @@ header{ border-bottom: 0 !important; }
 
 
 
+/* CONTACTO — móvil: texto más abajo (pegado a la izquierda) */
+@media (max-width: 768px){
+  .contacto-hero{
+    height: 320px !important;
+    background-position: center 22% !important; /* muestra un poco más abajo la foto */
+  }
+  .overlay-contacto{
+    justify-content: flex-end !important;   /* lleva el bloque hacia abajo */
+    align-items: flex-start !important;     /* a la izquierda */
+    padding: 0 12px 28px 12px !important;   /* bottom = 28px (ajusta 20–40) */
+    text-align: left !important;
+  }
+  .texto-hero-contacto{
+    margin-left: 0 !important;
+    max-width: 92%;
+  }
+  .texto-hero-contacto h1{ font-size: 30px; margin-bottom: 6px; }
+  .texto-hero-contacto p { font-size: 13.5px; margin-left: 12px; }
+}
+
+/* CONTACTO — móvil: texto bien abajo, a la izquierda */
+@media (max-width: 768px){
+  .contacto-hero{
+    height: 400px !important;                 /* un poco más alto para permitir bajar más */
+    background-position: center 28% !important;
+  }
+
+  .overlay-contacto{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;       /* a la izquierda */
+    justify-content: flex-start !important;   /* quitamos “centrado” */
+    padding: 0 12px 36px 12px !important;     /* ↑ empuja el bloque hacia ABAJO */
+    height: 100% !important;
+  }
+
+  /* este truco lo lleva al fondo del banner */
+  .texto-hero-contacto{
+    margin-left: 0 !important;
+    margin-top: auto !important;              /* pega el bloque al fondo */
+    margin-bottom: 0 !important;
+    max-width: 92%;
+  }
+
+  .texto-hero-contacto h1{ font-size: 30px; margin-bottom: 6px; }
+  .texto-hero-contacto p { font-size: 13.5px; margin-left: 12px; }
+}

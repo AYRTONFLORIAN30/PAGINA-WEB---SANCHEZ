@@ -7,7 +7,7 @@
 }
 
 .blog-hero {
-  height: 60vh;
+  height: 50vh;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -447,4 +447,264 @@
   .contenido h3{ font-size: 15px; }
   .contenido p { font-size: 12.5px; }
   .fecha{ font-size: 11.5px; }
+}
+
+/* === BLOG — recortar el hero (desktop) === */
+@media (min-width: 769px){
+  .blog-hero{
+    height: 46vh !important;          /* ↓ reduce el alto (prueba 42–52vh) */
+    background-position: center 18%;   /* sube el encuadre (menos “suelo”) */
+  }
+  .blog-hero .overlay{
+    padding-bottom: 16px !important;   /* menos aire bajo el texto */
+  }
+}
+
+/* Monitores muy grandes: tampoco lo hagas gigante */
+@media (min-width: 1400px){
+  .blog-hero{
+    height: 60vh !important;           /* evita los 82vh que tenías */
+    background-position: center 18%;
+  }
+}
+
+/* BLOG — mover imagen y texto un poco más abajo (solo desktop) */
+@media (min-width: 769px){
+  .blog-hero{
+    /* muestra una parte más baja de la foto */
+    background-position: center 30% !important; /* prueba 28–34% */
+  }
+  .blog-hero .overlay{
+    /* empuja el bloque de texto hacia abajo */
+    padding-top: 36px !important;  /* sube/baja a tu gusto: 24–56px */
+  }
+  .texto-hero-blog{
+    margin-top: 8px !important;    /* ajuste fino del título/párrafo */
+  }
+}
+
+/* BLOG — móvil: texto a la izquierda y más abajo (no centrado) */
+@media (max-width: 768px){
+  .blog-hero{
+    height: 320px !important;
+    background-position: center 28% !important; /* muestra un poco más abajo la foto */
+  }
+
+  .blog-hero .overlay{
+    justify-content: flex-end !important;  /* coloca el bloque abajo */
+    align-items: flex-start !important;    /* a la izquierda */
+    padding: 0 12px 24px 12px !important;  /* bottom = 24px (ajusta 16–40) */
+    text-align: left !important;
+  }
+
+  .texto-hero-blog{
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    max-width: 92%;
+  }
+
+  /* Mantén el estilo de desktop en móvil (barra amarilla a la izquierda) */
+  .texto-hero-blog h1{
+    font-size: 30px;
+    border-left: 6px solid #d3b81e !important;
+    padding-left: 10px !important;
+    margin-bottom: 6px;
+  }
+
+  .texto-hero-blog p{
+    font-size: 13.5px;
+    margin-left: 16px !important;  /* mismo “raz” que desktop */
+  }
+}
+
+/* BLOG — móvil: subir un poco el bloque de texto */
+@media (max-width: 768px){
+  .blog-hero{
+    background-position: center 24% !important; /* antes 28%: muestra menos “suelo” */
+  }
+  .blog-hero .overlay{
+    padding: 0 12px 14px 12px !important; /* antes 24px: menos separación abajo */
+  }
+}
+
+/* BLOG — móvil: subir más el texto (arriba, a la izquierda) */
+@media (max-width: 768px){
+  .blog-hero{
+    background-position: center 18% !important; /* muestra menos “suelo” */
+  }
+  .blog-hero .overlay{
+    justify-content: flex-end !important;       /* sigue pegado abajo */
+    align-items: flex-start !important;
+    padding: 0 12px 32px 12px !important;       /* ↑ sube el bloque (antes 14/24px) */
+    text-align: left !important;
+  }
+  .texto-hero-blog{
+    margin-left: 0 !important;
+    transform: translateY(-6px) !important;     /* ajuste fino hacia arriba */
+  }
+}
+
+/* BLOG — móvil: cards más pequeñas y compactas */
+@media (max-width: 768px){
+  .contenido-principal{
+    gap: 10px !important;
+    padding: 12px 10px 18px !important;
+  }
+
+  .articulos-grid{
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    width: 94% !important;
+    margin: 0 auto !important;
+  }
+
+  .blog-card{
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  }
+
+  .blog-card img{
+    height: 130px !important;           /* ↓ imagen */
+  }
+
+  .etiqueta{
+    font-size: 11px !important;
+    padding: 2px 7px !important;
+    top: 6px; left: 8px;
+  }
+  .plus{
+    font-size: 16px !important;
+    padding: 0 6px !important;
+    bottom: 6px; right: 8px;
+  }
+
+  .contenido{
+    padding: 10px 12px !important;      /* ↓ padding interno */
+  }
+  .contenido h3{
+    font-size: 15px !important;         /* ↓ título */
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .contenido p{
+    font-size: 12.5px !important;       /* ↓ resumen */
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .fecha{
+    font-size: 11.5px !important;       /* ↓ meta */
+  }
+}
+
+/* BLOG — móvil: cards más chicas y alineadas a la izquierda */
+@media (max-width: 768px){
+
+  /* conviene romper el grid para controlar tamaño/posición */
+  .articulos-grid{
+    display: block !important;
+    width: 100% !important;
+    gap: 0 !important;
+  }
+
+  .blog-card{
+    width: 88% !important;              /* ↓ ancho de la tarjeta */
+    margin: 10px 0 12px 12px !important;/* pegada a la izquierda */
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  }
+
+  .blog-card .img-wrapper{ height: auto !important; }
+  .blog-card img{
+    height: 120px !important;           /* ↓ imagen (prueba 110–130px) */
+    object-fit: cover;
+  }
+
+  .etiqueta{
+    font-size: 10.5px !important;
+    padding: 2px 6px !important;
+    top: 6px; left: 8px;
+  }
+  .plus{
+    font-size: 15px !important;
+    padding: 0 6px !important;
+    bottom: 6px; right: 8px;
+  }
+
+  .contenido{
+    padding: 10px 12px !important;      /* ↓ padding interno */
+  }
+  .contenido h3{
+    font-size: 14px !important;         /* ↓ título */
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .contenido p{
+    font-size: 12px !important;         /* ↓ resumen */
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .fecha{
+    font-size: 11px !important;         /* ↓ meta */
+  }
+}
+
+/* BLOG — móvil: más separación general */
+@media (max-width: 768px){
+  /* espacio entre el banner y la lista de artículos */
+  .contenido-principal{
+    margin-top: 18px !important;             /* ↑ separa del banner */
+    padding: 20px 12px 28px !important;      /* un poco más de aire */
+    gap: 16px !important;                    /* separa bloques internos */
+  }
+
+  /* más separación entre cada artículo */
+  .blog-card{
+    margin: 16px 0 22px 12px !important;     /* ↑ margen inferior y pegado a la izq. */
+  }
+
+  /* si quieres aún más aire dentro de cada card, descomenta: */
+  /* .contenido{ padding: 12px 14px 16px !important; } */
+}
+
+/* ===== BLOG — separación clara entre artículos ===== */
+
+/* Desktop: aumenta el gap del grid */
+@media (min-width: 769px){
+  .articulos-grid{
+    gap: 40px !important;            /* antes 30px */
+  }
+  /* por si hubiera wrappers, forzamos margen entre cards vecinas */
+  .blog-card + .blog-card{
+    margin-top: 24px !important;
+  }
+}
+
+/* Móvil: margen extra entre una card y la siguiente + línea suave */
+@media (max-width: 768px){
+  .blog-card{
+    margin-bottom: 26px !important;   /* ↑ espacio debajo de cada card */
+  }
+  .blog-card + .blog-card{
+    margin-top: 10px !important;      /* por si algún estilo pisa el gap */
+  }
+  /* separador visual opcional (fino) debajo de cada card */
+  .blog-card::after{
+    content: "";
+    display: block;
+    height: 1px;
+    background: #e9e9e9;
+    margin-top: 12px;
+    opacity: .9;
+  }
+}
+
+/* === ALTURA DEL BANNER (control único) === */
+:root{
+  --hero-h-desktop: 70vh;   /* cambia aquí para desktop */
+  --hero-h-mobile: 400px;   /* y aquí para móvil */
+}
+
+.blog-hero{ height: var(--hero-h-desktop) !important; }
+@media (max-width: 768px){
+  .blog-hero{ height: var(--hero-h-mobile) !important; }
 }

@@ -618,3 +618,19 @@
   /* opcional: tamaño ligeramente menor */
   .lr-radio{ gap: 8px; }
 }
+
+/* Solo móvil */
+@media (max-width: 768px){
+  .lr-wrapper{
+    margin-top: 150px !important;   /* baja el inicio del formulario */
+    margin-bottom: 84px !important; /* separa del footer */
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 420px){
+  .lr-wrapper{
+    margin-top: 145px !important;
+    margin-bottom: 80px !important;
+  }
+}

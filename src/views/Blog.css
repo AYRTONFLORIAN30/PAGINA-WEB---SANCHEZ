@@ -708,3 +708,75 @@
 @media (max-width: 768px){
   .blog-hero{ height: var(--hero-h-mobile) !important; }
 }
+
+/* ===== FIX: Alinear tarjetas en desktop ===== */
+@media (min-width: 769px){
+  /* 1) Nada de márgenes extras entre cards: usa solo el gap del grid */
+  .articulos-grid{ gap: 40px !important; }
+  .blog-card + .blog-card{ margin-top: 0 !important; }
+}
+
+/* 2) Altura uniforme de las tarjetas (todas iguales) */
+.articulos-grid .blog-card{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 3) Imagen con ratio fijo para que todas midan lo mismo */
+.articulos-grid .blog-card .img-wrapper{
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;        /* mismo alto en todas */
+}
+.articulos-grid .blog-card .img-wrapper img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 4) Cuerpo estirable y fecha al fondo */
+.articulos-grid .blog-card .contenido{
+  display: flex;
+  flex-direction: column;
+  flex: 1;                     /* estira para igualar alturas */
+}
+.articulos-grid .blog-card .fecha{
+  margin-top: auto;            /* siempre abajo */
+}
+
+/* 5) (Opcional) Limitar líneas de título y resumen para que no rompan la altura */
+.articulos-grid .blog-card .contenido h3{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;       /* máx 2 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.articulos-grid .blog-card .contenido p{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;       /* máx 3 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== SOLO MÓVIL: quitar el ratio fijo y pegar texto a la imagen ===== */
+@media (max-width: 768px){
+  /* el wrapper ya no fuerza altura por ratio */
+  .articulos-grid .blog-card .img-wrapper{
+    aspect-ratio: auto !important;   /* o: unset */
+    height: auto !important;
+  }
+
+  /* la imagen ocupa el alto natural sin dejar huecos */
+  .articulos-grid .blog-card .img-wrapper img{
+    width: 100% !important;
+    height: auto !important;         /* quita las alturas fijas en móvil */
+    display: block;                   /* elimina espacios fantasma */
+  }
+
+  /* junta un poco más el contenido con la imagen */
+  .articulos-grid .blog-card .contenido{
+    padding-top: 10px !important;    /* estaba en 12px/20px según bloque */
+  }
+}

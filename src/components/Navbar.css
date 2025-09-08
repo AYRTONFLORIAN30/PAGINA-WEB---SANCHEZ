@@ -758,3 +758,121 @@ body {
     border-top: 1px solid rgba(255,255,255,.05);
   }
 }
+
+/* ——— Submenú: tamaño y negrita ——— */
+.dropdown-menu a{
+  display:block;
+  padding: 14px 18px;          /* más alto/largo */
+  font-size: 1.05rem;          /* más grande */
+  font-weight: 700;            /* negrita */
+  color:#fff;                  /* en panel oscuro */
+  line-height:1.25;
+}
+
+/* Fondo por defecto del panel */
+.dropdown-menu{
+  background:#111;
+  min-width: 260px;
+  padding: 6px 0;
+}
+
+/* Separadores sutiles entre items */
+.dropdown-menu li + li a{
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+/* ——— Estado ACTIVO (ruta actual) ——— */
+.dropdown-menu a.active-sub{
+  background:#d3b81e !important;
+  color:#111 !important;
+}
+
+/* ——— Hover SOLO si NO es la activa ——— */
+/* ——— Hover/Focus de items NO activos: fondo transparente, texto visible ——— */
+.dropdown-menu li:hover > a:not(.active-sub),
+.dropdown-menu a:hover:not(.active-sub),
+.dropdown-menu a:focus:not(.active-sub),
+.dropdown-menu a:focus-visible:not(.active-sub){
+  background: transparent !important;
+  color: #fff !important;   /* ← BLANCO para que se lea sobre el panel oscuro */
+}
+
+
+/* Evita “doble amarillo”: quita estilos heredados raros */
+.dropdown-menu li:hover > a.active-sub{
+  background:#d3b81e !important;
+  color:#111 !important;
+}
+
+/* Cotizar un poco más grande (solo desktop) */
+@media (min-width: 992px){
+  .main-nav .cotizar-btn{
+    padding: 14px 38px !important;  /* ↑ alto y ancho un poco */
+    font-size: 1.12rem !important;  /* texto apenas más grande */
+    border-radius: 10px !important; /* esquinas un poco más redondas */
+  }
+}
+
+/* Mantén el botón visible y alineado en móvil */
+@media (max-width: 768px){
+  .main-nav { display:flex; align-items:center; }
+  .menu-toggle{ order: 3; margin-left: 8px; }
+  .cotizar-btn{
+    order: 2;                 /* aparece antes de la hamburguesa */
+    padding: 10px 16px;
+    font-size: .95rem;
+    border-radius: 6px;
+    margin-left: auto;        /* lo empuja a la derecha */
+  }
+  .menu{ order: 4; }          /* el menú cae debajo cuando se abre */
+}
+
+/* Desktop: el tamaño que pediste */
+@media (min-width: 992px){
+  .main-nav .cotizar-btn{
+    padding: 14px 38px !important;
+    font-size: 1.12rem !important;
+    border-radius: 10px !important;
+  }
+}
+
+/* Botón Cotizar base */
+.cotizar-btn {
+  background-color: #d3b81e;
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all .3s ease;
+  font-family: inherit;
+  height: auto;
+  align-self: center;
+}
+.cotizar-btn:hover { background:#fff; color:#d3b81e; }
+
+/* Orden y visibilidad en móvil */
+@media (max-width: 768px){
+  .main-nav{ display:flex; align-items:center; }
+  .logo{ order:1; }
+  .cotizar-btn{ 
+    order:2; 
+    margin-left:auto;           /* pega el botón a la derecha del logo */
+    padding:10px 16px; 
+    font-size:.95rem; 
+    border-radius:6px; 
+  }
+  .menu-toggle{ order:3; margin-left:8px; }
+  .menu{ order:4; }             /* el menú cae debajo al abrirse */
+}
+
+/* Un poco más grande en desktop (como pediste) */
+@media (min-width: 992px){
+  .main-nav .cotizar-btn{
+    padding: 14px 38px;
+    font-size: 1.12rem;
+    border-radius: 10px;
+  }
+}
+

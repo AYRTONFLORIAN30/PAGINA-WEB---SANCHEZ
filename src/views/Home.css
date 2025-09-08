@@ -133,7 +133,7 @@
 
 /* 🔝 Sección Experiencia y Respaldo (AMPLIADA) */
 .experiencia-section {
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   padding: 80px 50px;
   color: #000;
   display: flex;
@@ -209,7 +209,7 @@
   font-size: 1.3rem;
   font-weight: bold;
   background-color: #d3b81e;
-  color: white;
+  color: rgb(0, 56, 141);
   border-radius: 0;
   padding: 15px 10px;
   width: 100%; /* ✅ Que ocupe todo el ancho */

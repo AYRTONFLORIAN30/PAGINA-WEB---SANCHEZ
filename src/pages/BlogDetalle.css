@@ -490,3 +490,36 @@ header,
 .post-aside .card{
   min-height: 0 !important;
 }
+
+/* ==== SOLO MÓVIL: mostrar más de la imagen del hero ==== */
+@media (max-width: 768px){
+  .post-hero{
+    /* más alto → se corta menos */
+    aspect-ratio: 4 / 3;                /* antes 16/10 */
+    background-position: 50% 35%;       /* sube un poco el foco */
+  }
+
+  /* texto un poco más compacto para que no tape la foto */
+  .post-hero__overlay{
+    padding: 14px 14px 18px;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,.10) 0%,
+      rgba(0,0,0,.55) 55%,
+      rgba(0,0,0,.85) 100%
+    );
+  }
+  .post-title{
+    font-size: clamp(18px, 6vw, 26px);
+    line-height: 1.18;
+  }
+}
+
+/* Móviles muy pequeños: aún más alto para evitar recortes fuertes */
+@media (max-width: 360px){
+  .post-hero{
+    aspect-ratio: 1 / 1;                /* cuadrado */
+    background-position: 50% 32%;
+  }
+}
+

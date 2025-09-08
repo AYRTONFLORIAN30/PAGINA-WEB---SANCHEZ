@@ -9,6 +9,7 @@ function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  
 
   // Helpers para marcar activo según la ruta
   const isActive = (key) => {
@@ -117,53 +118,82 @@ function Navbar() {
 
         <ul className={`menu ${isMobileMenuOpen ? 'open' : ''}`}>
           {/* Servicios (dropdown) */}
-          <li className="dropdown">
-            <a
-              href="#"
-              onClick={(e) => toggleDropdown('servicios', e)}
-              className={isActive('servicios') || openDropdown === 'servicios' ? 'active' : ''}
-              aria-expanded={openDropdown === 'servicios'}
-            >
-              Servicios ▾
-            </a>
-            <ul
-              className="dropdown-menu"
-              style={{ display: openDropdown === 'servicios' ? 'block' : undefined }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <li>
-                <Link to="/servicio/grua-telescopica" onClick={closeMobileMenu}>
-                  Servicio de grúa telescópica
-                </Link>
-              </li>
-              <li>
-                <Link to="/servicio/transporte-pesado" onClick={closeMobileMenu}>
-                  Servicio de transporte de carga pesada
-                </Link>
-              </li>
-              <li>
-                <Link to="/servicio/semitrailer" onClick={closeMobileMenu}>
-                  Servicio de semitrailer grúa
-                </Link>
-              </li>
-              <li>
-                <Link to="/servicio/accesorios" onClick={closeMobileMenu}>
-                  Alquiler de canastillas
-                </Link>
-              </li>
-              <li>
-                <Link to="/servicio/mantenimiento" onClick={closeMobileMenu}>
-                  Servicio de grúas articuladas
-                </Link>
-              </li>
-              <li>
-  <Link to="/servicio/izajes-maniobras" onClick={closeMobileMenu}>
-    Servicio de izajes y maniobras
-  </Link>
+         <li className="dropdown">
+  <a
+    href="#"
+    onClick={(e) => toggleDropdown('servicios', e)}
+    className={isActive('servicios') || openDropdown === 'servicios' ? 'active' : ''}
+    aria-expanded={openDropdown === 'servicios'}
+  >
+    Servicios ▾
+  </a>
+
+  
+
+  <ul
+    className="dropdown-menu"
+    style={{ display: openDropdown === 'servicios' ? 'block' : undefined }}
+    onClick={(e) => e.stopPropagation()}
+  >
+    <li>
+      <Link
+        to="/servicio/grua-telescopica"
+        className={pathname === '/servicio/grua-telescopica' ? 'active-sub' : ''}
+        onClick={closeMobileMenu}
+      >
+        Servicio de grúa telescópica
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/servicio/transporte-pesado"
+        className={pathname === '/servicio/transporte-pesado' ? 'active-sub' : ''}
+        onClick={closeMobileMenu}
+      >
+        Servicio de transporte de carga pesada
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/servicio/semitrailer"
+        className={pathname === '/servicio/semitrailer' ? 'active-sub' : ''}
+        onClick={closeMobileMenu}
+      >
+        Servicio de semitrailer grúa
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/servicio/accesorios"
+        className={pathname === '/servicio/accesorios' ? 'active-sub' : ''}
+        onClick={closeMobileMenu}
+      >
+        Alquiler de canastillas
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/servicio/mantenimiento"
+        className={pathname === '/servicio/mantenimiento' ? 'active-sub' : ''}
+        onClick={closeMobileMenu}
+      >
+        Servicio de grúas articuladas
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/servicio/izajes-maniobras"
+        className={pathname === '/servicio/izajes-maniobras' ? 'active-sub' : ''}
+        onClick={closeMobileMenu}
+      >
+        Servicio de izajes y maniobras
+      </Link>
+    </li>
+  </ul>
 </li>
 
-            </ul>
-          </li>
+
+          
 
           {/* Proyectos */}
           <li>

@@ -77,7 +77,19 @@ const Footer = () => {
           <span>Felicitaciones, Sugerencias y Reclamos</span> |
           <span>Política SIG</span>
         </div>
-        <span className="dev">Developed by <strong>Ayrton Florian</strong></span>
+        <span className="dev">
+  Developed by{" "}
+  <a
+    href="https://github.com/AYRTONFLORIAN30"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Ir al perfil de GitHub de Ayrton Florian (se abre en una nueva pestaña)"
+    className="dev-link"
+  >
+    <strong>Ayrton Florian</strong>
+  </a>
+</span>
+
       </div>
     </footer>
   );

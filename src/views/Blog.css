@@ -780,3 +780,106 @@
     padding-top: 10px !important;    /* estaba en 12px/20px según bloque */
   }
 }
+
+/* === BLOG (móvil) — imagen más grande y texto más arriba === */
+@media (max-width: 768px){
+  /* La tarjeta: un pelín más ancha visualmente */
+  .blog-card{
+    border-radius: 10px;
+    margin: 14px 8px 20px 8px !important;  /* menos margen lateral => se “ve” más grande */
+  }
+
+  /* Imagen más protagonista */
+  .blog-card .img-wrapper{
+    aspect-ratio: 16 / 9 !important;   /* mantiene proporción bonita */
+  }
+  .blog-card .img-wrapper img{
+    height: 200px !important;          /* ↑ sube el alto de la imagen (antes 120–165px) */
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Subir el contenido (menos aire debajo de la imagen) */
+  .blog-card .contenido{
+    padding: 10px 12px 12px !important; /* ↓ padding top/bottom */
+  }
+  .blog-card .contenido h3{
+    margin-bottom: 6px !important;
+  }
+  .blog-card .contenido p{
+    margin-bottom: 8px !important;
+  }
+}
+
+/* === BLOG (móvil) — imagen más grande, misma altura y texto pegado === */
+@media (max-width: 768px){
+
+  /* Menos “bordes” laterales → la imagen se ve más grande */
+  .contenido-principal{ padding: 16px 8px 26px !important; }
+  .articulos-grid{ width: 100% !important; }
+  .blog-card{
+    margin: 12px 6px 18px 6px !important; /* ↓ gutters laterales */
+    border-radius: 10px;
+  }
+
+  /* TODAS las tarjetas con la misma altura de imagen (16:9) */
+  .articulos-grid .blog-card .img-wrapper{
+    aspect-ratio: 16 / 9 !important;
+    height: auto !important;
+    overflow: hidden;
+  }
+  .articulos-grid .blog-card .img-wrapper img{
+    width: 100% !important;
+    height: 100% !important;   /* ocupa todo el wrapper */
+    object-fit: cover !important;
+    display: block;
+  }
+
+  /* Texto casi pegado a la imagen (menos aire arriba) */
+  .articulos-grid .blog-card .contenido{
+    padding: 8px 12px 12px !important; /* antes 10–20px */
+  }
+  .articulos-grid .blog-card .contenido h3{
+    margin-bottom: 4px !important;
+  }
+  .articulos-grid .blog-card .contenido p{
+    margin-bottom: 6px !important;
+  }
+}
+
+/* === BLOG (móvil) — a la derecha + bordes cuadrados + texto pegado === */
+@media (max-width: 768px){
+  /* mueve la tarjeta un poco a la derecha */
+  .blog-card{
+    margin: 12px 8px 18px 18px !important; /* top right bottom left */
+    border-radius: 0 !important;           /* esquinas cuadradas */
+  }
+
+  /* imagen con misma altura en todas y SIN bordes redondeados */
+  .articulos-grid .blog-card .img-wrapper{
+    aspect-ratio: 16 / 9 !important;
+    overflow: hidden;
+    border-radius: 0 !important;
+  }
+  .articulos-grid .blog-card .img-wrapper img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block;
+    border-radius: 0 !important;
+  }
+
+  /* etiqueta cuadrada (opcional) */
+  .etiqueta{ border-radius: 0 !important; }
+
+  /* contenido más pegado a la imagen */
+  .articulos-grid .blog-card .contenido{
+    padding: 6px 12px 12px !important;   /* ↓ aún más el padding superior */
+  }
+  .articulos-grid .blog-card .contenido h3{
+    margin-bottom: 4px !important;
+  }
+  .articulos-grid .blog-card .contenido p{
+    margin-bottom: 6px !important;
+  }
+}

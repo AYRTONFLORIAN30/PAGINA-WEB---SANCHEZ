@@ -116,7 +116,7 @@ function Blog() {
               <div className="img-wrapper">
                 <img src={art.imagen} alt={art.titulo} />
                 <span className="etiqueta">{art.categoria}</span>
-                <span className="plus">+</span>
+               
               </div>
               <div className="contenido">
                 <h3>{art.titulo}</h3>

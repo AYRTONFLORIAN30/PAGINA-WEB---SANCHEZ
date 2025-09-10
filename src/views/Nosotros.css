@@ -220,7 +220,7 @@
   background-image: url('../assets/banner-nosotros.jpg');
   background-size: cover;
   background-position: center;
-  height: 600px; /* Igual que Proyectos */
+  height: 850px; /* Igual que Proyectos */
   position: relative;
   display: flex;
   align-items: flex-start;

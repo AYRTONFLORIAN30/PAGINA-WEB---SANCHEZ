@@ -25,7 +25,7 @@ const Footer = () => {
           <h3>DATOS DE CONTACTO</h3>
           <p><i className="fas fa-envelope verde-text"></i> administracion@tgruasanchez.com</p>
           <p><i className="fas fa-phone verde-text"></i> Central: (51) 356-5800</p>
-          <p><i className="fas fa-mobile-alt verde-text"></i> +51 999999999 / +51 999999999</p>
+          <p><i className="fas fa-mobile-alt verde-text"></i> +51 996 046 754  /  +51 996 133 033</p>
           <p><i className="fas fa-map-marker-alt verde-text"></i> Av. Las Torres Sub Lt 7-C S/N<br />Zona Norte de la Baja de Lima<br /> Lurigancho – Huachipa</p>
         </div>
 

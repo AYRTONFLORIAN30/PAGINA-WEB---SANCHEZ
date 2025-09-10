@@ -935,6 +935,16 @@
   .overlay-hero{ padding:0 24px; }
 }
 
+/* === Proyectos: quitar el oscurecido === */
+.experiencia-proyectos .proyecto .overlay{
+  background: transparent !important;   /* sin capa oscura */
+}
+
+/* (Opcional) Mantén legible el texto sin fondo */
+.experiencia-proyectos .proyecto .overlay h1,
+.experiencia-proyectos .proyecto .overlay p{
+  text-shadow: 0 2px 6px rgba(0,0,0,.45); /* quítalo si no quieres nada */
+}
 
 
 

@@ -1,7 +1,7 @@
 // src/servicios/IzajesManiobras.jsx
 import React from 'react';
 import './ServicioDetalle.css';
-import imagenFondo from '../../assets/servicio-izajes-maniobras.jpg';
+import imagenFondo from '../../assets/serv-izajes-maniobras.jpg'; // ← actualizado
 
 function IzajesManiobras() {
   const irACotizacion = () => {

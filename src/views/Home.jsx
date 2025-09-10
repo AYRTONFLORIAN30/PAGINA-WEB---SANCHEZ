@@ -31,21 +31,37 @@ import teigatmi from '../assets/teigatmi.jpg';
 import transportessanrafael from '../assets/transportessanrafael.jpg';
 import trenelectrico from '../assets/trenelectrico.jpg';
 import votorantim from '../assets/votorantim.jpg';
-import './ProyectosSlider.css';
 
+import proy1 from '../assets/proyecto-1.jpg';
+import proy2 from '../assets/proyecto-2.jpg';
+import proy3 from '../assets/proyecto-3.jpg';
+import proy4 from '../assets/proyecto-4.jpg';
+import proy5 from '../assets/proyecto-5.jpg';
+import proy6 from '../assets/proyecto-6.jpg';
+import proy7 from '../assets/proyecto-7.jpg';
+import proy8 from '../assets/proyecto-8.jpg';
+
+import gruaTelescopicaImg from '../assets/serv-grua-telescopica.jpg';
+import transportePesadoImg from '../assets/serv-transporte-pesado.jpg';
+import semitrailerImg      from '../assets/serv-semitrailer-grua.jpg';
+import canastillaImg       from '../assets/serv-canastilla.jpg';
+import mantenimientoImg    from '../assets/serv-mant-articuladas.jpg';
+import izajesImg           from '../assets/serv-izajes-maniobras.jpg';
+
+import './ProyectosSlider.css';
 
 function Home() {
   const navigate = useNavigate();
   const proyectos = [
-    { title: 'Proyecto 1', description: '', img: proyecto },
-    { title: 'Proyecto 2', description: '', img: proyecto },
-    { title: 'Proyecto 3', description: '', img: proyecto },
-    { title: 'Proyecto 4', description: '', img: proyecto },
-    { title: 'Proyecto 5', description: '', img: proyecto },
-    { title: 'Proyecto 6', description: '', img: proyecto },
-    { title: 'Proyecto 7', description: '', img: proyecto },
-    { title: 'Proyecto 8', description: '', img: proyecto },
-  ];
+  { title: 'Proyecto 1', description: '', img: proy1 },
+  { title: 'Proyecto 2', description: '', img: proy2 },
+  { title: 'Proyecto 3', description: '', img: proy3 },
+  { title: 'Proyecto 4', description: '', img: proy4 },
+  { title: 'Proyecto 5', description: '', img: proy5 },
+  { title: 'Proyecto 6', description: '', img: proy6 },
+  { title: 'Proyecto 7', description: '', img: proy7 },
+  { title: 'Proyecto 8', description: '', img: proy8 },
+];
 
   // Configuración del slider
   const settings = {
@@ -103,11 +119,12 @@ function Home() {
         <span className="highlight">SANCHEZ</span>
       </h1>
 
-      <p className="subtitulo">Izamos progreso sin fronteras</p>
+      <p className="subtitulo">Experiencia y seguridad en cada izaje.</p>
 
       <p className="descripcion">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br />
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...
+         <br />
+        Atendemos proyectos grandes y pequeños con grúas modernas y operadores certificados. 
+        Plan de izaje, visita técnica sin costo y respuesta 24/7 en Lima y provincias; seguridad y puntualidad garantizadas.
       </p>
 
       <button
@@ -176,11 +193,7 @@ function Home() {
         style={{ cursor: 'pointer' }}
       >
         <div className="imagen-servicio">
-          <img
-            src={proyecto}
-            alt="Alquiler de Grúas Telescópicas"
-            className="imagen-servicio-img"
-          />
+          <img src={gruaTelescopicaImg} alt="Alquiler de Grúas Telescópicas" className="imagen-servicio-img" />
           <div className="overlay-servicio">
             <h3 className="titulo-servicio">Servicio de Grúas Telescópicas</h3>
             <div
@@ -206,11 +219,7 @@ function Home() {
         style={{ cursor: 'pointer' }}
       >
         <div className="imagen-servicio">
-          <img
-            src={proyecto}
-            alt="Alquiler de Transporte de Carga Pesada"
-            className="imagen-servicio-img"
-          />
+          <img src={transportePesadoImg} alt="Transporte de Carga Pesada" className="imagen-servicio-img" />
           <div className="overlay-servicio">
             <h3 className="titulo-servicio">Servicio de Transporte de Carga Pesada</h3>
             <div
@@ -236,11 +245,7 @@ function Home() {
         style={{ cursor: 'pointer' }}
       >
         <div className="imagen-servicio">
-          <img
-            src={proyecto}
-            alt="Alquiler de Semitrailer Grúa"
-            className="imagen-servicio-img"
-          />
+          <img src={semitrailerImg} alt="Semitrailer Grúa" className="imagen-servicio-img" />
           <div className="overlay-servicio">
             <h3 className="titulo-servicio">Servicio de Semitrailer Grúa</h3>
             <div
@@ -266,11 +271,7 @@ function Home() {
         style={{ cursor: 'pointer' }}
       >
         <div className="imagen-servicio">
-          <img
-            src={proyecto}
-            alt="Alquiler de Accesorios (Canastilla)"
-            className="imagen-servicio-img"
-          />
+          <img src={canastillaImg} alt="Alquiler de Canastilla" className="imagen-servicio-img" />
           <div className="overlay-servicio">
             <h3 className="titulo-servicio">Alquiler de Canastilla</h3>
             <div
@@ -296,11 +297,7 @@ function Home() {
         style={{ cursor: 'pointer' }}
       >
         <div className="imagen-servicio">
-          <img
-            src={proyecto}
-            alt="Mantenimiento de Grúas Articuladas"
-            className="imagen-servicio-img"
-          />
+          <img src={mantenimientoImg} alt="Mantenimiento de Grúas Articuladas" className="imagen-servicio-img" />
           <div className="overlay-servicio">
             <h3 className="titulo-servicio">Mantenimiento de Grúas Articuladas</h3>
             <div
@@ -326,11 +323,7 @@ function Home() {
           style={{ cursor: 'pointer' }}
         >
           <div className="imagen-servicio">
-            <img
-              src={proyecto}
-              alt="Servicio de Izaje y Maniobras"
-              className="imagen-servicio-img"
-            />
+            <img src={izajesImg} alt="Servicio de Izaje y Maniobras" className="imagen-servicio-img" />
             <div className="overlay-servicio">
               <h3 className="titulo-servicio">Servicio de Izaje y Maniobras</h3>
               <div

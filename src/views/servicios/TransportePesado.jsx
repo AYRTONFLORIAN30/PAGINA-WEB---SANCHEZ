@@ -1,6 +1,6 @@
 import React from 'react';
 import './ServicioDetalle.css';
-import imagenFondo from '../../assets/servicio-transporte-carga.jpg';
+import imagenFondo from '../../assets/serv-transporte-pesado.jpg'; // ← tu archivo correcto
 
 function TransportePesado() {
   const irACotizacion = () => {

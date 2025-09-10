@@ -39,7 +39,7 @@
   background-image: url('../assets/banner-proyectos.jpg');
   background-size: cover;
   background-position: center;
-  height: 550px; /* vuelve al original */
+  height: 850px; /* vuelve al original */
   position: relative;
   display: flex;
   align-items: flex-start; /* ⬅️ cambiamos esto */
@@ -528,5 +528,17 @@
 @media (max-width: 768px){
   .proyectos-hero .texto-hero-proyectos{
     bottom: 32px !important;  /* antes 110px; prueba 90–100 según te guste */
+  }
+}
+/* Desktop: centro-izquierda */
+@media (min-width: 769px){
+  .proyectos-hero .overlay{
+    padding: 0 108px 0 120px !important; /* mismos laterales */
+    justify-content: center !important;  /* ⬅️ centra VERTICAL */
+    align-items: flex-start !important;  /* ⬅️ pegado a la izquierda */
+  }
+  .proyectos-hero .texto-hero-proyectos{
+    position: static !important;         /* cancela el absolute/bottom */
+    margin-left: 0 !important;
   }
 }

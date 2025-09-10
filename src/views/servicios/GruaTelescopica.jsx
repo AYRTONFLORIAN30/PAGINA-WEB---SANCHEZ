@@ -1,6 +1,6 @@
 import React from 'react';
 import './ServicioDetalle.css';
-import imagenFondo from '../../assets/servicio-grua-telescopica.jpg';
+import imagenFondo from '../../assets/serv-grua-telescopica.jpg';
 
 function GruaTelescopica() {
   const irACotizacion = () => {

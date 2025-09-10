@@ -1,7 +1,7 @@
 /* HERO con imagen */
 .contacto-hero {
   margin-top: 45px;
-  height: 550px;
+  height: 800px;
   background-image: url('../assets/contacto-hero.jpg');
   background-size: cover;
   background-position: center;

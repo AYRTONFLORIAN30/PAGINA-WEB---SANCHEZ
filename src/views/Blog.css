@@ -883,3 +883,22 @@
     margin-bottom: 6px !important;
   }
 }
+
+/* === BLOG — ALTURA ÚNICA (último en el archivo) === */
+:root{
+  --blog-hero-desktop: 89vh;   /* ajusta aquí para desktop */
+  --blog-hero-mobile: 360px;   /* y aquí para móvil */
+}
+
+@media (min-width: 769px){
+  .blog-hero{
+    height: var(--blog-hero-desktop) !important;
+    background-position: center 0%; /* opcional: muestra un poco más abajo la foto */
+  }
+}
+
+@media (max-width: 768px){
+  .blog-hero{
+    height: var(--blog-hero-mobile) !important;
+  }
+}

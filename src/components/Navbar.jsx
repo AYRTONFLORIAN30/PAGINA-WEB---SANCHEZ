@@ -81,7 +81,7 @@ function Navbar() {
           </a>
           <span className="sep">/</span>
           <a href="tel:+51996133401" className="contact-link">
-            +51 965 430 434
+            +51 996 046 754
           </a>
           <a href="mailto:tsanchezgruas@gmail.com" className="contact-link">
             <i className="fas fa-envelope"></i> tsanchezgruas@gmail.com
@@ -177,7 +177,7 @@ function Navbar() {
         className={pathname === '/servicio/mantenimiento' ? 'active-sub' : ''}
         onClick={closeMobileMenu}
       >
-        Servicio de grúas articuladas
+        Servicio de mantenimiento de grúas articuladas
       </Link>
     </li>
     <li>

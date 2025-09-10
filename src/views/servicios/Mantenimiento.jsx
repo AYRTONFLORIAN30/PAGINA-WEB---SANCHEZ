@@ -1,6 +1,6 @@
 import React from 'react';
 import './ServicioDetalle.css';
-import imagenFondo from '../../assets/servicio-mantenimiento.jpg';
+import imagenFondo from '../../assets/serv-mant-articuladas.jpg'; // ← MANT-ARTICULADAS
 
 function Mantenimiento() {
   const irACotizacion = () => {

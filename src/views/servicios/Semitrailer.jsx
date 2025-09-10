@@ -1,6 +1,6 @@
 import React from 'react';
 import './ServicioDetalle.css';
-import imagenFondo from '../../assets/servicio-semitrailer-grua.jpg';
+import imagenFondo from '../../assets/serv-semitrailer-grua.jpg'; // ← tu archivo correcto
 
 function Semitrailer() {
   const irACotizacion = () => {

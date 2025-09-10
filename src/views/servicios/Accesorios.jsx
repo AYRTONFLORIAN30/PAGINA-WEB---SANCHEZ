@@ -1,6 +1,6 @@
 import React from 'react';
 import './ServicioDetalle.css';
-import imagenFondo from '../../assets/servicio-canastilla.jpg';
+import imagenFondo from '../../assets/serv-canastilla.jpg'; // ← tu archivo correcto
 
 function Accesorios() {
   const irACotizacion = () => {

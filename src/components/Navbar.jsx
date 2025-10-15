@@ -49,7 +49,7 @@ function Navbar() {
       <div className="top-bar">
         <div className="social-icons">
           <a
-            href="https://www.facebook.com/people/TRANSPORTES-S%C3%81NCHEZ-GR%C3%9AAS-SAC/100063488621412/"
+            href="https://web.facebook.com/sanchezgruas.sac/"
             target="_blank" rel="noopener noreferrer"
           >
             <i className="fab fa-facebook-f"></i>
@@ -74,20 +74,22 @@ function Navbar() {
           </a>
         </div>
 
-        {/* 📞 Contacto */}
-        <div className="contact-info">
-          <a href="tel:+51996046754" className="contact-link">
-            <i className="fas fa-phone"></i> +51 996 133 033
-          </a>
-          <span className="sep">/</span>
-          <a href="tel:+51996133401" className="contact-link">
-            +51 996 046 754
-          </a>
-          <a href="mailto:tsanchezgruas@gmail.com" className="contact-link">
-            <i className="fas fa-envelope"></i> tsanchezgruas@gmail.com
-          </a>
-        </div>
-      </div>
+         {/* 📞 Contacto */}
+    <div className="contact-info">
+      <a href="tel:+51996046754" className="call-cta" aria-label="Llámanos al +51 996 133 033">
+        <i className="fas fa-phone"></i>
+        <span>(+51) 996 046 754</span>
+      </a>
+
+      <a href="tel:+51996046754" className="call-fab" aria-label="Llamar">
+        <i className="fas fa-phone"></i>
+      </a>
+
+      <a href="mailto:tsanchezgruas@gmail.com" className="contact-link">
+        <i className="fas fa-envelope"></i> doris.s@tgruasanchez.com
+      </a>
+    </div>
+  </div>  {/* 👈 CIERRE DE top-bar QUE FALTABA */}
 
       {/* 🔽 Navbar principal */}
       <nav className="main-nav">

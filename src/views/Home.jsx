@@ -116,7 +116,7 @@ function Home() {
     <div className="hero-texto-centrado">
       <h1>
         <span className="bold">GRÚAS</span>{' '}
-        <span className="highlight">SANCHEZ</span>
+        <span className="highlight">SÁNCHEZ</span>
       </h1>
 
       <p className="subtitulo">Experiencia y seguridad en cada izaje.</p>

@@ -331,3 +331,65 @@
   color: #527392;             /* tu amarillo de marca, si quieres */
   border-color: currentColor; /* subrayado sutil al pasar el mouse */
 }
+
+/* === Redes y Libro perfectamente alineados === */
+.footer .redes-con-libro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;    /* 👈 vuelve a alinear con el texto */
+  margin-top: 12px;
+  gap: 6px;
+  position: relative;
+  left: 4px;                  /* pequeño ajuste visual hacia la izquierda */
+}
+
+.footer .redes {
+  display: flex;
+  justify-content: flex-start; /* 👈 mantiene íconos a la izquierda */
+  gap: 14px;
+}
+
+.footer .libro-reclamaciones {
+  margin-top: 4px;
+  margin-left: 10px;          /* 👈 mueve el libro un poco al centro respecto a los íconos */
+  text-align: left;
+}
+
+.footer .libro-reclamaciones .libro-img {
+  display: block;
+  max-width: 130px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.footer .libro-reclamaciones .libro-img:hover {
+  transform: scale(1.05);
+}
+
+/* En pantallas pequeñas, centramos todo */
+@media (max-width: 768px) {
+  .footer .redes-con-libro {
+    align-items: center;
+    left: 0;
+  }
+
+  .footer .redes {
+    justify-content: center;
+  }
+
+  .footer .libro-reclamaciones {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+/* === Ajuste fino: mover el libro ligeramente a la derecha === */
+.footer .libro-reclamaciones {
+  margin-left: 35px !important; /* 🔧 prueba con 30–40px según lo veas */
+}
+
+@media (max-width: 768px) {
+  .footer .libro-reclamaciones {
+    margin-left: 0 !important; /* en móvil se mantiene centrado */
+  }
+}

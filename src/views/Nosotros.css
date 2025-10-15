@@ -843,3 +843,51 @@ body, html {
   .texto-nosotros h1{ font-size: 30px; margin-bottom: 6px; }
   .texto-nosotros p { font-size: 13.5px; margin-left: 12px; }
 }
+
+/* === OVERRIDES: 6 columnas en una sola fila (desktop) === */
+@media (min-width: 1024px){
+  .valores-grid{
+    display: grid !important;
+    grid-template-columns: repeat(6, minmax(160px, 1fr)) !important;
+    gap: 20px !important;
+    max-width: 1400px !important;   /* más ancho para que quepan cómodos */
+    margin: 0 auto !important;
+    overflow: visible !important;    /* evita que recorte o “empuje” */
+  }
+
+  .valor-cuadro{
+    min-height: 190px;               /* mantén altura pareja */
+  }
+}
+
+/* === VALORES: textos en blanco y más gruesos === */
+.valor-cuadro h3,
+.valor-cuadro p,
+.valor-cuadro i{
+  color: #fff !important;       /* blanco en icono, título y párrafo */
+}
+
+/* Pesos más fuertes */
+.valor-cuadro h3{
+  font-weight: 800 !important;  /* título bien marcado */
+  letter-spacing: .2px;
+}
+.valor-cuadro p{
+  font-weight: 700 !important;  /* párrafo en negrita */
+}
+
+/* Mantener blanco también en hover/focus (sobrescribe reglas previas) */
+.valor-cuadro:hover h3,
+.valor-cuadro:hover p,
+.valor-cuadro:hover i,
+.valor-cuadro:focus-visible h3,
+.valor-cuadro:focus-visible p,
+.valor-cuadro:focus-visible i{
+  color: #fff !important;
+}
+
+/* (Opcional) Mejora de legibilidad sobre fondo amarillo */
+.valor-cuadro h3,
+.valor-cuadro p{
+  text-shadow: 0 1px 2px rgba(0,0,0,.25);
+}

@@ -876,3 +876,192 @@ body {
   }
 }
 
+/* === TELÉFONO: estilos como las referencias === */
+
+/* pill rojo (desktop) */
+.call-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#e53935;          /* rojo */
+  color:#fff !important;
+  padding:10px 16px;
+  border-radius:8px;            /* rectángulo con esquinas */
+  font-weight:700;
+  text-decoration:none !important;
+  line-height:1;
+  box-shadow: 0 2px 0 rgba(0,0,0,.12);
+  transition: transform .08s ease, background .2s ease;
+}
+.call-cta i{ font-size:14px; }
+.call-cta:hover{ background:#c62828; transform: translateY(-1px); }
+
+/* botón redondo (móvil) */
+.call-fab{
+  display:none;                 /* oculto en desktop */
+  width:36px;
+  height:36px;
+  min-width:36px;
+  border-radius:50%;
+  background:#e53935;
+  color:#fff !important;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none !important;
+  line-height:1;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+}
+.call-fab i{ font-size:14px; }
+.call-fab:active{ transform: scale(.96); }
+
+/* alineación en la barra superior */
+.top-bar .contact-info{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* Responsive: mostrar solo 1 variante */
+@media (max-width: 768px){
+  .call-cta{ display:none; }    /* en móvil, oculta el pill */
+  .call-fab{ display:inline-flex; }  /* muestra el redondo */
+}
+@media (min-width: 769px){
+  .call-cta{ display:inline-flex; }
+  .call-fab{ display:none; }
+}
+
+/* === PULSE WHATSAPP-LIKE PARA .call-fab (SOLO MÓVIL) === */
+.call-fab{
+  position: relative;          /* permite pseudo-elementos */
+  overflow: visible;
+}
+
+/* Círculos de halo */
+.call-fab::before,
+.call-fab::after{
+  content: "";
+  position: absolute;
+  inset: -10px;                /* halo alrededor */
+  border-radius: 50%;
+  background: #e53935;         /* mismo rojo del botón */
+  opacity: .22;
+  transform: scale(.7);
+  z-index: -1;
+  animation: fab-pulse 1.8s ease-out infinite;
+}
+
+/* Segundo anillo, más grande y desfasado */
+.call-fab::after{
+  inset: -18px;
+  opacity: .14;
+  animation-delay: .45s;
+}
+
+/* Animación del pulso */
+@keyframes fab-pulse{
+  0%   { transform: scale(.6); opacity: .28; }
+  60%  { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+
+/* Un poquito de feedback al tocar */
+.call-fab:active{
+  transform: scale(.95);
+}
+
+/* Respeto a usuarios con reducción de movimiento */
+@media (prefers-reduced-motion: reduce){
+  .call-fab::before,
+  .call-fab::after{
+    animation: none;
+    opacity: 0;                /* sin halos si reducen animación */
+  }
+}
+
+/* Mantener que solo se vea en móvil */
+@media (max-width: 768px){
+  .call-cta{ display:none; }
+  .call-fab{ display:inline-flex; }
+}
+@media (min-width: 769px){
+  .call-cta{ display:inline-flex; }
+  .call-fab{ display:none; }
+}
+
+/* === CALL FAB con pulso visible (tipo WhatsApp) === */
+.call-fab{
+  display:none;                 /* se muestra solo en móvil más abajo */
+  width:40px;                   /* un pelín más grande para que luzca */
+  height:40px;
+  min-width:40px;
+  border-radius:50%;
+  background:#e53935;
+  color:#fff !important;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none !important;
+  line-height:1;
+  position: relative;
+  z-index: 1;                   /* por encima del fondo de .top-bar */
+  box-shadow: 0 0 0 0 rgba(229,57,53,.45),
+              0 0 0 0 rgba(229,57,53,.25);
+  animation: call-ring 1.8s ease-out infinite;
+}
+.call-fab i{ font-size:16px; }
+.call-fab:active{ transform: scale(.95); }
+
+/* Animación: dos anillos que se expanden y se desvanecen */
+@keyframes call-ring{
+  0%{
+    box-shadow: 0 0 0 0 rgba(229,57,53,.45),
+                0 0 0 0 rgba(229,57,53,.25);
+  }
+  60%{
+    box-shadow: 0 0 0 16px rgba(229,57,53,0),
+                0 0 0 30px rgba(229,57,53,0);
+  }
+  100%{
+    box-shadow: 0 0 0 0 rgba(229,57,53,0),
+                0 0 0 0 rgba(229,57,53,0);
+  }
+}
+
+/* Respeto a reducción de movimiento */
+@media (prefers-reduced-motion: reduce){
+  .call-fab{ animation: none; box-shadow: none; }
+}
+
+/* Mostrar solo en móvil (como tenías) */
+@media (max-width: 768px){
+  .call-cta{ display:none; }
+  .call-fab{ display:inline-flex; }
+}
+@media (min-width: 769px){
+  .call-cta{ display:inline-flex; }
+  .call-fab{ display:none; }
+}
+
+/* === NAVBAR MÁS GRUESO === */
+.menu a{
+  font-weight: 700 !important;          /* negrita en items del menú */
+  letter-spacing: -0.1px;               /* compacta un pelín = se ve más sólido */
+}
+.menu .dropdown > a.active{
+  font-weight: 800 !important;          /* el activo aún más marcado */
+}
+.dropdown-menu a{
+  font-weight: 700 !important;          /* submenús en negrita */
+}
+
+/* Top bar (teléfono / email) más marcado sin exagerar */
+.top-bar,
+.contact-info .contact-link{
+  font-weight: 600 !important;
+}
+
+/* Botón Cotizar más contundente */
+.cotizar-btn{
+  font-weight: 800 !important;
+  letter-spacing: .2px;
+}

@@ -23,23 +23,23 @@ const Footer = () => {
 
         <div className="footer-col">
           <h3>DATOS DE CONTACTO</h3>
-          <p><i className="fas fa-envelope verde-text"></i> administracion@tgruasanchez.com</p>
-          <p><i className="fas fa-phone verde-text"></i> Central: (51) 356-5800</p>
-          <p><i className="fas fa-mobile-alt verde-text"></i> +51 996 046 754  /  +51 996 133 033</p>
+          <p><i className="fas fa-envelope verde-text"></i> doris.s@tgruasanchez.com</p>
+          <p><i className="fas fa-mobile-alt verde-text"></i> +51 996 046 754  /  +51 949 344 778</p>
           <p><i className="fas fa-map-marker-alt verde-text"></i> Av. Las Torres Sub Lt 7-C S/N<br />Zona Norte de la Baja de Lima<br /> Lurigancho – Huachipa</p>
         </div>
 
         <div className="footer-col">
-          <h3>Gruas y Transportes | Sanchez</h3>
+          <h3>Grúas y Transportes Sánchez</h3>
           <p>Puedes seguirnos en nuestras redes:</p>
 
           <div className="redes-con-libro">
             <div className="redes">
               <a
-                href="https://www.facebook.com/people/TRANSPORTES-S%C3%81NCHEZ-GR%C3%9AAS-SAC/100063488621412/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                  href="https://web.facebook.com/sanchezgruas.sac/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+
                 <i className="fab fa-facebook-square"></i>
               </a>
               <a href="https://www.instagram.com/sanchezgruas?igsh=M2Z5NnZkcWJ5amxv" target="_blank" rel="noopener noreferrer">
@@ -69,7 +69,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>Copyright 2025 © Sanchez | Gruas y Transportes</p>
+        <p>Copyright 2025 © Sánchez | Grúas y Transportes</p>
         <div className="footer-links">
           <span>Políticas de Privacidad</span> |
           <span>Políticas de Cookies</span> |

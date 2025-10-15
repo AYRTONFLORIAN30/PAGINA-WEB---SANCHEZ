@@ -24,13 +24,12 @@ const ContactoInfo = () => {
           <div className="info-box">
             <i className="fas fa-envelope icono-contacto"></i>
             <h3>ESCRÍBENOS</h3>
-            <p>tsanchezgruas@gmail.com</p>
+            <p>doris.s@tgruasanchez.com</p>
           </div>
           <div className="info-box">
             <i className="fas fa-phone icono-contacto"></i>
             <h3>PUEDES LLAMARNOS</h3>
-            <p>+51 996133033 / +51 955329346</p>
-            <p>Central: (511) 356-5800</p>
+            <p>+51 996046754 / +51 949344778</p>
           </div>
           <div className="info-box">
             <i className="fas fa-map-marker-alt icono-contacto"></i>

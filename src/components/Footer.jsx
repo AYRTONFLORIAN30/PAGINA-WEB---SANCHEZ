@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="footer-col">
           <img src={logo} alt="Logo" className="footer-logo" />
           <p>
-            Líderes en <span className="verde-text">Alquiler</span> de grúas por más de 19 años.
+            Líderes en el<span className="verde-text"> Alquiler</span> de grúas desde hace 10 años.
           </p>
           <p>Izamos progreso sin fronteras</p>
           <p className="horario">
@@ -25,7 +25,15 @@ const Footer = () => {
           <h3>DATOS DE CONTACTO</h3>
           <p><i className="fas fa-envelope verde-text"></i> doris.s@tgruasanchez.com</p>
           <p><i className="fas fa-mobile-alt verde-text"></i> +51 996 046 754  /  +51 949 344 778</p>
-          <p><i className="fas fa-map-marker-alt verde-text"></i> Av. Las Torres Sub Lt 7-C S/N<br />Zona Norte de la Baja de Lima<br /> Lurigancho – Huachipa</p>
+          <p>
+  <i className="fas fa-map-marker-alt verde-text"></i>
+  Base 2, Los Angeles, Lurigancho-Chosica 15461
+</p>
+<p style={{ marginLeft: '18px' }}>
+  Fundo Huachipa - Lurigancho
+</p>
+
+
         </div>
 
         <div className="footer-col">

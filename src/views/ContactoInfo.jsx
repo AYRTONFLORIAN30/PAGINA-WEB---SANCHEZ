@@ -34,8 +34,8 @@ const ContactoInfo = () => {
           <div className="info-box">
             <i className="fas fa-map-marker-alt icono-contacto"></i>
             <h3>UBÍCANOS</h3>
-            <p>Cal. Los canarios mz. E2 Lote. 9A</p>
-            <p>Santa María de Huachipa - Lima, Perú</p>
+            <p>Base 2, Los Angeles, Lurigancho-Chosica 15461</p>
+            <p>Fundo Huachipa - Lurigancho</p>
           </div>
         </div>
 

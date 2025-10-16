@@ -158,9 +158,9 @@ function Home() {
     <div className="cards">
       <div className="card">
         <div className="card-header verde">Más de</div>
-        <div className="años">22 <span>años</span></div>
+        <div className="años">10 <span>años</span></div>
         <p>
-          Somos líderes en el alquiler de Grúas desde hace <strong>más de 22 años</strong>
+          Somos líderes en el alquiler de Grúas desde hace <strong>10 años</strong>
         </p>
       </div>
 

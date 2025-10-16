@@ -76,7 +76,7 @@ function Navbar() {
 
          {/* 📞 Contacto */}
     <div className="contact-info">
-      <a href="tel:+51996046754" className="call-cta" aria-label="Llámanos al +51 996 133 033">
+      <a href="tel:+51996046754" className="call-cta" aria-label="Llámanos al +51 996 046 754">
         <i className="fas fa-phone"></i>
         <span>(+51) 996 046 754</span>
       </a>
@@ -85,7 +85,7 @@ function Navbar() {
         <i className="fas fa-phone"></i>
       </a>
 
-      <a href="mailto:tsanchezgruas@gmail.com" className="contact-link">
+      <a href="mailto:doris.s@tgruasanchez.com" className="contact-link">
         <i className="fas fa-envelope"></i> doris.s@tgruasanchez.com
       </a>
     </div>

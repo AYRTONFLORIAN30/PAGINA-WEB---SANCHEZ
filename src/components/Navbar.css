@@ -1065,3 +1065,63 @@ body {
   font-weight: 800 !important;
   letter-spacing: .2px;
 }
+
+/* === LOGO MÁS GRANDE EN DESKTOP === */
+@media (min-width: 992px) {
+  .main-nav {
+    height: 110px !important; /* subimos un poco la altura */
+    padding: 0 32px !important;
+  }
+
+  .main-nav .logo {
+    max-height: 90px !important; /* antes 56–70px */
+    width: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  /* Centra verticalmente el menú y botón Cotizar */
+  .menu a {
+    padding: 30px 10px !important; /* para que el texto quede alineado con el logo */
+  }
+
+  .main-nav .cotizar-btn {
+    padding: 14px 36px !important;
+    font-size: 1.1rem !important;
+  }
+}
+
+/* === LOGO GRANDE TAMBIÉN EN TABLET === */
+@media (min-width: 768px) and (max-width: 991px) {
+  .main-nav {
+    height: 100px !important;
+  }
+  .main-nav .logo {
+    max-height: 80px !important;
+  }
+}
+
+/* === SOLO AGRANDAR EL LOGO, SIN MODIFICAR NAVBAR === */
+.logo {
+  max-height: 70px !important; /* 🔼 ajusta según tu gusto (ej. 65–75) */
+  width: auto;
+  transition: all 0.2s ease;
+}
+
+/* Mantener la altura original del navbar */
+.main-nav {
+  height: 68px !important; /* la misma altura que tenías antes */
+  padding: 0 24px !important;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+}
+
+/* Mueve el navbar un poco hacia abajo respecto a la top-bar */
+.main-nav{
+  margin-top: 10px !important;      /* prueba 8–12px */
+}
+
+@media (max-width: 768px){
+  .main-nav{ margin-top: 6px !important; }
+}
